@@ -24,11 +24,8 @@ public class AshBaseData : ConfigModel
     }
 
     public string ashRoot;
-
     public Color color1;
-
     public List<AnimationCurve> aaa;
-
     public TestEnum testEnum;
 }
 

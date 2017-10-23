@@ -118,11 +118,14 @@ namespace AshUnity
             }
         }
 
-        public static void Init()
+        /// <summary>
+        /// 
+        /// </summary>
+        static void Init()
         {
-            GameObject AshBaseGameObject = null;
             if (AshBase.Instance == null)
             {
+                GameObject AshBaseGameObject = null;
                 AshBaseGameObject = new GameObject("AshEngine");
                 AshBaseGameObject.AddComponent<AshBase>();
             }

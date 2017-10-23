@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/InitTestScene636422390324407499.unity
+- path: Assets/ThirdParty/Ash/Ash.Test/Test.unity
   isLoaded: 1
   isActive: 1

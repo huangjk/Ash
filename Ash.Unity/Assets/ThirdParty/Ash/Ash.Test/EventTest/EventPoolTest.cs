@@ -3,9 +3,12 @@ using AshUnity;
 using Ash.Event;
 using System;
 
-public class EventPool
+public class EventPoolTest
 {
-    public class TestEventArgs : AshEventArgs
+    /// <summary>
+    /// 事件参数
+    /// </summary>
+    private class TestEventArgs : AshEventArgs
     {
         public string Name
         {
@@ -34,28 +37,35 @@ public class EventPool
         }
     }
 
-    private void Test(object sender, AshEventArgs e)
+    /// <summary>
+    /// 测试事件CallBack
+    /// </summary>
+    /// <param name="sender">发送的</param>
+    /// <param name="e"></param>
+    private void TestCallBack(object sender, AshEventArgs e)
     {
         TestEventArgs te = (TestEventArgs)e;
 
-        if (te.Name == "name") ccc = "name";
-
+        testData = te.Name;
     }
 
-    public string ccc = "ccc";
+    //测试数据
+    public string testData = "one";
+
     [Test]
-	public void Test01()
+	public void TestEvent()
     {
-        AshApp.Init();
+        
         EventComponent eventManager = AshApp.GetComponent<EventComponent>();
 
-        eventManager.Subscribe(1, Test);
+        //订阅
+        eventManager.Subscribe(1, TestCallBack);
 
+        //发布事件
         TestEventArgs testEventArgs = new TestEventArgs("name", "aabb");
-
         eventManager.FireNow(this, testEventArgs);
 
-        Assert.AreEqual(ccc, "name");
+        Assert.AreEqual(testData, "name");
     }
 
 	// A UnityTest behaves like a coroutine in PlayMode

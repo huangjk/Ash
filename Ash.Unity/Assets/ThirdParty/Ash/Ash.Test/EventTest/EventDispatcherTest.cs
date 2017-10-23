@@ -4,13 +4,13 @@ using NUnit.Framework;
 using System.Collections;
 using AshUnity;
 
-public class EventDispatcher
+public class EventDispatcherTest
 {
 
 	[Test]
 	public void Test_01()
     {
-        AshApp.Init();
+        //AshApp.Init();
         EventComponent eventManager = AshApp.GetComponent<EventComponent>();
 
         bool isCall = false;
