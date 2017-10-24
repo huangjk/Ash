@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76A64C68-3045-4B57-944D-4770624808C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ash</RootNamespace>
+    <AssemblyName>Ash</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ash\AshEntry.cs" />
+    <Compile Include="Ash\AshModule.cs" />
+    <Compile Include="Ash\Support\Config\IConfigAdapter.cs" />
+    <Compile Include="Ash\Support\Config\ConfigDataBase.cs" />
+    <Compile Include="Ash\Support\Event\EventDispatcher\Dispatcher.cs" />
+    <Compile Include="Ash\Support\Event\EventDispatcher\Dispatcher.EventHandler.cs" />
+    <Compile Include="Ash\Support\Event\EventDispatcher\IAshEventHandler.cs" />
+    <Compile Include="Ash\Support\Event\EventPool\BaseEventArgs.cs" />
+    <Compile Include="Ash\Support\Event\EventPool\EventPool.cs" />
+    <Compile Include="Ash\Support\Event\EventPool\EventPool.Event.cs" />
+    <Compile Include="Ash\Support\Event\EventPool\EventPoolMode.cs" />
+    <Compile Include="Ash\Support\Exception\AssertException.cs" />
+    <Compile Include="Ash\Support\Exception\RuntimeException.cs" />
+    <Compile Include="Ash\Support\FileSystem\Adapter\IFileSystemAdapter.cs" />
+    <Compile Include="Ash\Support\FileSystem\Adapter\Local.cs" />
+    <Compile Include="Ash\Support\FileSystem\FileSystem.cs" />
+    <Compile Include="Ash\Support\FileSystem\IDirectory.cs" />
+    <Compile Include="Ash\Support\FileSystem\IFile.cs" />
+    <Compile Include="Ash\Support\FileSystem\IHandler.cs" />
+    <Compile Include="Ash\Support\FileSystem\Internal\Directory.cs" />
+    <Compile Include="Ash\Support\FileSystem\Internal\File.cs" />
+    <Compile Include="Ash\Support\FileSystem\Internal\Handler.cs" />
+    <Compile Include="Ash\Support\AshAction.cs" />
+    <Compile Include="Ash\Support\AshFunc.cs" />
+    <Compile Include="Ash\Support\Guard\Guard.cs" />
+    <Compile Include="Ash\Support\Log\Log.cs" />
+    <Compile Include="Ash\Support\Log\LogCallback.cs" />
+    <Compile Include="Ash\Support\Log\LogInfoType.cs" />
+    <Compile Include="Ash\Support\Log\LogLevel.cs" />
+    <Compile Include="Ash\Support\RegexUtil\RegexUtil.cs" />
+    <Compile Include="Ash\Support\TaskPool\ITask.cs" />
+    <Compile Include="Ash\Support\TaskPool\ITaskAgent.cs" />
+    <Compile Include="Ash\Support\TaskPool\TaskPool.cs" />
+    <Compile Include="Ash\Support\Version\Version.cs" />
+    <Compile Include="Event\EventManager.cs" />
+    <Compile Include="Event\AshEventArgs.cs" />
+    <Compile Include="Event\IEventManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Assembly.cs" />
+    <Compile Include="Utility\Converter.cs" />
+    <Compile Include="Utility\Encryption.cs" />
+    <Compile Include="Utility\Json.cs" />
+    <Compile Include="Utility\Json.IJsonHelper.cs" />
+    <Compile Include="Utility\Path.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) C:\Users\ChineseHXYun\OneDrive\Framework\Ash\Ash.Unity\Assets\ThirdParty\Ash\Ash.Lib</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
