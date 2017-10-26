@@ -16,3 +16,11 @@ C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnity\bin\Debug\Ash.
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnity\obj\Debug\AshUnity.csprojResolveAssemblyReference.cache
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnity\obj\Debug\AshUnity.dll
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnity\obj\Debug\AshUnity.pdb
+D:\Ash\Ash.VS\Ash\AshUnity\obj\Debug\AshUnity.csprojResolveAssemblyReference.cache
+D:\Ash\Ash.VS\Ash\AshUnity\obj\Debug\AshUnity.dll
+D:\Ash\Ash.VS\Ash\AshUnity\obj\Debug\AshUnity.pdb
+D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\AshUnity.dll
+D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\AshUnity.pdb
+D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\Ash.dll
+D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\UnityEngine.dll
+D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\Ash.pdb

@@ -62,7 +62,6 @@
     <Compile Include="Ash\Support\Guard\Guard.cs" />
     <Compile Include="Ash\Support\Log\Log.cs" />
     <Compile Include="Ash\Support\Log\LogCallback.cs" />
-    <Compile Include="Ash\Support\Log\LogInfoType.cs" />
     <Compile Include="Ash\Support\Log\LogLevel.cs" />
     <Compile Include="Ash\Support\RegexUtil\RegexUtil.cs" />
     <Compile Include="Ash\Support\TaskPool\ITask.cs" />
@@ -72,6 +71,15 @@
     <Compile Include="Event\EventManager.cs" />
     <Compile Include="Event\AshEventArgs.cs" />
     <Compile Include="Event\IEventManager.cs" />
+    <Compile Include="ObjectPool\IObjectPool.cs" />
+    <Compile Include="ObjectPool\IObjectPoolManager.cs" />
+    <Compile Include="ObjectPool\ObjectBase.cs" />
+    <Compile Include="ObjectPool\ObjectInfo.cs" />
+    <Compile Include="ObjectPool\ObjectPoolBase.cs" />
+    <Compile Include="ObjectPool\ObjectPoolManager.Object.cs" />
+    <Compile Include="ObjectPool\ObjectPoolManager.ObjectPool.cs" />
+    <Compile Include="ObjectPool\ObjectPoolManager.cs" />
+    <Compile Include="ObjectPool\ReleaseObjectFilterCallback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Assembly.cs" />
     <Compile Include="Utility\Converter.cs" />
@@ -79,10 +87,11 @@
     <Compile Include="Utility\Json.cs" />
     <Compile Include="Utility\Json.IJsonHelper.cs" />
     <Compile Include="Utility\Path.cs" />
+    <Compile Include="Utility\Text.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) C:\Users\ChineseHXYun\OneDrive\Framework\Ash\Ash.Unity\Assets\ThirdParty\Ash\Ash.Lib</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) D:\Ash\Ash.Unity\Assets\ThirdParty\Ash\Ash.Lib</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

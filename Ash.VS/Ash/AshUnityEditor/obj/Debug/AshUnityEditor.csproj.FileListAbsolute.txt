@@ -22,3 +22,14 @@ C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debu
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.csprojResolveAssemblyReference.cache
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.dll
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.pdb
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\AshUnityEditor.dll
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\AshUnityEditor.pdb
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\Ash.dll
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\AshUnity.dll
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\UnityEditor.dll
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\UnityEngine.dll
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\AshUnity.pdb
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\Ash.pdb
+D:\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.csprojResolveAssemblyReference.cache
+D:\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.dll
+D:\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.pdb

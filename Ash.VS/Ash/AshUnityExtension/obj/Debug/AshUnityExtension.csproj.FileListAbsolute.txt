@@ -26,3 +26,16 @@ C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityExtension\bin\D
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityExtension\obj\Debug\AshUnityExtension.csprojResolveAssemblyReference.cache
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityExtension\obj\Debug\AshUnityExtension.dll
 C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\AshUnityExtension\obj\Debug\AshUnityExtension.pdb
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\AshUnityExtension.dll
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\AshUnityExtension.pdb
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\Ash.dll
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\AshUnity.dll
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\AshUnityEditor.dll
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\UnityEditor.dll
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\UnityEngine.dll
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\AshUnityEditor.pdb
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\AshUnity.pdb
+D:\Ash\Ash.VS\Ash\AshUnityExtension\bin\Debug\Ash.pdb
+D:\Ash\Ash.VS\Ash\AshUnityExtension\obj\Debug\AshUnityExtension.csprojResolveAssemblyReference.cache
+D:\Ash\Ash.VS\Ash\AshUnityExtension\obj\Debug\AshUnityExtension.dll
+D:\Ash\Ash.VS\Ash\AshUnityExtension\obj\Debug\AshUnityExtension.pdb

@@ -6,6 +6,7 @@
     public enum LogLevel
     {
         All = 0,
+
         /// <summary>
         /// 调试。
         /// </summary>
@@ -25,5 +26,10 @@
         /// 错误。
         /// </summary>
         Error,
+
+        /// <summary>
+        /// 严重错误。
+        /// </summary>
+        Fatal
     }
 }

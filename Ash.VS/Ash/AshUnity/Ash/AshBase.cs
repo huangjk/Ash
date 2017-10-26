@@ -98,7 +98,7 @@ namespace AshUnity
 
         private void OnLowMemory()
         {
-            Log.Info("Low memory reported...", LogInfoType.System);
+            Log.Info("Low memory reported...");
         }
     }
 }
