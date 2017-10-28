@@ -305,7 +305,7 @@ namespace Ash.Adapter
         {
             if (!path.Contains(root))
             {
-                throw new RuntimeException("The path range is beyond root path. root path [" + root + "], your path [" + path + "].");
+                throw new AshException("The path range is beyond root path. root path [" + root + "], your path [" + path + "].");
             }
         }
 

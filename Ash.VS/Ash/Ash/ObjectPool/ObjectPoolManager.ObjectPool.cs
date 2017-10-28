@@ -111,7 +111,7 @@ namespace Ash.ObjectPool
                 {
                     if (value < 0)
                     {
-                        throw new RuntimeException("Capacity is invalid.");
+                        throw new AshException("Capacity is invalid.");
                     }
 
                     if (m_Capacity == value)
@@ -139,7 +139,7 @@ namespace Ash.ObjectPool
                 {
                     if (value < 0f)
                     {
-                        throw new RuntimeException("ExpireTime is invalid.");
+                        throw new AshException("ExpireTime is invalid.");
                     }
 
                     if (ExpireTime == value)
@@ -177,7 +177,7 @@ namespace Ash.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new RuntimeException("Object is invalid.");
+                    throw new AshException("Object is invalid.");
                 }
 
                 Log.Debug(spawned ? "Object pool '{0}' create and spawned '{1}'." : "Object pool '{0}' create '{1}'.", Utility.Text.GetFullName<T>(Name), obj.Name);
@@ -259,7 +259,7 @@ namespace Ash.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new RuntimeException("Object is invalid.");
+                    throw new AshException("Object is invalid.");
                 }
 
                 Unspawn(obj.Target);
@@ -273,7 +273,7 @@ namespace Ash.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new RuntimeException("Target is invalid.");
+                    throw new AshException("Target is invalid.");
                 }
 
                 foreach (Object<T> obj in m_Objects)
@@ -287,7 +287,7 @@ namespace Ash.ObjectPool
                     }
                 }
 
-                throw new RuntimeException(string.Format("Can not find target in object pool '{0}'.", Utility.Text.GetFullName<T>(Name)));
+                throw new AshException(string.Format("Can not find target in object pool '{0}'.", Utility.Text.GetFullName<T>(Name)));
             }
 
             /// <summary>
@@ -299,7 +299,7 @@ namespace Ash.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new RuntimeException("Object is invalid.");
+                    throw new AshException("Object is invalid.");
                 }
 
                 SetLocked(obj.Target, locked);
@@ -314,7 +314,7 @@ namespace Ash.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new RuntimeException("Target is invalid.");
+                    throw new AshException("Target is invalid.");
                 }
 
                 foreach (Object<T> obj in m_Objects)
@@ -327,7 +327,7 @@ namespace Ash.ObjectPool
                     }
                 }
 
-                throw new RuntimeException(string.Format("Can not find target in object pool '{0}'.", Utility.Text.GetFullName<T>(Name)));
+                throw new AshException(string.Format("Can not find target in object pool '{0}'.", Utility.Text.GetFullName<T>(Name)));
             }
 
             /// <summary>
@@ -339,7 +339,7 @@ namespace Ash.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new RuntimeException("Object is invalid.");
+                    throw new AshException("Object is invalid.");
                 }
 
                 SetPriority(obj.Target, priority);
@@ -354,7 +354,7 @@ namespace Ash.ObjectPool
             {
                 if (target == null)
                 {
-                    throw new RuntimeException("Target is invalid.");
+                    throw new AshException("Target is invalid.");
                 }
 
                 foreach (Object<T> obj in m_Objects)
@@ -367,7 +367,7 @@ namespace Ash.ObjectPool
                     }
                 }
 
-                throw new RuntimeException(string.Format("Can not find target in object pool '{0}'.", Utility.Text.GetFullName<T>(Name)));
+                throw new AshException(string.Format("Can not find target in object pool '{0}'.", Utility.Text.GetFullName<T>(Name)));
             }
 
             /// <summary>
@@ -405,7 +405,7 @@ namespace Ash.ObjectPool
             {
                 if (releaseObjectFilterCallback == null)
                 {
-                    throw new RuntimeException("Release object filter callback is invalid.");
+                    throw new AshException("Release object filter callback is invalid.");
                 }
 
                 m_AutoReleaseTime = 0f;
@@ -431,7 +431,7 @@ namespace Ash.ObjectPool
                 {
                     if (toReleaseObject == null)
                     {
-                        throw new RuntimeException("Can not release null object.");
+                        throw new AshException("Can not release null object.");
                     }
 
                     bool found = false;
@@ -451,7 +451,7 @@ namespace Ash.ObjectPool
 
                     if (!found)
                     {
-                        throw new RuntimeException("Can not release object which is not found.");
+                        throw new AshException("Can not release object which is not found.");
                     }
                 }
             }

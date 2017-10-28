@@ -5,12 +5,12 @@ namespace Ash
     /// <summary>
     /// 运行时异常
     /// </summary>
-    public class RuntimeException : Exception
+    public class AshException : Exception
     {
         /// <summary>
         /// 运行时异常
         /// </summary>  
-        public RuntimeException() : base()
+        public AshException() : base()
         {
 
         }
@@ -19,7 +19,7 @@ namespace Ash
         /// 运行时异常
         /// </summary>
         /// <param name="message">异常消息</param>
-        public RuntimeException(string message) : base(message)
+        public AshException(string message) : base(message)
         {
         }
 
@@ -28,7 +28,7 @@ namespace Ash
         /// </summary>
         /// <param name="message">异常消息</param>
         /// <param name="innerException">内部异常</param>
-        public RuntimeException(string message, Exception innerException) : base(message, innerException)
+        public AshException(string message, Exception innerException) : base(message, innerException)
         {
         }
     }

@@ -59,12 +59,12 @@ namespace Ash
             Type interfaceType = typeof(T);
             if (!interfaceType.IsInterface)
             {
-                throw new RuntimeException(string.Format("You must get module by interface, but '{0}' is not.", interfaceType.FullName));
+                throw new AshException(string.Format("You must get module by interface, but '{0}' is not.", interfaceType.FullName));
             }
 
             if (!interfaceType.FullName.StartsWith("Ash."))
             {
-                throw new RuntimeException(string.Format("You must get a Ash module, but '{0}' is not.", interfaceType.FullName));
+                throw new AshException(string.Format("You must get a Ash module, but '{0}' is not.", interfaceType.FullName));
             }
 
             //寻找对应Class名，Interface名字去掉First位字母
@@ -73,7 +73,7 @@ namespace Ash
             Type moduleType = Type.GetType(moduleName);
             if (moduleType == null)
             {
-                throw new RuntimeException(string.Format("Can not find Game Framework module type '{0}'.", moduleName));
+                throw new AshException(string.Format("Can not find Game Framework module type '{0}'.", moduleName));
             }
 
             return GetModule(moduleType) as T;
@@ -108,7 +108,7 @@ namespace Ash
             AshModule module = (AshModule)Activator.CreateInstance(moduleType);
             if (module == null)
             {
-                throw new RuntimeException(string.Format("Can not create module '{0}'.", module.GetType().FullName));
+                throw new AshException(string.Format("Can not create module '{0}'.", module.GetType().FullName));
             }
 
             LinkedListNode<AshModule> current = _ashModules.First;

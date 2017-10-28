@@ -42,7 +42,7 @@ namespace  Ash
             {
                 if (string.IsNullOrEmpty(typeName))
                 {
-                    throw new  RuntimeException("Type name is invalid.");
+                    throw new  AshException("Type name is invalid.");
                 }
 
                 Type type = null;

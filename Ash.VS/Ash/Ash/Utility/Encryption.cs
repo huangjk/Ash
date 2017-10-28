@@ -40,13 +40,13 @@ namespace  Ash
 
                 if (code == null)
                 {
-                    throw new  RuntimeException("Code is invalid.");
+                    throw new  AshException("Code is invalid.");
                 }
 
                 int codeLength = code.Length;
                 if (codeLength <= 0)
                 {
-                    throw new  RuntimeException("Code length is invalid.");
+                    throw new  AshException("Code length is invalid.");
                 }
 
                 int codeIndex = 0;

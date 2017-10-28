@@ -37,8 +37,6 @@
   <ItemGroup>
     <Compile Include="Ash\AshEntry.cs" />
     <Compile Include="Ash\AshModule.cs" />
-    <Compile Include="Ash\Support\Config\IConfigAdapter.cs" />
-    <Compile Include="Ash\Support\Config\ConfigDataBase.cs" />
     <Compile Include="Ash\Support\Event\EventDispatcher\Dispatcher.cs" />
     <Compile Include="Ash\Support\Event\EventDispatcher\Dispatcher.EventHandler.cs" />
     <Compile Include="Ash\Support\Event\EventDispatcher\IAshEventHandler.cs" />
@@ -46,8 +44,7 @@
     <Compile Include="Ash\Support\Event\EventPool\EventPool.cs" />
     <Compile Include="Ash\Support\Event\EventPool\EventPool.Event.cs" />
     <Compile Include="Ash\Support\Event\EventPool\EventPoolMode.cs" />
-    <Compile Include="Ash\Support\Exception\AssertException.cs" />
-    <Compile Include="Ash\Support\Exception\RuntimeException.cs" />
+    <Compile Include="Ash\Support\Exception\AshException.cs" />
     <Compile Include="Ash\Support\FileSystem\Adapter\IFileSystemAdapter.cs" />
     <Compile Include="Ash\Support\FileSystem\Adapter\Local.cs" />
     <Compile Include="Ash\Support\FileSystem\FileSystem.cs" />
@@ -68,6 +65,22 @@
     <Compile Include="Ash\Support\TaskPool\ITaskAgent.cs" />
     <Compile Include="Ash\Support\TaskPool\TaskPool.cs" />
     <Compile Include="Ash\Support\Version\Version.cs" />
+    <Compile Include="Entity\EntityManager.cs" />
+    <Compile Include="Entity\EntityManager.EntityGroup.cs" />
+    <Compile Include="Entity\EntityManager.EntityInfo.cs" />
+    <Compile Include="Entity\EntityManager.EntityInstanceObject.cs" />
+    <Compile Include="Entity\EntityManager.EntityStatus.cs" />
+    <Compile Include="Entity\EntityManager.ShowEntityInfo.cs" />
+    <Compile Include="Entity\HideEntityCompleteEventArgs.cs" />
+    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Entity\IEntityGroup.cs" />
+    <Compile Include="Entity\IEntityGroupHelper.cs" />
+    <Compile Include="Entity\IEntityHelper.cs" />
+    <Compile Include="Entity\IEntityManager.cs" />
+    <Compile Include="Entity\ShowEntityDependencyAssetEventArgs.cs" />
+    <Compile Include="Entity\ShowEntityFailureEventArgs.cs" />
+    <Compile Include="Entity\ShowEntitySuccessEventArgs.cs" />
+    <Compile Include="Entity\ShowEntityUpdateEventArgs.cs" />
     <Compile Include="Event\EventManager.cs" />
     <Compile Include="Event\AshEventArgs.cs" />
     <Compile Include="Event\IEventManager.cs" />

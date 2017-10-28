@@ -54,7 +54,7 @@ namespace AshUnity.Config
             _configAdapter.DeleteFromDisk(configPath);
         }
 
-        public virtual object GetCurrentObject()
+        public virtual object GetThis()
         {
             return this;
         }
@@ -80,7 +80,7 @@ namespace AshUnity.Config
             }
             else
             {
-                ConfigEditorAttribute configSetting = ConfigEditorAttribute.GetCurrentAttribute<ConfigEditorAttribute>(GetCurrentObject()) ?? new ConfigEditorAttribute();
+                ConfigEditorAttribute configSetting = ConfigEditorAttribute.GetCurrentAttribute<ConfigEditorAttribute>(GetThis()) ?? new ConfigEditorAttribute();
                 outputPath = configSetting.Setting.OutputPath;
                 if (string.IsNullOrEmpty(outputPath))
                 {
@@ -93,13 +93,6 @@ namespace AshUnity.Config
                 UnityEngine.Debug.LogError("SaveToDisk`s outputPath is null");
                 return;
             }
-
-            //var directoryPath = outputPath.Substring(0, outputPath.LastIndexOf('/'));
-
-            //if (!fileSystem.Exists(directoryPath))
-            //{
-            //    fileSystem.MakeDir(directoryPath);
-            //}
 
             string p = fileSystem.GetFullPath(outputPath);
 
@@ -147,7 +140,7 @@ namespace AshUnity.Config
             else
             {
                 V config = new V();
-                ConfigEditorAttribute configSetting = ConfigEditorAttribute.GetCurrentAttribute<ConfigEditorAttribute>(config.GetCurrentObject()) ?? new ConfigEditorAttribute();
+                ConfigEditorAttribute configSetting = ConfigEditorAttribute.GetCurrentAttribute<ConfigEditorAttribute>(config.GetThis()) ?? new ConfigEditorAttribute();
                 loadPath = configSetting.Setting.LoadPath;
             }
 

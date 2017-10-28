@@ -6,25 +6,25 @@ using UnityEditor;
 
 namespace AshUnityEditor.Config.Editor
 {
-    public class AshBaseConfigEditor : ConfigEditorSchema<AshBaseData>
+    public class AshAppConfigEditor : ConfigEditorSchema<AshAppData>
     {
 
         [MenuItem("Ash/Config/AshBase")]
         static public void OpenView()
         {
-            AshBaseConfigEditor w = CreateInstance<AshBaseConfigEditor>();
+            AshAppConfigEditor w = CreateInstance<AshAppConfigEditor>();
             w.ShowUtility();
         }
 
-        public override AshBaseData CreateValue()
+        public override AshAppData CreateValue()
         {
-            AshBaseData r = base.CreateValue();
+            AshAppData r = base.CreateValue();
             return r;
         }
 
         public override void Initialize()
         {
-            SetConfigType(new AshBaseConfig());
+            SetConfigType(new AshAppConfig());
         }
     }
 }

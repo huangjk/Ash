@@ -22,7 +22,7 @@ namespace Ash.ObjectPool
             {
                 if (obj == null)
                 {
-                    throw new RuntimeException("Object is invalid.");
+                    throw new AshException("Object is invalid.");
                 }
 
                 m_Object = obj;
@@ -138,7 +138,7 @@ namespace Ash.ObjectPool
                 m_SpawnCount--;
                 if (m_SpawnCount < 0)
                 {
-                    throw new RuntimeException("Spawn count is less than 0.");
+                    throw new AshException("Spawn count is less than 0.");
                 }
             }
 

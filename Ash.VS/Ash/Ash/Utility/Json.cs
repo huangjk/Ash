@@ -30,7 +30,7 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new  RuntimeException("JSON helper is invalid.");
+                    throw new  AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToJson(obj);
@@ -56,7 +56,7 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new  RuntimeException("JSON helper is invalid.");
+                    throw new  AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToObject<T>(json);
@@ -66,7 +66,7 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new RuntimeException("JSON helper is invalid.");
+                    throw new AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToObject(json, t);
@@ -92,7 +92,7 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new RuntimeException("JSON helper is invalid.");
+                    throw new AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToJson<T>(objectsList);
@@ -109,7 +109,7 @@ namespace  Ash
 
                 if (s_JsonHelper == null)
                 {
-                    throw new RuntimeException("JSON helper is invalid.");
+                    throw new AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToList<T>(json);
@@ -127,7 +127,7 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new RuntimeException("JSON helper is invalid.");
+                    throw new AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToJson<TKey, TValue>(objectsDict);
@@ -145,7 +145,7 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new RuntimeException("JSON helper is invalid.");
+                    throw new AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToDict<TKey, TValue>(json);

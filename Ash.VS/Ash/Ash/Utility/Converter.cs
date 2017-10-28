@@ -44,7 +44,7 @@ namespace  Ash
             {
                 if (ScreenDpi <= 0)
                 {
-                    throw new  RuntimeException("You must set screen DPI first.");
+                    throw new  AshException("You must set screen DPI first.");
                 }
 
                 return InchesToCentimeters * pixels / ScreenDpi;
@@ -59,7 +59,7 @@ namespace  Ash
             {
                 if (ScreenDpi <= 0)
                 {
-                    throw new  RuntimeException("You must set screen DPI first.");
+                    throw new  AshException("You must set screen DPI first.");
                 }
 
                 return CentimetersToInches * centimeters * ScreenDpi;
@@ -74,7 +74,7 @@ namespace  Ash
             {
                 if (ScreenDpi <= 0)
                 {
-                    throw new  RuntimeException("You must set screen DPI first.");
+                    throw new  AshException("You must set screen DPI first.");
                 }
 
                 return pixels / ScreenDpi;
@@ -89,7 +89,7 @@ namespace  Ash
             {
                 if (ScreenDpi <= 0)
                 {
-                    throw new  RuntimeException("You must set screen DPI first.");
+                    throw new  AshException("You must set screen DPI first.");
                 }
 
                 return inches * ScreenDpi;
@@ -424,7 +424,7 @@ namespace  Ash
             {
                 if (value == null)
                 {
-                    throw new  RuntimeException("Value is invalid.");
+                    throw new  AshException("Value is invalid.");
                 }
 
                 return Encoding.UTF8.GetString(value, 0, value.Length);

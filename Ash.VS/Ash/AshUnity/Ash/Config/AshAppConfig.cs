@@ -5,18 +5,18 @@ using UnityEngine;
 
 [Serializable]
 [ConfigEditor(load_path: "Base/AshBase")]
-public class AshBaseConfig : ConfigBase<AshBaseData>
+public class AshAppConfig : ConfigBase<AshAppData>
 {
-    public override object GetCurrentObject()
+    public override object GetThis()
     {
         return this;
     }
 }
 
 [Serializable]
-public class AshBaseData : ConfigModel
+public class AshAppData : ConfigModel
 {
-    public AshBaseData()
+    public AshAppData()
     {
         ashRoot = string.Empty;
         aaa = new List<AnimationCurve>();

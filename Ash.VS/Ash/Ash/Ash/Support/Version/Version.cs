@@ -204,7 +204,7 @@ namespace Ash
         {
             if (!versionMatcher.IsMatch(version))
             {
-                throw new RuntimeException("version is invalid, 版本号非法");
+                throw new AshException("version is invalid, 版本号非法");
             }
         }
 

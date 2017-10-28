@@ -530,7 +530,7 @@ namespace Ash.ObjectPool
         {
             if (objectPool == null)
             {
-                throw new RuntimeException("Object pool is invalid.");
+                throw new AshException("Object pool is invalid.");
             }
 
             return DestroyObjectPool<T>(objectPool.Name);
@@ -564,7 +564,7 @@ namespace Ash.ObjectPool
         {
             if (HasObjectPool<T>(name))
             {
-                throw new RuntimeException(string.Format("Already exist object pool '{0}'.", Utility.Text.GetFullName<T>(name)));
+                throw new AshException(string.Format("Already exist object pool '{0}'.", Utility.Text.GetFullName<T>(name)));
             }
 
             ObjectPool<T> objectPool = new ObjectPool<T>(name, allowMultiSpawn, capacity, expireTime, priority);

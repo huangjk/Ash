@@ -6,7 +6,7 @@ using Ash;
 namespace AshUnity.Config
 {
     [Serializable]
-    public class ConfigModel : ConfigDataBase
+    public class ConfigModel
     {
         public ConfigModel() : base(){ }
 

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using Ash;
 
-namespace Ash
+namespace AshUnity.Config
 {
-    public interface IConfigAdapter<T> where T : ConfigDataBase
+    public interface IConfigAdapter<T> where T : ConfigModel
     {
         T SearchByID(int id);
 

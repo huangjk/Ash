@@ -1,4 +1,4 @@
-﻿namespace Ash.Event
+﻿namespace Ash
 {
     /// <summary>
     /// 游戏逻辑事件基类。

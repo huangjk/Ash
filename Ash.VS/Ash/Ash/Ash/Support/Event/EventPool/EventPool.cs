@@ -79,7 +79,7 @@ namespace Ash
         {
             if (handler == null)
             {
-                throw new RuntimeException("Event handler is invalid.");
+                throw new AshException("Event handler is invalid.");
             }
 
             EventHandler<T> handlers = null;
@@ -113,7 +113,7 @@ namespace Ash
         {
             if (handler == null)
             {
-                throw new RuntimeException("Event handler is invalid.");
+                throw new AshException("Event handler is invalid.");
             }
 
             EventHandler<T> eventHandler = null;
@@ -123,11 +123,11 @@ namespace Ash
             }
             else if ((m_EventPoolMode & EventPoolMode.AllowMultiHandler) == 0)
             {
-                throw new RuntimeException(string.Format("Event '{0}' not allow multi handler.", id.ToString()));
+                throw new AshException(string.Format("Event '{0}' not allow multi handler.", id.ToString()));
             }
             else if ((m_EventPoolMode & EventPoolMode.AllowDuplicateHandler) == 0 && Check(id, handler))
             {
-                throw new RuntimeException(string.Format("Event '{0}' not allow duplicate handler.", id.ToString()));
+                throw new AshException(string.Format("Event '{0}' not allow duplicate handler.", id.ToString()));
             }
             else
             {
@@ -145,7 +145,7 @@ namespace Ash
         {
             if (handler == null)
             {
-                throw new RuntimeException("Event handler is invalid.");
+                throw new AshException("Event handler is invalid.");
             }
 
             if (m_EventHandlers.ContainsKey(id))
@@ -197,7 +197,7 @@ namespace Ash
 
             if ((m_EventPoolMode & EventPoolMode.AllowNoHandler) == 0)
             {
-                throw new RuntimeException(string.Format("Event '{0}' not allow no handler.", e.Id));
+                throw new AshException(string.Format("Event '{0}' not allow no handler.", e.Id));
             }
         }
     }

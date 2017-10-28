@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ConfigEditorInputWindowType.cs" />
-    <Compile Include="Config\Editor\Data\AshBaseConfigEditor.cs" />
-    <Compile Include="Config\Editor\ConfigEditorSchema.cs" />
+    <Compile Include="Config\Editor\AshAppConfigEditor.cs" />
+    <Compile Include="Config\Editor\Base\ConfigEditorSchema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

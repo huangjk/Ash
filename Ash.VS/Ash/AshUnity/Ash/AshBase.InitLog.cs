@@ -8,7 +8,6 @@ namespace AshUnity
      */
     internal sealed partial class AshBase
     {
-
         private void InitLog()
         {
             ////设置Log回调
@@ -32,7 +31,7 @@ namespace AshUnity
                     Debug.LogError(message.ToString());
                     break;
                 default:
-                    throw new RuntimeException(message.ToString());
+                    throw new AshException(message.ToString());
             }
         }
     }

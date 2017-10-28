@@ -69,7 +69,7 @@ namespace Ash.ObjectPool
         {
             if (target == null)
             {
-                throw new RuntimeException(string.Format("Target '{0}' is invalid.", name));
+                throw new AshException(string.Format("Target '{0}' is invalid.", name));
             }
 
             m_Name = name ?? string.Empty;

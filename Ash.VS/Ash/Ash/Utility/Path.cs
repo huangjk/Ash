@@ -72,7 +72,7 @@ namespace  Ash
             {
                 if (string.IsNullOrEmpty(resourceName))
                 {
-                    throw new  RuntimeException("Resource name is invalid.");
+                    throw new  AshException("Resource name is invalid.");
                 }
 
                 return string.Format("{0}.dat", resourceName);
@@ -88,7 +88,7 @@ namespace  Ash
             {
                 if (string.IsNullOrEmpty(resourceName))
                 {
-                    throw new  RuntimeException("Resource name is invalid.");
+                    throw new  AshException("Resource name is invalid.");
                 }
 
                 return string.Format("{0}.{1:x8}.dat", resourceName, hashCode);
@@ -103,7 +103,7 @@ namespace  Ash
             {
                 if (string.IsNullOrEmpty(directoryName))
                 {
-                    throw new RuntimeException("Directory name is invalid.");
+                    throw new AshException("Directory name is invalid.");
                 }
 
                 try

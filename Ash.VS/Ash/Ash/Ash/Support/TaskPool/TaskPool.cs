@@ -133,7 +133,7 @@ namespace  Ash
         {
             if (agent == null)
             {
-                throw new  RuntimeException("Task agent is invalid.");
+                throw new  AshException("Task agent is invalid.");
             }
 
             agent.Initialize();
