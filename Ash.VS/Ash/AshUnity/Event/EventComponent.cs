@@ -52,7 +52,7 @@ namespace AshUnity
         /// <param name="id">事件类型编号。</param>
         /// <param name="handler">要检查的事件处理回调函数。</param>
         /// <returns>是否存在事件处理回调函数。</returns>
-        public bool Check(int id, EventHandler<Ash.Event.AshEventArgs> handler)
+        public bool Check(int id, EventHandler<AshEventArgs> handler)
         {
             return m_EventManager.Check(id, handler);
         }
@@ -62,7 +62,7 @@ namespace AshUnity
         /// </summary>
         /// <param name="id">事件类型编号。</param>
         /// <param name="handler">要订阅的事件处理回调函数。</param>
-        public void Subscribe(int id, EventHandler<Ash.Event.AshEventArgs> handler)
+        public void Subscribe(int id, EventHandler<AshEventArgs> handler)
         {
             m_EventManager.Subscribe(id, handler);
         }
@@ -72,7 +72,7 @@ namespace AshUnity
         /// </summary>
         /// <param name="id">事件类型编号。</param>
         /// <param name="handler">要取消订阅的事件处理回调函数。</param>
-        public void Unsubscribe(int id, EventHandler<Ash.Event.AshEventArgs> handler)
+        public void Unsubscribe(int id, EventHandler<AshEventArgs> handler)
         {
             m_EventManager.Unsubscribe(id, handler);
         }
@@ -82,7 +82,7 @@ namespace AshUnity
         /// </summary>
         /// <param name="sender">事件发送者。</param>
         /// <param name="e">事件内容。</param>
-        public void Fire(object sender, Ash.Event.AshEventArgs e)
+        public void Fire(object sender, AshEventArgs e)
         {
             m_EventManager.Fire(sender, e);
         }
@@ -92,7 +92,7 @@ namespace AshUnity
         /// </summary>
         /// <param name="sender">事件发送者。</param>
         /// <param name="e">事件内容。</param>
-        public void FireNow(object sender, Ash.Event.AshEventArgs e)
+        public void FireNow(object sender, AshEventArgs e)
         {
             m_EventManager.FireNow(sender, e);
         }

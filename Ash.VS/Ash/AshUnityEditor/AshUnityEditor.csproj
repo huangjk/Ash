@@ -41,9 +41,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\ConfigEditorInputWindowType.cs" />
-    <Compile Include="Config\Editor\AshAppConfigEditor.cs" />
-    <Compile Include="Config\Editor\Base\ConfigEditorSchema.cs" />
+    <Compile Include="Config\Editor\DrawHelper.cs" />
+    <Compile Include="Config\Editor\FieldHelper.cs" />
+    <Compile Include="Config\Editor\FieldType.cs" />
+    <Compile Include="Config\Editor\ValuePropertityInfo.cs" />
+    <Compile Include="Config\Editor\ConfigEditorSchema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

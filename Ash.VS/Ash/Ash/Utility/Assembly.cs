@@ -70,6 +70,23 @@ namespace  Ash
 
                 return null;
             }
+
+            /// <summary>
+            /// 获得类型的默认第一个属性
+            /// </summary>
+            /// <typeparam name="T">属性的类型</typeparam>
+            /// <param name="type">拥有属性的类型</param>
+            /// <param name="inherited"></param>
+            /// <returns>需要获得的属性</returns>
+            public static T GetDefaultFirstAttribute<T>(Type type, bool inherited = true)
+            {
+                object[] o = type.GetCustomAttributes(typeof(T), inherited);
+                if (o == null || o.Length < 1)
+                {
+                    return default(T);
+                }
+                return ((T)o[0]);
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using AshUnity;
-using Ash.Event;
-using System;
+using Ash;
+
 
 public class EventPoolTest
 {

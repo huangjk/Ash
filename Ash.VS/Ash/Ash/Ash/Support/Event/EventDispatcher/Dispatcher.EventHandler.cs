@@ -119,7 +119,7 @@ namespace Ash
 
                 _ref--;
 
-                Guard.Requires<AssertException>(_ref >= 0);
+                Guard.Requires<AshException>(_ref >= 0);
 
                 return result;
             }

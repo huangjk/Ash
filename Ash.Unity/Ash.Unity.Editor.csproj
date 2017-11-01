@@ -132,8 +132,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ThirdParty\Ash\Ash.Test\Base\Config\Editor\ConfigTestEditor.cs" />
-    <Compile Include="Assets\ThirdParty\Ash\Ash.Test\Base\Config\Editor\TestDataConfig.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Ash.Test\Base\Config\Editor\AshAppConfigEditor.cs" />
     <Compile Include="Assets\UnityFileDebug\Lib\Editor\UnityFileDebugEditor.cs" />
   </ItemGroup>
   <ItemGroup>
