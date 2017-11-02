@@ -1,9 +1,10 @@
 ﻿using Ash;
 using Ash.Debugger;
+using AshUnity.Debugger;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AshUnity.Debugger
+namespace AshUnity
 {
     /// <summary>
     /// 调试组件。
@@ -182,7 +183,7 @@ namespace AshUnity.Debugger
 
         private void Start()
         {
-            //RegisterDebuggerWindow("Console", m_ConsoleWindow);
+            RegisterDebuggerWindow("Console", m_ConsoleWindow);
             //RegisterDebuggerWindow("Information/System", m_SystemInformationWindow);
             //RegisterDebuggerWindow("Information/Environment", m_EnvironmentInformationWindow);
             //RegisterDebuggerWindow("Information/Screen", m_ScreenInformationWindow);
@@ -345,7 +346,6 @@ namespace AshUnity.Debugger
             }
 
             string title = string.Format("<color=#{0}{1}{2}{3}><b>FPS: {4}</b></color>", color.r.ToString("x2"), color.g.ToString("x2"), color.b.ToString("x2"), color.a.ToString("x2"), m_FpsCounter.CurrentFps.ToString("F2"));
-            title += string.Format("<color=#{0}{1}{2}{3}><b>FPS: {4}</b></color>", color.r.ToString("x2"), color.g.ToString("x2"), color.b.ToString("x2"), color.a.ToString("x2"), m_FpsCounter.CurrentFps.ToString("F2"));
             if (GUILayout.Button(title, GUILayout.Width(100f), GUILayout.Height(40f)))
             {
                 m_ShowFullWindow = true;

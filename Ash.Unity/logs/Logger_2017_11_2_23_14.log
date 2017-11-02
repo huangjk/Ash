@@ -1,0 +1,39 @@
+Ash version is 1.0.1. AshUnity version is 1.0.1.=================================================================
+
+
+AAAAAAAAAAA=================================================================
+
+
+<color=#888888>BBBBBBBBBB</color>=================================================================
+
+
+CCCCCCCCCCC{
+    1.AshUnity.AshBase:LogCallback(LogLevel, Object)
+}
+{
+    2.Ash.Log:Warning(String, Object[])
+}
+{
+    3.Test:Start() (at Assets/Test.cs:16)
+}
+=================================================================
+DDDDDDDDDDD{
+    1.AshUnity.AshBase:LogCallback(LogLevel, Object)
+}
+{
+    2.Ash.Log:Error(String, Object[])
+}
+{
+    3.Test:Start() (at Assets/Test.cs:17)
+}
+=================================================================
+EEEEEEEEEEEEE{
+    1.AshUnity.AshBase:LogCallback(LogLevel, Object)
+}
+{
+    2.Ash.Log:Error(String, Object[])
+}
+{
+    3.Test:Start() (at Assets/Test.cs:18)
+}
+=================================================================

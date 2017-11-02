@@ -1,10 +1,9 @@
-﻿using Ash;
-using Ash.Debugger;
+﻿using Ash.Debugger;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AshUnity.Debugger
+namespace AshUnity
 {
     public partial class DebuggerComponent
     {
@@ -232,7 +231,7 @@ namespace AshUnity.Debugger
                 //    return;
                 //}
 
-                //Application.logMessageReceived += OnLogMessageReceived;
+                Application.logMessageReceived += OnLogMessageReceived;
                 //m_LockScroll = m_LastLockScroll = m_SettingComponent.GetBool("Debugger.Console.LockScroll", true);
                 //m_InfoFilter = m_LastInfoFilter = m_SettingComponent.GetBool("Debugger.Console.InfoFilter", true);
                 //m_WarningFilter = m_LastWarningFilter = m_SettingComponent.GetBool("Debugger.Console.WarningFilter", true);
@@ -289,8 +288,6 @@ namespace AshUnity.Debugger
                 }
             }
 
-            int test = 0;
-
             public void OnDraw()
             {
                 RefreshCount();
@@ -307,11 +304,6 @@ namespace AshUnity.Debugger
                     m_WarningFilter = GUILayout.Toggle(m_WarningFilter, string.Format("Warning ({0})", m_WarningCount.ToString()), GUILayout.Width(90f));
                     m_ErrorFilter = GUILayout.Toggle(m_ErrorFilter, string.Format("Error ({0})", m_ErrorCount.ToString()), GUILayout.Width(90f));
                     m_FatalFilter = GUILayout.Toggle(m_FatalFilter, string.Format("Fatal ({0})", m_FatalCount.ToString()), GUILayout.Width(90f));
-
-
-                    string[] aa = { "aaa", "bbb" };
-                    test =  GUILayout.SelectionGrid(test, aa, 1, GUILayout.Width(90f));
-                    test = GUILayout.Toolbar(test, aa, GUILayout.Width(90f));
                 }
                 GUILayout.EndHorizontal();
 

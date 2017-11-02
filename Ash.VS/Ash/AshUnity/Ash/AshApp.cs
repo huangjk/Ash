@@ -104,7 +104,7 @@ namespace AshUnity
 
             if (shutdownType == ShutdownType.Restart)
             {
-                SceneManager.LoadScene( AshSceneId);
+                SceneManager.LoadScene(AshSceneId);
                 return;
             }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace AshUnity.Debugger
+namespace AshUnity
 {
     public partial class DebuggerComponent
     {

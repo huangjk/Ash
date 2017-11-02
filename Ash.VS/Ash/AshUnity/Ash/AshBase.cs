@@ -12,6 +12,26 @@ namespace AshUnity
     {
         public static AshBase Instance = null;
 
+        [SerializeField]
+        private int m_FrameRate = 30;
+
+
+
+        /// <summary>
+        /// 获取或设置游戏帧率。
+        /// </summary>
+        public int FrameRate
+        {
+            get
+            {
+                return m_FrameRate;
+            }
+            set
+            {
+                Application.targetFrameRate = m_FrameRate = value;
+            }
+        }
+
         /// <summary>
         /// 游戏框架组件初始化。
         /// </summary>
@@ -35,11 +55,13 @@ namespace AshUnity
         /// </summary>
         void Init()
         {
-            InitLog();
+            RegisterLog();
             Log.Info("Ash version is {0}. AshUnity version is {1}.", AshEntry.Version, AshApp.AshUnityVersion);
 
             InitJsonHelper();
 
+
+            Application.targetFrameRate = m_FrameRate;
 
 #if UNITY_5_6_OR_NEWER
             Application.lowMemory += OnLowMemory;
@@ -93,6 +115,7 @@ namespace AshUnity
 
         internal void Shutdown()
         {
+            UnRegisterLog();
             Destroy(gameObject);
         }
 

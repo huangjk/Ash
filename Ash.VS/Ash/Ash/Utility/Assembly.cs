@@ -1,7 +1,7 @@
 ﻿ 
-
 using System;
 using System.Collections.Generic;
+using Type = System.Type;
 
 namespace  Ash
 {
@@ -12,7 +12,7 @@ namespace  Ash
         /// </summary>
         public static class Assembly
         {
-            private static readonly Dictionary<string, Type> s_CachedTypes = new Dictionary<string, Type>();
+            private static readonly Dictionary<string, System.Type> s_CachedTypes = new Dictionary<string, System.Type>();
             private static readonly List<string> s_LoadedAssemblyNames = new List<string>();
 
             static Assembly()
@@ -38,20 +38,20 @@ namespace  Ash
             /// </summary>
             /// <param name="typeName">要获取的类型名。</param>
             /// <returns>获取的类型。</returns>
-            public static Type GetTypeWithinLoadedAssemblies(string typeName)
+            public static System.Type GetTypeWithinLoadedAssemblies(string typeName)
             {
                 if (string.IsNullOrEmpty(typeName))
                 {
-                    throw new  AshException("Type name is invalid.");
+                    throw new AshException("Type name is invalid.");
                 }
 
-                Type type = null;
+                System.Type type = null;
                 if (s_CachedTypes.TryGetValue(typeName, out type))
                 {
                     return type;
                 }
 
-                type = Type.GetType(typeName);
+                type = System.Type.GetType(typeName);
                 if (type != null)
                 {
                     s_CachedTypes.Add(typeName, type);
@@ -60,7 +60,7 @@ namespace  Ash
 
                 foreach (string assemblyName in s_LoadedAssemblyNames)
                 {
-                    type = Type.GetType(string.Format("{0}, {1}", typeName, assemblyName));
+                    type = System.Type.GetType(string.Format("{0}, {1}", typeName, assemblyName));
                     if (type != null)
                     {
                         s_CachedTypes.Add(typeName, type);
@@ -78,7 +78,7 @@ namespace  Ash
             /// <param name="type">拥有属性的类型</param>
             /// <param name="inherited"></param>
             /// <returns>需要获得的属性</returns>
-            public static T GetDefaultFirstAttribute<T>(Type type, bool inherited = true)
+            public static T GetDefaultFirstAttribute<T>(System.Type type, bool inherited = true)
             {
                 object[] o = type.GetCustomAttributes(typeof(T), inherited);
                 if (o == null || o.Length < 1)
@@ -87,6 +87,6 @@ namespace  Ash
                 }
                 return ((T)o[0]);
             }
-        }
+        }    
     }
 }

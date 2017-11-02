@@ -41,11 +41,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\Editor\DrawHelper.cs" />
-    <Compile Include="Config\Editor\FieldHelper.cs" />
-    <Compile Include="Config\Editor\FieldType.cs" />
-    <Compile Include="Config\Editor\ValuePropertityInfo.cs" />
-    <Compile Include="Config\Editor\ConfigEditorSchema.cs" />
+    <Compile Include="Editor\Config\DrawHelper.cs" />
+    <Compile Include="Editor\Config\FieldHelper.cs" />
+    <Compile Include="Editor\Config\FieldType.cs" />
+    <Compile Include="Editor\Config\ValuePropertityInfo.cs" />
+    <Compile Include="Editor\Config\ConfigEditorSchema.cs" />
+    <Compile Include="Editor\Log\LogRedirection.cs" />
+    <Compile Include="Editor\Log\LogTrack.cs" />
+    <Compile Include="Editor\Misc\OpenFolder.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\ProjectDirectoryEditor.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\IProjectDirectory.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\ProjectCatalogDefaultData.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\ProjectDirectory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -45,6 +45,8 @@
     <Compile Include="Ash\AshApp.cs" />
     <Compile Include="Ash\AshBase.cs" />
     <Compile Include="Ash\Config\Attribute\ConfigEditorAttribute.cs" />
+    <Compile Include="Ash\Log\LogCallbackWithStack.cs" />
+    <Compile Include="Ash\Log\LogToFile.cs" />
     <Compile Include="Ash\ShutdownType.cs" />
     <Compile Include="Ash\Config\Attribute\ConfigFieldEditorAttribute.cs" />
     <Compile Include="Ash\Config\DataBase.cs" />

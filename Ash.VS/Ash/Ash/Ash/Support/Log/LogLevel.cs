@@ -5,8 +5,6 @@
     /// </summary>
     public enum LogLevel
     {
-        All = 0,
-
         /// <summary>
         /// 调试。
         /// </summary>

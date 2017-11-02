@@ -1,0 +1,9 @@
+[Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[Info]--AAAAAAAAAAA
+[Info]--BBBBBBBBBB
+[Warning]--CCCCCCCCCCC
+      1.Test:Start() (at Assets/Test.cs:16)
+[Error]--DDDDDDDDDDD
+      1.Test:Start() (at Assets/Test.cs:17)
+[Error]--EEEEEEEEEEEEE
+      1.Test:Start() (at Assets/Test.cs:18)
