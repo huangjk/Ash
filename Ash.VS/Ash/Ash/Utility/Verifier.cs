@@ -43,7 +43,7 @@ namespace  Ash
             /// <returns>计算后的 CRC32。</returns>
             public static byte[] GetCrc32(string fileName)
             {
-                if (!File.Exists(fileName))
+                if (!System.IO.File.Exists(fileName))
                 {
                     return Zero;
                 }

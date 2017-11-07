@@ -1,4 +1,5 @@
 ﻿using Ash;
+using Ash.Resource;
 using UnityEngine;
 
 namespace AshUnity
@@ -8,14 +9,31 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Base")]
-    internal sealed partial class AshBase : ComponentBase
+    internal sealed partial class AshBase : BaseComponent
     {
         public static AshBase Instance = null;
+
+        [SerializeField]
+        private bool m_EditorResourceMode = true;
 
         [SerializeField]
         private int m_FrameRate = 30;
 
 
+        /// <summary>
+        /// 获取或设置是否使用编辑器资源模式（仅编辑器内有效）。
+        /// </summary>
+        public bool EditorResourceMode
+        {
+            get
+            {
+                return m_EditorResourceMode;
+            }
+            set
+            {
+                m_EditorResourceMode = value;
+            }
+        }
 
         /// <summary>
         /// 获取或设置游戏帧率。
@@ -30,6 +48,15 @@ namespace AshUnity
             {
                 Application.targetFrameRate = m_FrameRate = value;
             }
+        }
+
+        /// <summary>
+        /// 获取或设置编辑器资源辅助器。
+        /// </summary>
+        public IResourceManager EditorResourceHelper
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -60,6 +87,11 @@ namespace AshUnity
 
             InitJsonHelper();
 
+            m_EditorResourceMode &= Application.isEditor;
+            if (m_EditorResourceMode)
+            {
+                Log.Info("During this run, Ash Framework will use editor resource files, which you should validate first.");
+            }
 
             Application.targetFrameRate = m_FrameRate;
 

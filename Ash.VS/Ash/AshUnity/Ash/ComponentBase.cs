@@ -5,7 +5,7 @@ namespace AshUnity
     /// <summary>
     /// 游戏框架组件抽象类。
     /// </summary>
-    public abstract class ComponentBase : MonoBehaviour
+    public abstract class BaseComponent : MonoBehaviour
     {
         /// <summary>
         /// 游戏框架组件初始化。

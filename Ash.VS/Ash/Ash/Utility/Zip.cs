@@ -29,7 +29,7 @@ namespace  Ash
             {
                 if (s_ZipHelper == null)
                 {
-                    throw new  RuntimeException("Zip helper is invalid.");
+                    throw new  AshException("Zip helper is invalid.");
                 }
 
                 return s_ZipHelper.Compress(bytes);
@@ -44,7 +44,7 @@ namespace  Ash
             {
                 if (s_ZipHelper == null)
                 {
-                    throw new  RuntimeException("Zip helper is invalid.");
+                    throw new  AshException("Zip helper is invalid.");
                 }
 
                 return s_ZipHelper.Decompress(bytes);

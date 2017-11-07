@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Ash;
+using UnityEngine;
 
-namespace Ash.Unity
+namespace AshUnity.Utility
 {
     /// <summary>
     /// 辅助器创建器相关的实用函数。

@@ -1,0 +1,18 @@
+[11/3/2017 10:57:01 PM][Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[11/3/2017 10:57:01 PM][Info]--AAAAAAAAAAA
+[11/3/2017 10:57:01 PM][Info]--BBBBBBBBBB
+[11/3/2017 10:57:01 PM][Warning]--CCCCCCCCCCC
+      1.Test:Start() (at Assets/Test.cs:16)
+[11/3/2017 10:57:01 PM][Error]--DDDDDDDDDDD
+      1.Test:Start() (at Assets/Test.cs:17)
+[11/3/2017 10:57:01 PM][Error]--EEEEEEEEEEEEE
+      1.Test:Start() (at Assets/Test.cs:18)
+[11/3/2017 10:57:05 PM][Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[11/3/2017 10:57:05 PM][Info]--AAAAAAAAAAA
+[11/3/2017 10:57:05 PM][Info]--BBBBBBBBBB
+[11/3/2017 10:57:05 PM][Warning]--CCCCCCCCCCC
+      1.Test:Start() (at Assets/Test.cs:16)
+[11/3/2017 10:57:05 PM][Error]--DDDDDDDDDDD
+      1.Test:Start() (at Assets/Test.cs:17)
+[11/3/2017 10:57:05 PM][Error]--EEEEEEEEEEEEE
+      1.Test:Start() (at Assets/Test.cs:18)
