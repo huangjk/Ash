@@ -219,7 +219,6 @@
     <Compile Include="Sound\SoundManager.SoundAgent.cs" />
     <Compile Include="Sound\SoundManager.SoundGroup.cs" />
     <Compile Include="Utility\Random.cs" />
-    <Compile Include="Utility\TypeHelper.cs" />
     <Compile Include="Utility\Assembly.cs" />
     <Compile Include="Utility\Converter.cs" />
     <Compile Include="Utility\Encryption.cs" />

@@ -10,7 +10,7 @@ namespace AshUnity
     /// 场景组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Scene")]
+    [AddComponentMenu("Ash/Scene")]
     public sealed class SceneComponent : BaseComponent
     {
         private ISceneManager m_SceneManager = null;

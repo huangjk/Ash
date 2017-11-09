@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;UNITY_5_6_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -31,8 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\3rd\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEditor">
       <HintPath>..\..\3rd\UnityEditor.dll</HintPath>
     </Reference>
@@ -41,6 +46,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzer.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzerController.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzerController.Stamp.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetsOrder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\DependencyData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\ScatteredAssetsOrder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetBundleCode.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetBundleData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.BuildReport.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.VersionListData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\BuildAssetBundle.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\IBuildEventHandler.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\Asset.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundle.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundleCollection.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundleLoadType.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundleType.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.AssetBundleFolder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.AssetBundleItem.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.MenuState.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditorController.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetSorterType.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\SourceAsset.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\SourceFolder.cs" />
     <Compile Include="Editor\Config\DrawHelper.cs" />
     <Compile Include="Editor\Config\FieldHelper.cs" />
     <Compile Include="Editor\Config\FieldType.cs" />
@@ -49,6 +82,7 @@
     <Compile Include="Editor\Log\LogRedirection.cs" />
     <Compile Include="Editor\Log\LogTrack.cs" />
     <Compile Include="Editor\Misc\OpenFolder.cs" />
+    <Compile Include="Editor\Misc\TypeHelper.cs" />
     <Compile Include="Editor\ProjectCatalogDirectory\ProjectDirectoryEditor.cs" />
     <Compile Include="Editor\ProjectCatalogDirectory\IProjectDirectory.cs" />
     <Compile Include="Editor\ProjectCatalogDirectory\ProjectCatalogDefaultData.cs" />

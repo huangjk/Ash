@@ -6,13 +6,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AshUnity.Runtime
+namespace AshUnity
 {
     /// <summary>
     /// 流程组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Procedure")]
+    [AddComponentMenu("Ash/Procedure")]
     public sealed class ProcedureComponent : BaseComponent
     {
         private IProcedureManager m_ProcedureManager = null;

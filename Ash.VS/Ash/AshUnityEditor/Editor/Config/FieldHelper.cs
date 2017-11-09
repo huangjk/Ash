@@ -13,11 +13,11 @@ namespace AshUnityEditor.Config
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static FieldType GetCurrentFieldType(Type value)
+        public static FieldType GetCurrentFieldType(System.Type value)
         {
             if (value.IsGenericType)
             {
-                Type t = value.GetGenericArguments()[0];
+                System.Type t = value.GetGenericArguments()[0];
 
                 if (t.IsEnum)
                 {

@@ -12,7 +12,7 @@ namespace AshUnity
     /// 资源组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Resource")]
+    [AddComponentMenu("Ash/Resource")]
     public sealed partial class ResourceComponent : BaseComponent
     {
         private IResourceManager m_ResourceManager = null;

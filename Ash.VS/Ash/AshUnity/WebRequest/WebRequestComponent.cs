@@ -9,7 +9,7 @@ namespace AshUnity
     /// Web 请求组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Web Request")]
+    [AddComponentMenu("Ash/Web Request")]
     public sealed class WebRequestComponent : BaseComponent
     {
         private IWebRequestManager m_WebRequestManager = null;

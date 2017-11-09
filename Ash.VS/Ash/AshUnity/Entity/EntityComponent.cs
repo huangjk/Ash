@@ -12,7 +12,7 @@ namespace AshUnity
     /// 实体组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Entity")]
+    [AddComponentMenu("Ash/Entity")]
     public sealed partial class EntityComponent : BaseComponent
     {
         private IEntityManager m_EntityManager = null;

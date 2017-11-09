@@ -10,7 +10,7 @@ namespace AshUnity
     /// 调试组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Debugger")]
+    [AddComponentMenu("Ash/Debugger")]
     public sealed partial class DebuggerComponent : BaseComponent
     {
         /// <summary>

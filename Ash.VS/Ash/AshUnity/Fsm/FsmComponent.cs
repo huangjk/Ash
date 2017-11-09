@@ -2,13 +2,13 @@
 using Ash.Fsm;
 using UnityEngine;
 
-namespace AshUnity.Runtime
+namespace AshUnity
 {
     /// <summary>
     /// 有限状态机组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/FSM")]
+    [AddComponentMenu("Ash/FSM")]
     public sealed class FsmComponent : BaseComponent
     {
         private IFsmManager m_FsmManager = null;

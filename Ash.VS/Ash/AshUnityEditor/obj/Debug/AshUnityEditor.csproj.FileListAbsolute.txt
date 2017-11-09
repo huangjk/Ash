@@ -33,3 +33,4 @@ D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\Ash.pdb
 D:\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.csprojResolveAssemblyReference.cache
 D:\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.dll
 D:\Ash\Ash.VS\Ash\AshUnityEditor\obj\Debug\AshUnityEditor.pdb
+D:\Ash\Ash.VS\Ash\AshUnityEditor\bin\Debug\ICSharpCode.SharpZipLib.dll

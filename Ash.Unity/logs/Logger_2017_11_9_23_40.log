@@ -1,0 +1,7 @@
+[Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[Info]--During this run, Ash Framework will use editor resource files, which you should validate first.
+[Info]--Can't add script behaviour BaseComponent. The script class can't be abstract!
+[Info]--AshException: Resource manager is invalid.
+[Info]--NullReferenceException: Object reference not set to an instance of an object
+[Info]--AshException: Resource manager is invalid.
+[Info]--AshException: Resource manager is invalid.

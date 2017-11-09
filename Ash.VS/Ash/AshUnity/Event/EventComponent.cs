@@ -10,7 +10,7 @@ namespace AshUnity
     /// 事件组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Event")]
+    [AddComponentMenu("Ash/Event")]
     public sealed class EventComponent : BaseComponent
     {
         private IEventManager m_EventManager = null;

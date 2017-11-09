@@ -51,7 +51,7 @@ namespace AshUnityEditor.Config
             {
                 GUILayout.BeginVertical(GUIStyle.none, new GUILayoutOption[] { GUILayout.Width(data.fieldSetting.Width) });
 
-                Type t = value.GetType().GetGenericArguments()[0];
+                System.Type t = value.GetType().GetGenericArguments()[0];
 
                 if (value == null)
                 {

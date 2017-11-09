@@ -49,7 +49,7 @@ namespace AshUnityEditor
 
             if (match.Groups[1].Value.Contains("Log.cs"))
             {
-                // 直接使用 GameFramework.dll 源码而非 dll 的工程会多一次匹配的堆栈
+                // 直接使用 Ash.dll 源码而非 dll 的工程会多一次匹配的堆栈
                 match = match.NextMatch();
                 if (!match.Success)
                 {

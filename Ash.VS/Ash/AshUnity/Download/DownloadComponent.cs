@@ -9,7 +9,7 @@ namespace AshUnity
     /// 下载组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Download")]
+    [AddComponentMenu("Ash/Download")]
     public sealed class DownloadComponent : BaseComponent
     {
         private IDownloadManager m_DownloadManager = null;
