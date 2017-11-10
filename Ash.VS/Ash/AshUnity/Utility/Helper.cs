@@ -1,7 +1,7 @@
 ﻿using Ash;
 using UnityEngine;
 
-namespace AshUnity.Utility
+namespace AshUnity
 {
     /// <summary>
     /// 辅助器创建器相关的实用函数。

@@ -2,7 +2,6 @@
 using Ash.Download;
 using Ash.ObjectPool;
 using Ash.Resource;
-using AshUnity.Utility;
 using System;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Resource")]
-    public sealed partial class ResourceComponent : BaseComponent
+    public sealed partial class ResourceComponent : AshComponent
     {
         private IResourceManager m_ResourceManager = null;
         private EventComponent m_EventComponent = null;

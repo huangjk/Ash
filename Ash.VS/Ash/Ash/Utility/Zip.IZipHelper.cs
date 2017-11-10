@@ -1,6 +1,4 @@
-﻿ 
-
-namespace  Ash
+﻿ namespace  Ash
 {
     public static partial class Utility
     {

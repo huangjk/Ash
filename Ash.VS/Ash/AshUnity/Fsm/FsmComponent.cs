@@ -9,7 +9,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/FSM")]
-    public sealed class FsmComponent : BaseComponent
+    public sealed class FsmComponent : AshComponent
     {
         private IFsmManager m_FsmManager = null;
 

@@ -1,7 +1,8 @@
-﻿using ICSharpCode.SharpZipLib.GZip;
+﻿using Ash;
+using ICSharpCode.SharpZipLib.GZip;
 using System.IO;
 
-namespace Ash.Unity
+namespace AshUnity
 {
     /// <summary>
     /// 压缩解压缩辅助器。

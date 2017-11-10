@@ -13,7 +13,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Procedure")]
-    public sealed class ProcedureComponent : BaseComponent
+    public sealed class ProcedureComponent : AshComponent
     {
         private IProcedureManager m_ProcedureManager = null;
         private ProcedureBase m_EntranceProcedure = null;

@@ -2,7 +2,6 @@
 using Ash.Entity;
 using Ash.ObjectPool;
 using Ash.Resource;
-using AshUnity.Utility;
 using System;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Entity")]
-    public sealed partial class EntityComponent : BaseComponent
+    public sealed partial class EntityComponent : AshComponent
     {
         private IEntityManager m_EntityManager = null;
         private EventComponent m_EventComponent = null;

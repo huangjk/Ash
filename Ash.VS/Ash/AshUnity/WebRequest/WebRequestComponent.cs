@@ -1,6 +1,5 @@
 ﻿using Ash;
 using Ash.WebRequest;
-using AshUnity.Utility;
 using UnityEngine;
 
 namespace AshUnity
@@ -10,7 +9,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Web Request")]
-    public sealed class WebRequestComponent : BaseComponent
+    public sealed class WebRequestComponent : AshComponent
     {
         private IWebRequestManager m_WebRequestManager = null;
         private EventComponent m_EventComponent = null;

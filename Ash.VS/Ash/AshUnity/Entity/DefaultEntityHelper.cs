@@ -1,6 +1,5 @@
 ﻿using Ash;
 using Ash.Entity;
-using AshUnity.Utility;
 using UnityEngine;
 
 namespace AshUnity

@@ -1,13 +1,6 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
+﻿using System.Collections.Generic;
 
-using System.Collections.Generic;
-
-namespace GameFramework.DataNode
+namespace Ash.DataNode
 {
     internal partial class DataNodeManager
     {
@@ -32,7 +25,7 @@ namespace GameFramework.DataNode
             {
                 if (!IsValidName(name))
                 {
-                    throw new GameFrameworkException("Name of data node is invalid.");
+                    throw new AshException("Name of data node is invalid.");
                 }
 
                 m_Name = name;
@@ -133,7 +126,7 @@ namespace GameFramework.DataNode
             {
                 if (!IsValidName(name))
                 {
-                    throw new GameFrameworkException("Name is invalid.");
+                    throw new AshException("Name is invalid.");
                 }
 
                 if (m_Childs == null)

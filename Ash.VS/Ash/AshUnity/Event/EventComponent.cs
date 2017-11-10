@@ -11,7 +11,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Event")]
-    public sealed class EventComponent : BaseComponent
+    public sealed class EventComponent : AshComponent
     {
         private IEventManager m_EventManager = null;
 

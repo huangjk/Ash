@@ -13,20 +13,20 @@ namespace MyGame
         /// <summary>
         /// 获取游戏基础组件。
         /// </summary>
-        public static BaseComponent Base
+        public static AshBase Base
         {
             get;
             private set;
         }
 
-        ///// <summary>
-        ///// 获取数据结点组件。
-        ///// </summary>
-        //public static DataNodeComponent DataNode
-        //{
-        //    get;
-        //    private set;
-        //}
+        /// <summary>
+        /// 获取数据结点组件。
+        /// </summary>
+        public static DataNodeComponent DataNode
+        {
+            get;
+            private set;
+        }
 
         ///// <summary>
         ///// 获取数据表组件。
@@ -174,8 +174,8 @@ namespace MyGame
 
         private static void InitBuiltinComponents()
         {
-            Base = AshApp.GetComponent<BaseComponent>();
-            //DataNode = AshApp.GetComponent<DataNodeComponent>();
+            Base = AshApp.GetComponent<AshBase>();
+            DataNode = AshApp.GetComponent<DataNodeComponent>();
             //DataTable = AshApp.GetComponent<DataTableComponent>();
             Debugger = AshApp.GetComponent<DebuggerComponent>();
             Download = AshApp.GetComponent<DownloadComponent>();
@@ -184,7 +184,7 @@ namespace MyGame
             Fsm = AshApp.GetComponent<FsmComponent>();
             //Localization = AshApp.GetComponent<LocalizationComponent>();
             //Network = AshApp.GetComponent<NetworkComponent>();
-            //ObjectPool = AshApp.GetComponent<ObjectPoolComponent>();
+            ObjectPool = AshApp.GetComponent<ObjectPoolComponent>();
             Procedure = AshApp.GetComponent<ProcedureComponent>();
             Resource = AshApp.GetComponent<ResourceComponent>();
             Scene = AshApp.GetComponent<SceneComponent>();

@@ -11,7 +11,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Debugger")]
-    public sealed partial class DebuggerComponent : BaseComponent
+    public sealed partial class DebuggerComponent : AshComponent
     {
         /// <summary>
         /// 默认调试器漂浮框大小。

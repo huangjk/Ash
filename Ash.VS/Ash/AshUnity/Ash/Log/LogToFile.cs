@@ -131,16 +131,14 @@ namespace AshUnity
         {
             try
             {
+                string msg = string.Format("[{0}][{1}]--", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), type.ToString()) + logMessage;
                 if (type < LogLevel.Warning)
-                {
-                    string msg = string.Format("[{0}]--", type.ToString()) + logMessage;
-                        //"\r=================================================================\r\n";
+                {                  
                     SaveLogToFile(msg + "\n");
                 }
                 else
                 {
-                    string msg = string.Format("[{0}]--", type.ToString()) + logMessage  + 
-                        "\n" + StackToMsg(stacktrace);
+                    msg += "\n" + StackToMsg(stacktrace);
                     SaveLogToFile(msg);
                 }
             }

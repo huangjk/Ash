@@ -1,22 +1,15 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework;
-using GameFramework.DataNode;
+﻿using Ash;
+using Ash.DataNode;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace AshUnity
 {
     /// <summary>
     /// 数据结点组件。
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Game Framework/Data Node")]
-    public sealed class DataNodeComponent : GameFrameworkComponent
+    public sealed class DataNodeComponent : AshComponent
     {
         private IDataNodeManager m_DataNodeManager = null;
 
@@ -27,7 +20,7 @@ namespace UnityGameFramework.Runtime
         {
             base.Awake();
 
-            m_DataNodeManager = GameFrameworkEntry.GetModule<IDataNodeManager>();
+            m_DataNodeManager = AshEntry.GetModule<IDataNodeManager>();
             if (m_DataNodeManager == null)
             {
                 Log.Fatal("Data node manager is invalid.");

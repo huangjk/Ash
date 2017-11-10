@@ -79,6 +79,8 @@
     <Compile Include="Editor\Config\FieldType.cs" />
     <Compile Include="Editor\Config\ValuePropertityInfo.cs" />
     <Compile Include="Editor\Config\ConfigEditorSchema.cs" />
+    <Compile Include="Editor\Inspector\GameFrameworkInspector.cs" />
+    <Compile Include="Editor\Inspector\ObjectPoolComponentInspector.cs" />
     <Compile Include="Editor\Log\LogRedirection.cs" />
     <Compile Include="Editor\Log\LogTrack.cs" />
     <Compile Include="Editor\Misc\OpenFolder.cs" />

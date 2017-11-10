@@ -8,7 +8,7 @@ namespace AshUnity
     /*
      * Ash.Utility 部分 初始化
      */
-    internal sealed partial class AshBase
+    public sealed partial class AshBase
     {
         public LogLevel logLevel = LogLevel.Debug;
 
@@ -33,7 +33,7 @@ namespace AshUnity
             logFilePath = m_LogToFile.GetLogPath();
         }
 
-        private void UnRegisterLog()
+        private void UnregisterLog()
         {
             if (m_LogToFile.IsLogFile) m_LogToFile.IsLogFile = false;
         }

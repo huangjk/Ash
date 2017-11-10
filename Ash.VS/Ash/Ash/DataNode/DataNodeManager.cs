@@ -1,18 +1,11 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
+﻿using System;
 
-using System;
-
-namespace GameFramework.DataNode
+namespace Ash.DataNode
 {
     /// <summary>
     /// 数据结点管理器。
     /// </summary>
-    internal sealed partial class DataNodeManager : GameFrameworkModule, IDataNodeManager
+    internal sealed partial class DataNodeManager : AshModule, IDataNodeManager
     {
         private static readonly string[] EmptyStringArray = new string[] { };
         private static readonly string[] PathSplit = new string[] { ".", "/", "\\" };
@@ -79,7 +72,7 @@ namespace GameFramework.DataNode
             IDataNode current = GetNode(path, node);
             if (current == null)
             {
-                throw new GameFrameworkException(string.Format("Data node is not exist, path '{0}', node '{1}'.", path, (node != null ? node.FullName : string.Empty)));
+                throw new AshException(string.Format("Data node is not exist, path '{0}', node '{1}'.", path, (node != null ? node.FullName : string.Empty)));
             }
 
             return current.GetData();
@@ -108,7 +101,7 @@ namespace GameFramework.DataNode
             IDataNode current = GetNode(path, node);
             if (current == null)
             {
-                throw new GameFrameworkException(string.Format("Data node is not exist, path '{0}', node '{1}'.", path, (node != null ? node.FullName : string.Empty)));
+                throw new AshException(string.Format("Data node is not exist, path '{0}', node '{1}'.", path, (node != null ? node.FullName : string.Empty)));
             }
 
             return current.GetData<T>();

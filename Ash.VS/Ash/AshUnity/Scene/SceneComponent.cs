@@ -11,7 +11,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Scene")]
-    public sealed class SceneComponent : BaseComponent
+    public sealed class SceneComponent : AshComponent
     {
         private ISceneManager m_SceneManager = null;
         private EventComponent m_EventComponent = null;

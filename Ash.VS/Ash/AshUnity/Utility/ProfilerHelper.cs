@@ -1,12 +1,13 @@
-﻿using System.Threading;
+﻿using Ash;
+using System.Threading;
 using UnityEngine;
 
-namespace Ash.Unity
+namespace AshUnity
 {
     /// <summary>
     /// 性能分析辅助器。
     /// </summary>
-    internal class ProfilerHelper : Ash.Utility.Profiler.IProfilerHelper
+    internal class ProfilerHelper : Utility.Profiler.IProfilerHelper
     {
         private Thread m_MainThread = null;
 

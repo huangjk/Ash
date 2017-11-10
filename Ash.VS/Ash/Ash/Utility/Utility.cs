@@ -1,8 +1,4 @@
-﻿
-using System.Reflection;
-using System;
-
-namespace  Ash
+﻿namespace Ash
 {
     /// <summary>
     /// 实用函数集。

@@ -9,7 +9,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Object Pool")]
-    public sealed class ObjectPoolComponent : BaseComponent
+    public sealed class ObjectPoolComponent : AshComponent
     {
         private IObjectPoolManager m_ObjectPoolManager = null;
 

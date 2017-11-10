@@ -24,3 +24,4 @@ D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\AshUnity.pdb
 D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\Ash.dll
 D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\UnityEngine.dll
 D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\Ash.pdb
+D:\Ash\Ash.VS\Ash\AshUnity\bin\Debug\ICSharpCode.SharpZipLib.dll

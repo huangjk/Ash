@@ -1,6 +1,5 @@
 ﻿using Ash;
 using Ash.Download;
-using AshUnity.Utility;
 using UnityEngine;
 
 namespace AshUnity
@@ -10,7 +9,7 @@ namespace AshUnity
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Ash/Download")]
-    public sealed class DownloadComponent : BaseComponent
+    public sealed class DownloadComponent : AshComponent
     {
         private IDownloadManager m_DownloadManager = null;
         private EventComponent m_EventComponent = null;

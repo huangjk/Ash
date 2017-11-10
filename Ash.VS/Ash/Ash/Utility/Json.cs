@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace  Ash
+﻿namespace Ash
 {
     public static partial class Utility
     {
@@ -30,7 +27,7 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new  AshException("JSON helper is invalid.");
+                    throw new AshException("JSON helper is invalid.");
                 }
 
                 return s_JsonHelper.ToJson(obj);
@@ -56,20 +53,10 @@ namespace  Ash
             {
                 if (s_JsonHelper == null)
                 {
-                    throw new  AshException("JSON helper is invalid.");
-                }
-
-                return s_JsonHelper.ToObject<T>(json);
-            }
-
-            public static object ToObject(Type t, string json)
-            {
-                if (s_JsonHelper == null)
-                {
                     throw new AshException("JSON helper is invalid.");
                 }
 
-                return s_JsonHelper.ToObject(json, t);
+                return s_JsonHelper.ToObject<T>(json);
             }
 
             /// <summary>
@@ -81,74 +68,6 @@ namespace  Ash
             public static T ToObject<T>(byte[] jsonData)
             {
                 return ToObject<T>(Converter.GetString(jsonData));
-            }
-
-            /// 将List序列化字符串
-            /// </summary>
-            /// <typeparam name="T">对象类型</typeparam>
-            /// <param name="objectsList">要序列化的对象</param>
-            /// <returns>序列化后的 JSON 字符串</returns>
-            public static string ToJson<T>(List<T> objectsList)
-            {
-                if (s_JsonHelper == null)
-                {
-                    throw new AshException("JSON helper is invalid.");
-                }
-
-                return s_JsonHelper.ToJson<T>(objectsList);
-            }
-
-            /// <summary>
-            /// 将 JSON 字符串反序列化为List。
-            /// </summary>
-            /// <typeparam name="T">对象类型。</typeparam>
-            /// <param name="json">要反序列化的 JSON 字符串。</param>
-            /// <returns>反序列化后的对象。</returns>
-            public static List<T> ToList<T>(string json)
-            {
-
-                if (s_JsonHelper == null)
-                {
-                    throw new AshException("JSON helper is invalid.");
-                }
-
-                return s_JsonHelper.ToList<T>(json);
-
-            }
-
-            /// <summary>
-            /// 将Dictionary序列化字符串
-            /// </summary>
-            /// <typeparam name="TKey">对象类型</typeparam>
-            /// <typeparam name="TValue">对象类型</typeparam>
-            /// <param name="objectsDict">要序列化的对象</param>
-            /// <returns>序列化后的 JSON 字符串</returns>
-            public static string ToJson<TKey, TValue>(Dictionary<TKey, TValue> objectsDict)
-            {
-                if (s_JsonHelper == null)
-                {
-                    throw new AshException("JSON helper is invalid.");
-                }
-
-                return s_JsonHelper.ToJson<TKey, TValue>(objectsDict);
-            }
-
-
-            /// <summary>
-            /// 将 JSON 字符串反序列化为Dictionary。
-            /// </summary>
-            /// <typeparam name="TKey">对象类型</typeparam>
-            /// <typeparam name="TValue">对象类型</typeparam>
-            /// <param name="json">要反序列化的 JSON 字符串。</param>
-            /// <returns>反序列化后的对象。</returns>
-            public static Dictionary<TKey, TValue> ToDict<TKey, TValue>(string json)
-            {
-                if (s_JsonHelper == null)
-                {
-                    throw new AshException("JSON helper is invalid.");
-                }
-
-                return s_JsonHelper.ToDict<TKey, TValue>(json);
             }
         }
     }

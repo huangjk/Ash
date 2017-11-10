@@ -11,7 +11,7 @@ namespace AshUnity
     /// </summary>
     public static class AshApp
     {
-        private static readonly LinkedList<BaseComponent> _ComponentBases = new LinkedList<BaseComponent>();
+        private static readonly LinkedList<AshComponent> _ComponentBases = new LinkedList<AshComponent>();
 
         private static readonly Ash.Version _ashUnityVersion = new Ash.Version(1, 0, 1);
 
@@ -55,7 +55,7 @@ namespace AshUnity
         /// </summary>
         /// <typeparam name="T">要获取的Ash组件类型。</typeparam>
         /// <returns>要获取的Ash组件。</returns>
-        public static T GetComponent<T>() where T : BaseComponent
+        public static T GetComponent<T>() where T : AshComponent
         {
             return (T)GetComponent(typeof(T));
         }
@@ -65,9 +65,14 @@ namespace AshUnity
         /// </summary>
         /// <param name="type">要获取的Ash组件类型。</param>
         /// <returns>要获取的Ash组件。</returns>
-        public static BaseComponent GetComponent(Type type)
-        {
-            LinkedListNode<BaseComponent> current = _ComponentBases.First;
+        public static AshComponent GetComponent(Type type)
+        {        
+            if (AshBase.Instance == null)
+            {
+                CreatAshBase();
+            }
+
+            LinkedListNode<AshComponent> current = _ComponentBases.First;
             while (current != null)
             {
                 if (current.Value.GetType() == type)
@@ -121,14 +126,11 @@ namespace AshUnity
         /// <summary>
         /// 
         /// </summary>
-        static void Init()
+        static void CreatAshBase()
         {
-            if (AshBase.Instance == null)
-            {
-                GameObject AshBaseGameObject = null;
-                AshBaseGameObject = new GameObject("AshEngine");
-                AshBaseGameObject.AddComponent<AshBase>();
-            }
+            GameObject AshBaseGameObject = null;
+            AshBaseGameObject = new GameObject("AshEngine");
+            AshBaseGameObject.AddComponent<AshBase>();
         }
 
         /// <summary>
@@ -136,24 +138,20 @@ namespace AshUnity
         /// </summary>
         /// <param name="modelType">要创建的模块类型</param>
         /// <returns>创建的模块</returns>
-        internal static BaseComponent CeateModle(Type modelType)
+        internal static AshComponent CeateModle(Type modelType)
         {
-            if (AshBase.Instance == null)
-            {
-                Init();
-            }
             string gameObjectName = modelType.ToString();
             gameObjectName = gameObjectName.Substring(gameObjectName.LastIndexOf('.') + 1);
             GameObject gameObjectToAttach = new GameObject(gameObjectName);
             gameObjectToAttach.transform.parent = AshBase.Instance.transform;
-            return (BaseComponent)gameObjectToAttach.AddComponent(modelType);
+            return (AshComponent)gameObjectToAttach.AddComponent(modelType);
         }
 
         /// <summary>
         /// 注册Ash组件。
         /// </summary>
         /// <param name=" ComponentBase">要注册的Ash组件。</param>
-        internal static void RegisterComponent(BaseComponent ComponentBase)
+        internal static void RegisterComponent(AshComponent ComponentBase)
         {
             if (ComponentBase == null)
             {
@@ -163,7 +161,7 @@ namespace AshUnity
 
             Type type = ComponentBase.GetType();
 
-            LinkedListNode<BaseComponent> current = _ComponentBases.First;
+            LinkedListNode<AshComponent> current = _ComponentBases.First;
             while (current != null)
             {
                 if (current.Value.GetType() == type)

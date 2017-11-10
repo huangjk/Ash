@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;UNITY_5_5_OR_NEWER</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;UNITY_5_5_OR_NEWER,UNITY_5_3_OR_NEWER,UNITY_5_3</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>C:\Users\ChineseHXYun\OneDrive\Framework\Ash\Ash.VS\3rd\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine">
@@ -41,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Ash\AshBase.InitLog.cs" />
     <Compile Include="Ash\AshBase.InitUtility.cs" />
-    <Compile Include="Ash\ComponentBase.cs" />
+    <Compile Include="Ash\BaseComponent.cs" />
     <Compile Include="Ash\AshApp.cs" />
     <Compile Include="Ash\AshBase.cs" />
     <Compile Include="Ash\Config\Attribute\ConfigEditorAttribute.cs" />
@@ -51,6 +54,7 @@
     <Compile Include="Ash\Config\Attribute\ConfigFieldEditorAttribute.cs" />
     <Compile Include="Ash\Config\DataBase.cs" />
     <Compile Include="Ash\Config\ConfigBase.cs" />
+    <Compile Include="DataNode\DataNodeComponent.cs" />
     <Compile Include="Debugger\DebuggerActiveWindowType.cs" />
     <Compile Include="Debugger\DebuggerComponent.ConsoleWindow.cs" />
     <Compile Include="Debugger\DebuggerComponent.ConsoleWindow.LogNode.cs" />
@@ -114,8 +118,9 @@
     <Compile Include="Scene\SceneComponent.cs" />
     <Compile Include="Utility\Helper.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
-    <Compile Include="Utility\JsonHelper.Serialization.cs" />
+    <Compile Include="Utility\ProfilerHelper.cs" />
     <Compile Include="Utility\UnityExtension.cs" />
+    <Compile Include="Utility\ZipHelper.cs" />
     <Compile Include="Variable\VarBool.cs" />
     <Compile Include="Variable\VarByte.cs" />
     <Compile Include="Variable\VarBytes.cs" />

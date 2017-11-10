@@ -1,0 +1,6 @@
+[2017-11-11 00:09:00.164][Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[2017-11-11 00:09:00.177][Info]--During this run, Game Framework will use editor resource files, which you should validate first.
+[2017-11-11 00:09:00.216][Info]--AshException: Resource manager is invalid.
+[2017-11-11 00:09:00.219][Info]--NullReferenceException: Object reference not set to an instance of an object
+[2017-11-11 00:09:00.222][Info]--AshException: Resource manager is invalid.
+[2017-11-11 00:09:00.224][Info]--AshException: Resource manager is invalid.

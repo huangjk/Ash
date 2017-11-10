@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace AshUnity.Utility
+namespace AshUnity
 {
     /// <summary>
     /// Unity 扩展。

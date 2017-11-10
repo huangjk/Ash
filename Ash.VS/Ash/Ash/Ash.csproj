@@ -68,6 +68,10 @@
     <Compile Include="Ash\Support\Variable\GenericVariable.cs" />
     <Compile Include="Ash\Support\Variable\Variable.cs" />
     <Compile Include="Ash\Support\Version\Version.cs" />
+    <Compile Include="DataNode\DataNodeManager.cs" />
+    <Compile Include="DataNode\DataNodeManager.DataNode.cs" />
+    <Compile Include="DataNode\IDataNode.cs" />
+    <Compile Include="DataNode\IDataNodeManager.cs" />
     <Compile Include="Debugger\DebuggerManager.cs" />
     <Compile Include="Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
     <Compile Include="Debugger\IDebuggerManager.cs" />
@@ -218,6 +222,10 @@
     <Compile Include="Sound\SoundManager.PlaySoundInfo.cs" />
     <Compile Include="Sound\SoundManager.SoundAgent.cs" />
     <Compile Include="Sound\SoundManager.SoundGroup.cs" />
+    <Compile Include="Utility\Nullable.cs" />
+    <Compile Include="Utility\Profiler\DontProfileAttribute.cs" />
+    <Compile Include="Utility\Profiler\Profiler.cs" />
+    <Compile Include="Utility\Profiler\Profiler.IProfilerHelper.cs" />
     <Compile Include="Utility\Random.cs" />
     <Compile Include="Utility\Assembly.cs" />
     <Compile Include="Utility\Converter.cs" />
@@ -226,6 +234,7 @@
     <Compile Include="Utility\Json.IJsonHelper.cs" />
     <Compile Include="Utility\Path.cs" />
     <Compile Include="Utility\Text.cs" />
+    <Compile Include="Utility\Utility.cs" />
     <Compile Include="Utility\Verifier.Crc32.cs" />
     <Compile Include="Utility\Verifier.cs" />
     <Compile Include="Utility\Zip.cs" />
