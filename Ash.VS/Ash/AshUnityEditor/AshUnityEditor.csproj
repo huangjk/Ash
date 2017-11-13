@@ -84,6 +84,7 @@
     <Compile Include="Editor\Log\LogRedirection.cs" />
     <Compile Include="Editor\Log\LogTrack.cs" />
     <Compile Include="Editor\Misc\OpenFolder.cs" />
+    <Compile Include="Editor\Misc\ScriptableObjectCreater.cs" />
     <Compile Include="Editor\Misc\TypeHelper.cs" />
     <Compile Include="Editor\ProjectCatalogDirectory\ProjectDirectoryEditor.cs" />
     <Compile Include="Editor\ProjectCatalogDirectory\IProjectDirectory.cs" />

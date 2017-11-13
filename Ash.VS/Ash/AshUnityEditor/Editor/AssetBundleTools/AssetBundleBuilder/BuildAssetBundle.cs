@@ -12,7 +12,7 @@ namespace AshUnityEditor.AssetBundleTools
         /// <summary>
         /// 运行生成资源包。
         /// </summary>
-        [MenuItem("Ash/AssetBundle Tools/Build AssetBundle", false, 30)]
+        [MenuItem("Window/Ash/AssetBundle Tools/Build AssetBundle", false, 30)]
         private static void Run()
         {
             AssetBundleBuilderController controller = new AssetBundleBuilderController();

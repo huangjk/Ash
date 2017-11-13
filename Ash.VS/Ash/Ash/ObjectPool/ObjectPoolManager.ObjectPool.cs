@@ -118,7 +118,6 @@ namespace Ash.ObjectPool
                     {
                         return;
                     }
-                    Log.Debug(m_Capacity + " : " + value);
                     Log.Debug("Object pool '{0}' capacity changed from '{1}' to '{2}'.", Utility.Text.GetFullName<T>(Name), m_Capacity.ToString(), value.ToString());
                     m_Capacity = value;
                     Release();

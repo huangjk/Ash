@@ -96,7 +96,8 @@
     <Compile Include="Assets\_Project\Module\MyGame\_Scripts\Base\GameEntry.Builtin.cs" />
     <Compile Include="Assets\_Project\Module\MyGame\_Scripts\Base\GameEntry.Custom.cs" />
     <Compile Include="Assets\_Project\Module\MyGame\_Scripts\Base\GameEntry.cs" />
-    <Compile Include="Assets\_Project\Module\MyGame\_Scripts\MyGameLaunch.cs" />
+    <Compile Include="Assets\_Project\Module\MyGame\_Scripts\Configs\ConfigComponent.cs" />
+    <Compile Include="Assets\_Project\Module\MyGame\_Scripts\Procedure\MyGameLaunch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

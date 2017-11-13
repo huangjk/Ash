@@ -13,7 +13,7 @@ namespace AshUnityEditor.AssetBundleTools
         private bool m_OrderBuildAssetBundles = false;
         private int m_BuildEventHandlerTypeNameIndex = 0;
 
-        [MenuItem("Ash/AssetBundle Tools/AssetBundle Builder", false, 31)]
+        [MenuItem("Window/Ash/AssetBundle Tools/AssetBundle Builder", false, 31)]
         private static void Open()
         {
             AssetBundleBuilder window = GetWindow<AssetBundleBuilder>(true, "AssetBundle Builder", true);

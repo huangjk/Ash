@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Ash\AshBase.InitLog.cs" />
     <Compile Include="Ash\AshBase.InitUtility.cs" />
+    <Compile Include="Ash\AshGlobal.cs" />
     <Compile Include="Ash\BaseComponent.cs" />
     <Compile Include="Ash\AshApp.cs" />
     <Compile Include="Ash\AshBase.cs" />
@@ -116,6 +117,9 @@
     <Compile Include="Resource\ResourceHelperBase.cs" />
     <Compile Include="Resource\SceneAsset.cs" />
     <Compile Include="Scene\SceneComponent.cs" />
+    <Compile Include="Setting\DefaultSettingHelper.cs" />
+    <Compile Include="Setting\SettingComponent.cs" />
+    <Compile Include="Setting\SettingHelperBase.cs" />
     <Compile Include="Utility\Helper.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
     <Compile Include="Utility\ProfilerHelper.cs" />

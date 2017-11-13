@@ -1,27 +1,20 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework;
-using GameFramework.Setting;
+﻿using Ash;
+using Ash.Setting;
 using UnityEngine;
 
-namespace UnityGameFramework.Runtime
+namespace AshUnity
 {
     /// <summary>
     /// 配置组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/Setting")]
-    public sealed class SettingComponent : GameFrameworkComponent
+    [AddComponentMenu("Ash/Setting")]
+    public sealed class SettingComponent : AshComponent
     {
         private ISettingManager m_SettingManager = null;
 
         [SerializeField]
-        private string m_SettingHelperTypeName = "UnityGameFramework.Runtime.DefaultSettingHelper";
+        private string m_SettingHelperTypeName = "AshUnity.DefaultSettingHelper";
 
         [SerializeField]
         private SettingHelperBase m_CustomSettingHelper = null;
@@ -33,7 +26,7 @@ namespace UnityGameFramework.Runtime
         {
             base.Awake();
 
-            m_SettingManager = GameFrameworkEntry.GetModule<ISettingManager>();
+            m_SettingManager = AshEntry.GetModule<ISettingManager>();
             if (m_SettingManager == null)
             {
                 Log.Fatal("Setting manager is invalid.");

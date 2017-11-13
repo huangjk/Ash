@@ -205,3 +205,16 @@
 [2017-11-11 01:15:24.162][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+AssetObject.Asset Pool' auto release complete.
 [2017-11-11 01:15:24.164][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+ResourceObject.Resource Pool' auto release start.
 [2017-11-11 01:15:24.166][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+ResourceObject.Resource Pool' auto release complete.
+[2017-11-11 22:27:45.002][Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[2017-11-11 22:28:31.942][Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[2017-11-11 22:28:45.756][Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[2017-11-11 22:28:57.133][Info]--Ash version is 1.0.1. AshUnity version is 1.0.1.
+[2017-11-11 22:28:57.269][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+AssetObject.Asset Pool' capacity changed from '0' to '2147483647'.
+[2017-11-11 22:28:57.276][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+AssetObject.Asset Pool' expire time changed from '0' to '3.402823E+38'.
+[2017-11-11 22:28:57.278][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+ResourceObject.Resource Pool' capacity changed from '0' to '2147483647'.
+[2017-11-11 22:28:57.280][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+ResourceObject.Resource Pool' expire time changed from '0' to '3.402823E+38'.
+[2017-11-11 22:28:57.283][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+AssetObject.Asset Pool' capacity changed from '2147483647' to '64'.
+[2017-11-11 22:28:57.285][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+AssetObject.Asset Pool' expire time changed from '3.402823E+38' to '60'.
+[2017-11-11 22:28:57.287][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+ResourceObject.Resource Pool' capacity changed from '2147483647' to '16'.
+[2017-11-11 22:28:57.289][Info]--Object pool 'Ash.Resource.ResourceManager+ResourceLoader+ResourceObject.Resource Pool' expire time changed from '3.402823E+38' to '60'.
+[2017-11-11 22:28:57.390][Info]--Enter 'MyGameLaunch' procedure.

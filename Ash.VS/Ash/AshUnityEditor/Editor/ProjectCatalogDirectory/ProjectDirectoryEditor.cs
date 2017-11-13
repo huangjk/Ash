@@ -22,7 +22,7 @@ namespace ProjectCatalogDirectory
         }
 
 
-        [MenuItem("Tools/Ash/Project/ProjectDetalogDirectory")]
+        [MenuItem("Window/Ash/Project/ProjectDetalogDirectory")]
         static void AddWindow()
         {
             //创建窗口

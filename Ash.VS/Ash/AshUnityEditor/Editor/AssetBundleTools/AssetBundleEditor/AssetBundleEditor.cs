@@ -36,7 +36,7 @@ namespace AshUnityEditor.AssetBundleTools
         private int m_CurrentAssetBundleRowOnDraw = 0;
         private int m_CurrentSourceRowOnDraw = 0;
 
-        [MenuItem("Ash/AssetBundle Tools/AssetBundle Editor", false, 32)]
+        [MenuItem("Window/Ash/AssetBundle Tools/AssetBundle Editor", false, 32)]
         private static void Open()
         {
             AssetBundleEditor window = GetWindow<AssetBundleEditor>(true, "AssetBundle Editor", true);
