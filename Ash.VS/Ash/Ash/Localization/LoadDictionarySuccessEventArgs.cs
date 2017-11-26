@@ -1,16 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-namespace GameFramework.Localization
+﻿namespace Ash.Localization
 {
     /// <summary>
     /// 加载字典成功事件。
     /// </summary>
-    public sealed class LoadDictionarySuccessEventArgs : GameFrameworkEventArgs
+    public sealed class LoadDictionarySuccessEventArgs : BaseEventArgs
     {
         /// <summary>
         /// 初始化加载字典成功事件的新实例。

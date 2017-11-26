@@ -1,21 +1,14 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework.ObjectPool;
-using GameFramework.Resource;
+﻿using Ash.ObjectPool;
+using Ash.Resource;
 using System;
 using System.Collections.Generic;
 
-namespace GameFramework.UI
+namespace Ash.UI
 {
     /// <summary>
     /// 界面管理器。
     /// </summary>
-    internal sealed partial class UIManager : GameFrameworkModule, IUIManager
+    internal sealed partial class UIManager : AshModule, IUIManager
     {
         private readonly Dictionary<string, UIGroup> m_UIGroups;
         private readonly List<int> m_UIFormsBeingLoaded;
@@ -245,7 +238,7 @@ namespace GameFramework.UI
         {
             if (objectPoolManager == null)
             {
-                throw new GameFrameworkException("Object pool manager is invalid.");
+                throw new AshException("Object pool manager is invalid.");
             }
 
             m_ObjectPoolManager = objectPoolManager;
@@ -260,7 +253,7 @@ namespace GameFramework.UI
         {
             if (resourceManager == null)
             {
-                throw new GameFrameworkException("Resource manager is invalid.");
+                throw new AshException("Resource manager is invalid.");
             }
 
             m_ResourceManager = resourceManager;
@@ -274,7 +267,7 @@ namespace GameFramework.UI
         {
             if (uiFormHelper == null)
             {
-                throw new GameFrameworkException("UI form helper is invalid.");
+                throw new AshException("UI form helper is invalid.");
             }
 
             m_UIFormHelper = uiFormHelper;
@@ -289,7 +282,7 @@ namespace GameFramework.UI
         {
             if (string.IsNullOrEmpty(uiGroupName))
             {
-                throw new GameFrameworkException("UI group name is invalid.");
+                throw new AshException("UI group name is invalid.");
             }
 
             return m_UIGroups.ContainsKey(uiGroupName);
@@ -304,7 +297,7 @@ namespace GameFramework.UI
         {
             if (string.IsNullOrEmpty(uiGroupName))
             {
-                throw new GameFrameworkException("UI group name is invalid.");
+                throw new AshException("UI group name is invalid.");
             }
 
             UIGroup uiGroup = null;
@@ -354,12 +347,12 @@ namespace GameFramework.UI
         {
             if (string.IsNullOrEmpty(uiGroupName))
             {
-                throw new GameFrameworkException("UI group name is invalid.");
+                throw new AshException("UI group name is invalid.");
             }
 
             if (uiGroupHelper == null)
             {
-                throw new GameFrameworkException("UI group helper is invalid.");
+                throw new AshException("UI group helper is invalid.");
             }
 
             if (HasUIGroup(uiGroupName))
@@ -399,7 +392,7 @@ namespace GameFramework.UI
         {
             if (string.IsNullOrEmpty(uiFormAssetName))
             {
-                throw new GameFrameworkException("UI form asset name is invalid.");
+                throw new AshException("UI form asset name is invalid.");
             }
 
             foreach (KeyValuePair<string, UIGroup> uiGroup in m_UIGroups)
@@ -441,7 +434,7 @@ namespace GameFramework.UI
         {
             if (string.IsNullOrEmpty(uiFormAssetName))
             {
-                throw new GameFrameworkException("UI form asset name is invalid.");
+                throw new AshException("UI form asset name is invalid.");
             }
 
             foreach (KeyValuePair<string, UIGroup> uiGroup in m_UIGroups)
@@ -465,7 +458,7 @@ namespace GameFramework.UI
         {
             if (string.IsNullOrEmpty(uiFormAssetName))
             {
-                throw new GameFrameworkException("UI form asset name is invalid.");
+                throw new AshException("UI form asset name is invalid.");
             }
 
             List<IUIForm> uiForms = new List<IUIForm>();
@@ -520,7 +513,7 @@ namespace GameFramework.UI
         {
             if (string.IsNullOrEmpty(uiFormAssetName))
             {
-                throw new GameFrameworkException("UI form asset name is invalid.");
+                throw new AshException("UI form asset name is invalid.");
             }
 
             return m_UIFormAssetNamesBeingLoaded.Contains(uiFormAssetName);
@@ -588,28 +581,28 @@ namespace GameFramework.UI
         {
             if (m_ResourceManager == null)
             {
-                throw new GameFrameworkException("You must set resource manager first.");
+                throw new AshException("You must set resource manager first.");
             }
 
             if (m_UIFormHelper == null)
             {
-                throw new GameFrameworkException("You must set UI form helper first.");
+                throw new AshException("You must set UI form helper first.");
             }
 
             if (string.IsNullOrEmpty(uiFormAssetName))
             {
-                throw new GameFrameworkException("UI form asset name is invalid.");
+                throw new AshException("UI form asset name is invalid.");
             }
 
             if (string.IsNullOrEmpty(uiGroupName))
             {
-                throw new GameFrameworkException("UI group name is invalid.");
+                throw new AshException("UI group name is invalid.");
             }
 
             UIGroup uiGroup = (UIGroup)GetUIGroup(uiGroupName);
             if (uiGroup == null)
             {
-                throw new GameFrameworkException(string.Format("UI group '{0}' is not exist.", uiGroupName));
+                throw new AshException(string.Format("UI group '{0}' is not exist.", uiGroupName));
             }
 
             int serialId = m_Serial++;
@@ -653,7 +646,7 @@ namespace GameFramework.UI
             IUIForm uiForm = GetUIForm(serialId);
             if (uiForm == null)
             {
-                throw new GameFrameworkException(string.Format("Can not find UI form '{0}'.", serialId.ToString()));
+                throw new AshException(string.Format("Can not find UI form '{0}'.", serialId.ToString()));
             }
 
             CloseUIForm(uiForm, userData);
@@ -677,13 +670,13 @@ namespace GameFramework.UI
         {
             if (uiForm == null)
             {
-                throw new GameFrameworkException("UI form is invalid.");
+                throw new AshException("UI form is invalid.");
             }
 
             UIGroup uiGroup = (UIGroup)uiForm.UIGroup;
             if (uiGroup == null)
             {
-                throw new GameFrameworkException("UI group is invalid.");
+                throw new AshException("UI group is invalid.");
             }
 
             uiGroup.RemoveUIForm(uiForm);
@@ -748,13 +741,13 @@ namespace GameFramework.UI
         {
             if (uiForm == null)
             {
-                throw new GameFrameworkException("UI form is invalid.");
+                throw new AshException("UI form is invalid.");
             }
 
             UIGroup uiGroup = (UIGroup)uiForm.UIGroup;
             if (uiGroup == null)
             {
-                throw new GameFrameworkException("UI group is invalid.");
+                throw new AshException("UI group is invalid.");
             }
 
             uiGroup.RefocusUIForm(uiForm, userData);
@@ -771,7 +764,7 @@ namespace GameFramework.UI
         {
             if (uiForm == null)
             {
-                throw new GameFrameworkException("UI form is invalid.");
+                throw new AshException("UI form is invalid.");
             }
 
             m_InstancePool.SetLocked(uiForm, locked);
@@ -786,7 +779,7 @@ namespace GameFramework.UI
         {
             if (uiForm == null)
             {
-                throw new GameFrameworkException("UI form is invalid.");
+                throw new AshException("UI form is invalid.");
             }
 
             m_InstancePool.SetPriority(uiForm, priority);
@@ -799,7 +792,7 @@ namespace GameFramework.UI
                 IUIForm uiForm = m_UIFormHelper.CreateUIForm(uiFormInstance, uiGroup, userData);
                 if (uiForm == null)
                 {
-                    throw new GameFrameworkException("Can not create UI form in helper.");
+                    throw new AshException("Can not create UI form in helper.");
                 }
 
                 uiForm.OnInit(serialId, uiFormAssetName, uiGroup, pauseCoveredUIForm, isNewInstance, userData);
@@ -829,7 +822,7 @@ namespace GameFramework.UI
             OpenUIFormInfo openUIFormInfo = (OpenUIFormInfo)userData;
             if (openUIFormInfo == null)
             {
-                throw new GameFrameworkException("Open UI form info is invalid.");
+                throw new AshException("Open UI form info is invalid.");
             }
 
             UIFormInstanceObject uiFormInstanceObject = new UIFormInstanceObject(uiFormAssetName, uiFormAsset, m_UIFormHelper.InstantiateUIForm(uiFormAsset), m_UIFormHelper);
@@ -853,7 +846,7 @@ namespace GameFramework.UI
             OpenUIFormInfo openUIFormInfo = (OpenUIFormInfo)userData;
             if (openUIFormInfo == null)
             {
-                throw new GameFrameworkException("Open UI form info is invalid.");
+                throw new AshException("Open UI form info is invalid.");
             }
 
             m_UIFormsBeingLoaded.Remove(openUIFormInfo.SerialId);
@@ -866,7 +859,7 @@ namespace GameFramework.UI
                 return;
             }
 
-            throw new GameFrameworkException(appendErrorMessage);
+            throw new AshException(appendErrorMessage);
         }
 
         private void LoadUIFormUpdateCallback(string uiFormAssetName, float progress, object userData)
@@ -874,7 +867,7 @@ namespace GameFramework.UI
             OpenUIFormInfo openUIFormInfo = (OpenUIFormInfo)userData;
             if (openUIFormInfo == null)
             {
-                throw new GameFrameworkException("Open UI form info is invalid.");
+                throw new AshException("Open UI form info is invalid.");
             }
 
             if (m_OpenUIFormUpdateEventHandler != null)
@@ -888,7 +881,7 @@ namespace GameFramework.UI
             OpenUIFormInfo openUIFormInfo = (OpenUIFormInfo)userData;
             if (openUIFormInfo == null)
             {
-                throw new GameFrameworkException("Open UI form info is invalid.");
+                throw new AshException("Open UI form info is invalid.");
             }
 
             if (m_OpenUIFormDependencyAssetEventHandler != null)

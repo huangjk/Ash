@@ -1,19 +1,12 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework.Network
+namespace Ash.Network
 {
     /// <summary>
     /// 网络管理器。
     /// </summary>
-    internal sealed partial class NetworkManager : GameFrameworkModule, INetworkManager
+    internal sealed partial class NetworkManager : AshModule, INetworkManager
     {
         private readonly Dictionary<string, NetworkChannel> m_NetworkChannels;
         private readonly EventPool<Packet> m_EventPool;
@@ -189,7 +182,7 @@ namespace GameFramework.Network
         {
             if (networkHelper == null)
             {
-                throw new GameFrameworkException("Network helper is invalid.");
+                throw new AshException("Network helper is invalid.");
             }
 
             m_NetworkHelper = networkHelper;
@@ -246,12 +239,12 @@ namespace GameFramework.Network
         {
             if (m_NetworkHelper == null)
             {
-                throw new GameFrameworkException("You must set network helper first.");
+                throw new AshException("You must set network helper first.");
             }
 
             if (HasNetworkChannel(name))
             {
-                throw new GameFrameworkException(string.Format("Already exist network channel '{0}'.", name ?? string.Empty));
+                throw new AshException(string.Format("Already exist network channel '{0}'.", name ?? string.Empty));
             }
 
             NetworkChannel networkChannel = new NetworkChannel(name, m_NetworkHelper);
@@ -298,7 +291,7 @@ namespace GameFramework.Network
         {
             if (handler == null)
             {
-                throw new GameFrameworkException("Packet handler is invalid.");
+                throw new AshException("Packet handler is invalid.");
             }
 
             m_EventPool.Subscribe(handler.Id, handler.Handle);

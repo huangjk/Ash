@@ -1,20 +1,13 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework.Resource;
+﻿using Ash.Resource;
 using System;
 using System.Collections.Generic;
 
-namespace GameFramework.DataTable
+namespace Ash.DataTable
 {
     /// <summary>
     /// 数据表管理器。
     /// </summary>
-    internal sealed partial class DataTableManager : GameFrameworkModule, IDataTableManager
+    internal sealed partial class DataTableManager : AshModule, IDataTableManager
     {
         private readonly Dictionary<string, DataTableBase> m_DataTables;
         private readonly LoadAssetCallbacks m_LoadAssetCallbacks;
@@ -142,7 +135,7 @@ namespace GameFramework.DataTable
         {
             if (resourceManager == null)
             {
-                throw new GameFrameworkException("Resource manager is invalid.");
+                throw new AshException("Resource manager is invalid.");
             }
 
             m_ResourceManager = resourceManager;
@@ -156,7 +149,7 @@ namespace GameFramework.DataTable
         {
             if (dataTableHelper == null)
             {
-                throw new GameFrameworkException("Data table helper is invalid.");
+                throw new AshException("Data table helper is invalid.");
             }
 
             m_DataTableHelper = dataTableHelper;
@@ -180,12 +173,12 @@ namespace GameFramework.DataTable
         {
             if (m_ResourceManager == null)
             {
-                throw new GameFrameworkException("You must set resource manager first.");
+                throw new AshException("You must set resource manager first.");
             }
 
             if (m_DataTableHelper == null)
             {
-                throw new GameFrameworkException("You must set data table helper first.");
+                throw new AshException("You must set data table helper first.");
             }
 
             m_ResourceManager.LoadAsset(dataTableAssetName, m_LoadAssetCallbacks, userData);
@@ -313,7 +306,7 @@ namespace GameFramework.DataTable
         {
             if (HasDataTable<T>(name))
             {
-                throw new GameFrameworkException(string.Format("Already exist data table '{0}'.", Utility.Text.GetFullName<T>(name)));
+                throw new AshException(string.Format("Already exist data table '{0}'.", Utility.Text.GetFullName<T>(name)));
             }
 
             string[] dataRowTexts = m_DataTableHelper.SplitToDataRows(text);
@@ -401,7 +394,7 @@ namespace GameFramework.DataTable
             {
                 if (!m_DataTableHelper.LoadDataTable(dataTableAsset, userData))
                 {
-                    throw new GameFrameworkException(string.Format("Load data table failure in helper, asset name '{0}'.", dataTableAssetName));
+                    throw new AshException(string.Format("Load data table failure in helper, asset name '{0}'.", dataTableAssetName));
                 }
             }
             catch (Exception exception)
@@ -434,7 +427,7 @@ namespace GameFramework.DataTable
                 return;
             }
 
-            throw new GameFrameworkException(appendErrorMessage);
+            throw new AshException(appendErrorMessage);
         }
 
         private void LoadDataTableUpdateCallback(string dataTableAssetName, float progress, object userData)

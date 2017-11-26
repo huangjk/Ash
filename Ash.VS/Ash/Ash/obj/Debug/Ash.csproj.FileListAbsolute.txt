@@ -12,6 +12,6 @@ C:\Users\huangjiangkun\OneDrive\Framework\Ash\Ash.VS\Ash\Ash\obj\Debug\Ash.pdb
 C:\Users\ChineseHXYun\OneDrive\Framework\Ash\Ash.VS\Ash\Ash\obj\Debug\Ash.csprojResolveAssemblyReference.cache
 D:\Ash\Ash.VS\Ash\Ash\bin\Debug\Ash.dll
 D:\Ash\Ash.VS\Ash\Ash\bin\Debug\Ash.pdb
-D:\Ash\Ash.VS\Ash\Ash\obj\Debug\Ash.csprojResolveAssemblyReference.cache
 D:\Ash\Ash.VS\Ash\Ash\obj\Debug\Ash.dll
 D:\Ash\Ash.VS\Ash\Ash\obj\Debug\Ash.pdb
+D:\Ash\Ash.VS\Ash\Ash\obj\Debug\Ash.csprojResolveAssemblyReference.cache

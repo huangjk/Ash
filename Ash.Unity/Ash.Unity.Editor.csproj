@@ -115,14 +115,14 @@
     <Reference Include="Ash">
       <HintPath>Assets\ThirdParty\Ash\Ash.Lib\Ash.dll</HintPath>
     </Reference>
-    <Reference Include="AshUnity">
-      <HintPath>Assets\ThirdParty\Ash\Ash.Lib\AshUnity.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\ThirdParty\Ash\Ash.Lib\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="AshUnityEditor">
-      <HintPath>Assets\ThirdParty\Ash\Ash.Lib\AshUnityEditor.dll</HintPath>
+    <Reference Include="LitJson">
+      <HintPath>Assets\ThirdParty\Ash\Ash.Lib\LitJson.dll</HintPath>
     </Reference>
-    <Reference Include="AshUnityExtension">
-      <HintPath>Assets\ThirdParty\Ash\Ash.Lib\AshUnityExtension.dll</HintPath>
+    <Reference Include="protobuf-net">
+      <HintPath>Assets\ThirdParty\Ash\Ash.Lib\protobuf-net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +133,84 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ThirdParty\Ash\Ash.Test\Base\Config\Editor\AshAppConfigEditor.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzer.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzerController.Stamp.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzerController.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleAnalyzer\AssetsOrder.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleAnalyzer\DependencyData.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleAnalyzer\ScatteredAssetsOrder.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilder.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetBundleCode.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetBundleData.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetData.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.BuildReport.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.VersionListData.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\BuildAssetBundle.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleBuilder\IBuildEventHandler.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleCollection\Asset.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleCollection\AssetBundle.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleCollection\AssetBundleCollection.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleCollection\AssetBundleLoadType.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleCollection\AssetBundleType.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.AssetBundleFolder.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.AssetBundleItem.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.MenuState.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditorController.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\AssetSorterType.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\SourceAsset.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\AssetBundleTools\AssetBundleEditor\SourceFolder.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Config\ConfigEditorSchema.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Config\DrawHelper.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Config\FieldHelper.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Config\FieldType.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Config\ValuePropertityInfo.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\AshInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\BaseComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\DataNodeComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\DataTableComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\DebuggerComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\DownloadComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\EntityComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\EventComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\FsmComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\LocalizationComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\NetworkComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\ObjectPoolComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\ProcedureComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\ResourceComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\SceneComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\SettingComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\SoundComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\UIComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Inspector\WebRequestComponentInspector.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Log\LogRedirection.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Log\LogTrack.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Misc\BuildSettings.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Misc\ContextMenu.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Misc\Help.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Misc\HelperInfo.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Misc\OpenFolder.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Misc\ScriptableObjectCreater.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\Misc\TypeHelper.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\ProjectCatalogDirectory\IProjectDirectory.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\ProjectCatalogDirectory\ProjectCatalogDefaultData.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\ProjectCatalogDirectory\ProjectDirectory.cs" />
+    <Compile Include="Assets\ThirdParty\Ash\Scripts\Editor\ProjectCatalogDirectory\ProjectDirectoryEditor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\_Project\Developer\Global\Configs\BuildInfo.txt" />
+    <None Include="Assets\_Project\Developer\Global\Configs\DefaultDictionary.xml" />
+    <None Include="Assets\_Project\Developer\Global\DataTables\Aircraft.txt" />
+    <None Include="Assets\_Project\Developer\Global\DataTables\Entity.txt" />
+    <None Include="Assets\_Project\Developer\Global\DataTables\Music.txt" />
+    <None Include="Assets\_Project\Developer\Global\DataTables\Scene.txt" />
+    <None Include="Assets\_Project\Developer\Global\DataTables\Sound.txt" />
+    <None Include="Assets\_Project\Developer\Global\DataTables\UIForm.txt" />
+    <None Include="Assets\_Project\Developer\Global\DataTables\UISound.txt" />
+    <None Include="Assets\_Project\Developer\Global\Localization\ChineseSimplified\Dictionaries\Default.xml" />
+    <None Include="Assets\_Project\Developer\Global\Localization\English\Dictionaries\Default.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

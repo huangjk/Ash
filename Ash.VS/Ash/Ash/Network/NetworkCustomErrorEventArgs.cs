@@ -1,16 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-namespace GameFramework.Network
+﻿namespace Ash.Network
 {
     /// <summary>
     /// 用户自定义网络错误事件。
     /// </summary>
-    public sealed class NetworkCustomErrorEventArgs : GameFrameworkEventArgs
+    public sealed class NetworkCustomErrorEventArgs : BaseEventArgs
     {
         /// <summary>
         /// 初始化用户自定义网络错误事件的新实例。

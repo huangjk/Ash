@@ -1,14 +1,7 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework.Resource;
+﻿using Ash.Resource;
 using System;
 
-namespace GameFramework.Localization
+namespace Ash.Localization
 {
     /// <summary>
     /// 本地化管理器接口。

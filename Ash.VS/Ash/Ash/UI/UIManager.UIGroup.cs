@@ -1,13 +1,6 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
+﻿using System.Collections.Generic;
 
-using System.Collections.Generic;
-
-namespace GameFramework.UI
+namespace Ash.UI
 {
     internal partial class UIManager
     {
@@ -31,12 +24,12 @@ namespace GameFramework.UI
             {
                 if (string.IsNullOrEmpty(name))
                 {
-                    throw new GameFrameworkException("UI group name is invalid.");
+                    throw new AshException("UI group name is invalid.");
                 }
 
                 if (uiGroupHelper == null)
                 {
-                    throw new GameFrameworkException("UI group helper is invalid.");
+                    throw new AshException("UI group helper is invalid.");
                 }
 
                 m_Name = name;
@@ -159,7 +152,7 @@ namespace GameFramework.UI
             {
                 if (string.IsNullOrEmpty(uiFormAssetName))
                 {
-                    throw new GameFrameworkException("UI form asset name is invalid.");
+                    throw new AshException("UI form asset name is invalid.");
                 }
 
                 foreach (UIFormInfo uiFormInfo in m_UIFormInfos)
@@ -200,7 +193,7 @@ namespace GameFramework.UI
             {
                 if (string.IsNullOrEmpty(uiFormAssetName))
                 {
-                    throw new GameFrameworkException("UI form asset name is invalid.");
+                    throw new AshException("UI form asset name is invalid.");
                 }
 
                 foreach (UIFormInfo uiFormInfo in m_UIFormInfos)
@@ -223,7 +216,7 @@ namespace GameFramework.UI
             {
                 if (string.IsNullOrEmpty(uiFormAssetName))
                 {
-                    throw new GameFrameworkException("UI form asset name is invalid.");
+                    throw new AshException("UI form asset name is invalid.");
                 }
 
                 List<IUIForm> uiForms = new List<IUIForm>();
@@ -272,7 +265,7 @@ namespace GameFramework.UI
                 UIFormInfo uiFormInfo = GetUIFormInfo(uiForm);
                 if (uiFormInfo == null)
                 {
-                    throw new GameFrameworkException(string.Format("Can not find UI form info for serial id '{0}', UI form asset name is '{1}'.", uiForm.SerialId.ToString(), uiForm.UIFormAssetName));
+                    throw new AshException(string.Format("Can not find UI form info for serial id '{0}', UI form asset name is '{1}'.", uiForm.SerialId.ToString(), uiForm.UIFormAssetName));
                 }
 
                 if (!uiFormInfo.Covered)
@@ -300,7 +293,7 @@ namespace GameFramework.UI
                 UIFormInfo uiFormInfo = GetUIFormInfo(uiForm);
                 if (uiFormInfo == null)
                 {
-                    throw new GameFrameworkException("Can not find UI form info.");
+                    throw new AshException("Can not find UI form info.");
                 }
 
                 m_UIFormInfos.Remove(uiFormInfo);
@@ -375,7 +368,7 @@ namespace GameFramework.UI
             {
                 if (uiForm == null)
                 {
-                    throw new GameFrameworkException("UI form is invalid.");
+                    throw new AshException("UI form is invalid.");
                 }
 
                 foreach (UIFormInfo uiFormInfo in m_UIFormInfos)

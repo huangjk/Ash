@@ -1,16 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-namespace GameFramework.DataTable
+﻿namespace Ash.DataTable
 {
     /// <summary>
     /// 加载数据表时加载依赖资源事件。
     /// </summary>
-    public sealed class LoadDataTableDependencyAssetEventArgs : GameFrameworkEventArgs
+    public sealed class LoadDataTableDependencyAssetEventArgs : BaseEventArgs
     {
         /// <summary>
         /// 初始化加载数据表时加载依赖资源事件的新实例。

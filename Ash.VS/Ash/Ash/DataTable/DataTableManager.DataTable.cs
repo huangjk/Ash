@@ -1,15 +1,8 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace GameFramework.DataTable
+namespace Ash.DataTable
 {
     internal partial class DataTableManager
     {
@@ -119,7 +112,7 @@ namespace GameFramework.DataTable
             {
                 if (condition == null)
                 {
-                    throw new GameFrameworkException("Condition is invalid.");
+                    throw new AshException("Condition is invalid.");
                 }
 
                 foreach (KeyValuePair<int, T> dataRow in m_DataSet)
@@ -159,7 +152,7 @@ namespace GameFramework.DataTable
             {
                 if (condition == null)
                 {
-                    throw new GameFrameworkException("Condition is invalid.");
+                    throw new AshException("Condition is invalid.");
                 }
 
                 foreach (KeyValuePair<int, T> dataRow in m_DataSet)
@@ -187,17 +180,17 @@ namespace GameFramework.DataTable
                 }
                 catch (Exception exception)
                 {
-                    if (exception is GameFrameworkException)
+                    if (exception is AshException)
                     {
                         throw;
                     }
 
-                    throw new GameFrameworkException(string.Format("Can not parse data table '{0}' at '{1}' with exception '{2}'.", Utility.Text.GetFullName<T>(Name), dataRowText, exception.ToString()), exception);
+                    throw new AshException(string.Format("Can not parse data table '{0}' at '{1}' with exception '{2}'.", Utility.Text.GetFullName<T>(Name), dataRowText, exception.ToString()), exception);
                 }
 
                 if (HasDataRow(dataRow.Id))
                 {
-                    throw new GameFrameworkException(string.Format("Already exist '{0}' in data table '{1}'.", dataRow.Id.ToString(), Utility.Text.GetFullName<T>(Name)));
+                    throw new AshException(string.Format("Already exist '{0}' in data table '{1}'.", dataRow.Id.ToString(), Utility.Text.GetFullName<T>(Name)));
                 }
 
                 m_DataSet.Add(dataRow.Id, dataRow);
@@ -238,7 +231,7 @@ namespace GameFramework.DataTable
             {
                 if (condition == null)
                 {
-                    throw new GameFrameworkException("Condition is invalid.");
+                    throw new AshException("Condition is invalid.");
                 }
 
                 List<T> results = new List<T>();
@@ -263,7 +256,7 @@ namespace GameFramework.DataTable
             {
                 if (comparison == null)
                 {
-                    throw new GameFrameworkException("Comparison is invalid.");
+                    throw new AshException("Comparison is invalid.");
                 }
 
                 List<T> allDataRows = new List<T>();
@@ -286,12 +279,12 @@ namespace GameFramework.DataTable
             {
                 if (condition == null)
                 {
-                    throw new GameFrameworkException("Condition is invalid.");
+                    throw new AshException("Condition is invalid.");
                 }
 
                 if (comparison == null)
                 {
-                    throw new GameFrameworkException("Comparison is invalid.");
+                    throw new AshException("Comparison is invalid.");
                 }
 
                 List<T> results = new List<T>();

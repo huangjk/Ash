@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using AshUnity;
-using Ash;
-
+using Ash.Event;
 
 public class EventPoolTest
 {
@@ -59,7 +58,7 @@ public class EventPoolTest
         EventComponent eventManager = AshApp.GetComponent<EventComponent>();
 
         //订阅
-        eventManager.Subscribe(1, TestCallBack);
+        eventManager.Subscribe(EventId.DownloadStart, TestCallBack);
 
         //发布事件
         TestEventArgs testEventArgs = new TestEventArgs("name", "aabb");

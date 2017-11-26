@@ -1,16 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
-namespace GameFramework.Network
+namespace Ash.Network
 {
     internal partial class NetworkManager
     {
@@ -36,13 +29,13 @@ namespace GameFramework.Network
             private bool m_Active;
             private bool m_Disposed;
 
-            public GameFrameworkAction<NetworkChannel, object> NetworkChannelConnected;
-            public GameFrameworkAction<NetworkChannel> NetworkChannelClosed;
-            public GameFrameworkAction<NetworkChannel, int, object> NetworkChannelSended;
-            public GameFrameworkAction<NetworkChannel, Packet> NetworkChannelReceived;
-            public GameFrameworkAction<NetworkChannel, int> NetworkChannelMissHeartBeat;
-            public GameFrameworkAction<NetworkChannel, NetworkErrorCode, string> NetworkChannelError;
-            public GameFrameworkAction<NetworkChannel, object> NetworkChannelCustomError;
+            public AshAction<NetworkChannel, object> NetworkChannelConnected;
+            public AshAction<NetworkChannel> NetworkChannelClosed;
+            public AshAction<NetworkChannel, int, object> NetworkChannelSended;
+            public AshAction<NetworkChannel, Packet> NetworkChannelReceived;
+            public AshAction<NetworkChannel, int> NetworkChannelMissHeartBeat;
+            public AshAction<NetworkChannel, NetworkErrorCode, string> NetworkChannelError;
+            public AshAction<NetworkChannel, object> NetworkChannelCustomError;
 
             /// <summary>
             /// 初始化网络频道的新实例。
@@ -120,13 +113,13 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     IPEndPoint ipEndPoint = (IPEndPoint)m_Socket.LocalEndPoint;
                     if (ipEndPoint == null)
                     {
-                        throw new GameFrameworkException("Local end point is invalid.");
+                        throw new AshException("Local end point is invalid.");
                     }
 
                     return ipEndPoint.Address;
@@ -142,13 +135,13 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     IPEndPoint ipEndPoint = (IPEndPoint)m_Socket.LocalEndPoint;
                     if (ipEndPoint == null)
                     {
-                        throw new GameFrameworkException("Local end point is invalid.");
+                        throw new AshException("Local end point is invalid.");
                     }
 
                     return ipEndPoint.Port;
@@ -164,13 +157,13 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     IPEndPoint ipEndPoint = (IPEndPoint)m_Socket.RemoteEndPoint;
                     if (ipEndPoint == null)
                     {
-                        throw new GameFrameworkException("Remote end point is invalid.");
+                        throw new AshException("Remote end point is invalid.");
                     }
 
                     return ipEndPoint.Address;
@@ -186,13 +179,13 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     IPEndPoint ipEndPoint = (IPEndPoint)m_Socket.RemoteEndPoint;
                     if (ipEndPoint == null)
                     {
-                        throw new GameFrameworkException("Remote end point is invalid.");
+                        throw new AshException("Remote end point is invalid.");
                     }
 
                     return ipEndPoint.Port;
@@ -260,7 +253,7 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     return m_Socket.ReceiveBufferSize;
@@ -269,7 +262,7 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     m_Socket.ReceiveBufferSize = value;
@@ -285,7 +278,7 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     return m_Socket.SendBufferSize;
@@ -294,7 +287,7 @@ namespace GameFramework.Network
                 {
                     if (m_Socket == null)
                     {
-                        throw new GameFrameworkException("You must initialize network channel first.");
+                        throw new AshException("You must initialize network channel first.");
                     }
 
                     m_Socket.SendBufferSize = value;
@@ -418,7 +411,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new AshException(errorMessage);
                 }
 
                 try
@@ -516,7 +509,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new AshException(errorMessage);
                 }
 
                 try
@@ -563,7 +556,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new AshException(errorMessage);
                 }
 
                 if (packet == null)
@@ -575,7 +568,7 @@ namespace GameFramework.Network
                         return;
                     }
 
-                    throw new GameFrameworkException(errorMessage);
+                    throw new AshException(errorMessage);
                 }
 
                 try
@@ -657,12 +650,12 @@ namespace GameFramework.Network
 
                 if (packetHeaderLength != 1 || packetHeaderLength != 2 || packetHeaderLength != 4)
                 {
-                    throw new GameFrameworkException("Packet header length is invalid, you can only use 1, 2 or 4.");
+                    throw new AshException("Packet header length is invalid, you can only use 1, 2 or 4.");
                 }
 
                 if (maxPacketLength <= 0)
                 {
-                    throw new GameFrameworkException("Max packet length is invalid.");
+                    throw new AshException("Max packet length is invalid.");
                 }
 
                 m_PacketHeaderLength = packetHeaderLength;
@@ -677,7 +670,7 @@ namespace GameFramework.Network
                         m_NetworkType = NetworkType.IPv6;
                         break;
                     default:
-                        throw new GameFrameworkException(string.Format("Not supported address family '{0}'.", addressFamily.ToString()));
+                        throw new AshException(string.Format("Not supported address family '{0}'.", addressFamily.ToString()));
                 }
 
                 m_Socket = new Socket(addressFamily, SocketType.Stream, ProtocolType.Tcp);
@@ -708,12 +701,12 @@ namespace GameFramework.Network
             {
                 if (m_ReceiveState.ReceivedLength != m_ReceiveState.Length)
                 {
-                    throw new GameFrameworkException(string.Format("Receive length '{0}' is not equal to length '{1}'.", m_ReceiveState.ReceivedLength.ToString(), m_ReceiveState.Length.ToString()));
+                    throw new AshException(string.Format("Receive length '{0}' is not equal to length '{1}'.", m_ReceiveState.ReceivedLength.ToString(), m_ReceiveState.Length.ToString()));
                 }
 
                 if (m_ReceiveState.Length < m_PacketHeaderLength)
                 {
-                    throw new GameFrameworkException(string.Format("Length '{0}' is smaller than length header.", m_ReceiveState.Length.ToString()));
+                    throw new AshException(string.Format("Length '{0}' is smaller than length header.", m_ReceiveState.Length.ToString()));
                 }
 
                 if (m_ReceiveState.Length == m_PacketHeaderLength)
@@ -728,7 +721,7 @@ namespace GameFramework.Network
                             return false;
                         }
 
-                        throw new GameFrameworkException(errorMessage);
+                        throw new AshException(errorMessage);
                     }
 
                     m_ReceiveState.Length += packetLength;
@@ -741,7 +734,7 @@ namespace GameFramework.Network
                             return false;
                         }
 
-                        throw new GameFrameworkException(errorMessage);
+                        throw new AshException(errorMessage);
                     }
 
                     return true;

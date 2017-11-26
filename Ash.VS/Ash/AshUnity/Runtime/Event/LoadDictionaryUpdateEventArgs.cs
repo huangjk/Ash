@@ -1,0 +1,70 @@
+﻿using Ash.Event;
+
+namespace AshUnity
+{
+    /// <summary>
+    /// 加载字典更新事件。
+    /// </summary>
+    public sealed class LoadDictionaryUpdateEventArgs : AshEventArgs
+    {
+        /// <summary>
+        /// 初始化加载字典更新事件的新实例。
+        /// </summary>
+        /// <param name="e">内部事件。</param>
+        public LoadDictionaryUpdateEventArgs(Ash.Localization.LoadDictionaryUpdateEventArgs e)
+        {
+            LoadDictionaryInfo loadDictionaryInfo = (LoadDictionaryInfo)e.UserData;
+            DictionaryName = loadDictionaryInfo.DictionaryName;
+            DictionaryAssetName = e.DictionaryAssetName;
+            Progress = e.Progress;
+            UserData = loadDictionaryInfo.UserData;
+        }
+
+        /// <summary>
+        /// 获取加载字典失败事件编号。
+        /// </summary>
+        public override int Id
+        {
+            get
+            {
+                return (int)EventId.LoadDictionaryUpdate;
+            }
+        }
+
+        /// <summary>
+        /// 获取字典名称。
+        /// </summary>
+        public string DictionaryName
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取字典资源名称。
+        /// </summary>
+        public string DictionaryAssetName
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取加载字典进度。
+        /// </summary>
+        public float Progress
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取用户自定义数据。
+        /// </summary>
+        public object UserData
+        {
+            get;
+            private set;
+        }
+    }
+}

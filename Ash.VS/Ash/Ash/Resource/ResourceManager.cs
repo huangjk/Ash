@@ -33,7 +33,7 @@ namespace Ash.Resource
         private string m_ReadOnlyPath;
         private string m_ReadWritePath;
         private ResourceMode m_ResourceMode;
-        private bool m_RefuseSetCurrentVariant;
+        private bool m_RefuseSetCurrentVariant;     //拒绝使用变体
         private string m_CurrentVariant;
         private string m_UpdatePrefixUri;
         private string m_ApplicableGameVersion;

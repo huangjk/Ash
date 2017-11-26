@@ -1,20 +1,13 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework.Resource;
+﻿using Ash.Resource;
 using System;
 using System.Collections.Generic;
 
-namespace GameFramework.Localization
+namespace Ash.Localization
 {
     /// <summary>
     /// 本地化管理器。
     /// </summary>
-    internal sealed class LocalizationManager : GameFrameworkModule, ILocalizationManager
+    internal sealed class LocalizationManager : AshModule, ILocalizationManager
     {
         private readonly Dictionary<string, string> m_Dictionary;
         private readonly LoadAssetCallbacks m_LoadAssetCallbacks;
@@ -55,7 +48,7 @@ namespace GameFramework.Localization
             {
                 if (value == Language.Unspecified)
                 {
-                    throw new GameFrameworkException("Language is invalid.");
+                    throw new AshException("Language is invalid.");
                 }
 
                 m_Language = value;
@@ -71,7 +64,7 @@ namespace GameFramework.Localization
             {
                 if (m_LocalizationHelper == null)
                 {
-                    throw new GameFrameworkException("You must set localization helper first.");
+                    throw new AshException("You must set localization helper first.");
                 }
 
                 return m_LocalizationHelper.SystemLanguage;
@@ -175,7 +168,7 @@ namespace GameFramework.Localization
         {
             if (resourceManager == null)
             {
-                throw new GameFrameworkException("Resource manager is invalid.");
+                throw new AshException("Resource manager is invalid.");
             }
 
             m_ResourceManager = resourceManager;
@@ -189,7 +182,7 @@ namespace GameFramework.Localization
         {
             if (localizationHelper == null)
             {
-                throw new GameFrameworkException("Localization helper is invalid.");
+                throw new AshException("Localization helper is invalid.");
             }
 
             m_LocalizationHelper = localizationHelper;
@@ -213,12 +206,12 @@ namespace GameFramework.Localization
         {
             if (m_ResourceManager == null)
             {
-                throw new GameFrameworkException("You must set resource manager first.");
+                throw new AshException("You must set resource manager first.");
             }
 
             if (m_LocalizationHelper == null)
             {
-                throw new GameFrameworkException("You must set localization helper first.");
+                throw new AshException("You must set localization helper first.");
             }
 
             m_ResourceManager.LoadAsset(dictionaryAssetName, m_LoadAssetCallbacks, userData);
@@ -244,7 +237,7 @@ namespace GameFramework.Localization
         {
             if (m_LocalizationHelper == null)
             {
-                throw new GameFrameworkException("You must set localization helper first.");
+                throw new AshException("You must set localization helper first.");
             }
 
             return m_LocalizationHelper.ParseDictionary(text, userData);
@@ -260,7 +253,7 @@ namespace GameFramework.Localization
         {
             if (string.IsNullOrEmpty(key))
             {
-                throw new GameFrameworkException("Key is invalid.");
+                throw new AshException("Key is invalid.");
             }
 
             string value = null;
@@ -298,7 +291,7 @@ namespace GameFramework.Localization
         {
             if (string.IsNullOrEmpty(key))
             {
-                throw new GameFrameworkException("Key is invalid.");
+                throw new AshException("Key is invalid.");
             }
 
             return m_Dictionary.ContainsKey(key);
@@ -313,7 +306,7 @@ namespace GameFramework.Localization
         {
             if (string.IsNullOrEmpty(key))
             {
-                throw new GameFrameworkException("Key is invalid.");
+                throw new AshException("Key is invalid.");
             }
 
             string value = null;
@@ -363,7 +356,7 @@ namespace GameFramework.Localization
             {
                 if (!m_LocalizationHelper.LoadDictionary(dictionaryAsset, userData))
                 {
-                    throw new GameFrameworkException(string.Format("Load dictionary failure in helper, asset name '{0}'.", dictionaryAssetName));
+                    throw new AshException(string.Format("Load dictionary failure in helper, asset name '{0}'.", dictionaryAssetName));
                 }
             }
             catch (Exception exception)
@@ -396,7 +389,7 @@ namespace GameFramework.Localization
                 return;
             }
 
-            throw new GameFrameworkException(appendErrorMessage);
+            throw new AshException(appendErrorMessage);
         }
 
         private void LoadDictionaryUpdateCallback(string dictionaryAssetName, float progress, object userData)

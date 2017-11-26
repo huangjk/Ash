@@ -79,10 +79,14 @@
     <Compile Include="Editor\Config\FieldType.cs" />
     <Compile Include="Editor\Config\ValuePropertityInfo.cs" />
     <Compile Include="Editor\Config\ConfigEditorSchema.cs" />
-    <Compile Include="Editor\Inspector\GameFrameworkInspector.cs" />
-    <Compile Include="Editor\Inspector\ObjectPoolComponentInspector.cs" />
+    <Compile Include="Editor\Inspector\AshInspector.cs" />
+    <Compile Include="Editor\Inspector\ProcedureComponentInspector.cs" />
     <Compile Include="Editor\Log\LogRedirection.cs" />
     <Compile Include="Editor\Log\LogTrack.cs" />
+    <Compile Include="Editor\Misc\BuildSettings.cs" />
+    <Compile Include="Editor\Misc\ContextMenu.cs" />
+    <Compile Include="Editor\Misc\Help.cs" />
+    <Compile Include="Editor\Misc\HelperInfo.cs" />
     <Compile Include="Editor\Misc\OpenFolder.cs" />
     <Compile Include="Editor\Misc\ScriptableObjectCreater.cs" />
     <Compile Include="Editor\Misc\TypeHelper.cs" />
@@ -102,7 +106,6 @@
       <Name>Ash</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) D:\Ash\Ash.Unity\Assets\ThirdParty\Ash\Ash.Lib</PostBuildEvent>

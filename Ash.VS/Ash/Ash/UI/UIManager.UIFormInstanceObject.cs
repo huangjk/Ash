@@ -1,13 +1,6 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
+﻿using Ash.ObjectPool;
 
-using GameFramework.ObjectPool;
-
-namespace GameFramework.UI
+namespace Ash.UI
 {
     internal partial class UIManager
     {
@@ -24,12 +17,12 @@ namespace GameFramework.UI
             {
                 if (uiFormAsset == null)
                 {
-                    throw new GameFrameworkException("UI form asset is invalid.");
+                    throw new AshException("UI form asset is invalid.");
                 }
 
                 if (uiFormHelper == null)
                 {
-                    throw new GameFrameworkException("UI form helper is invalid.");
+                    throw new AshException("UI form helper is invalid.");
                 }
 
                 m_UIFormAsset = uiFormAsset;

@@ -1,15 +1,8 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using GameFramework.ObjectPool;
-using GameFramework.Resource;
+﻿using Ash.ObjectPool;
+using Ash.Resource;
 using System;
 
-namespace GameFramework.UI
+namespace Ash.UI
 {
     /// <summary>
     /// 界面管理器接口。

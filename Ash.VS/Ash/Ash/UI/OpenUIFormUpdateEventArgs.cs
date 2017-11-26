@@ -1,16 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-namespace GameFramework.UI
+﻿namespace Ash.UI
 {
     /// <summary>
     /// 打开界面更新事件。
     /// </summary>
-    public sealed class OpenUIFormUpdateEventArgs : GameFrameworkEventArgs
+    public sealed class OpenUIFormUpdateEventArgs : BaseEventArgs
     {
         /// <summary>
         /// 初始化打开界面更新事件的新实例。

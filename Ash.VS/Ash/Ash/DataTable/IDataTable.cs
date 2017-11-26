@@ -1,14 +1,7 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework.DataTable
+namespace Ash.DataTable
 {
     /// <summary>
     /// 数据表接口。

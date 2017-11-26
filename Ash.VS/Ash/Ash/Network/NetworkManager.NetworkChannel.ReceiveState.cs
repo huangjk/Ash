@@ -1,11 +1,4 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-namespace GameFramework.Network
+﻿namespace Ash.Network
 {
     internal partial class NetworkManager
     {
@@ -21,7 +14,7 @@ namespace GameFramework.Network
                 {
                     if (bufferSize <= 0)
                     {
-                        throw new GameFrameworkException("Buffer size is invalid.");
+                        throw new AshException("Buffer size is invalid.");
                     }
 
                     m_Buffer = new byte[bufferSize];

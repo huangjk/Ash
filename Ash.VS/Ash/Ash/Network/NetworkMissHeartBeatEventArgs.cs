@@ -1,16 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-namespace GameFramework.Network
+﻿namespace Ash.Network
 {
     /// <summary>
     /// 网络心跳包丢失事件。
     /// </summary>
-    public sealed class NetworkMissHeartBeatEventArgs : GameFrameworkEventArgs
+    public sealed class NetworkMissHeartBeatEventArgs : BaseEventArgs
     {
         /// <summary>
         /// 初始化网络心跳包丢失事件的新实例。

@@ -41,7 +41,7 @@
     <Compile Include="Ash\Support\Event\EventDispatcher\Dispatcher.EventHandler.cs" />
     <Compile Include="Ash\Support\Event\EventDispatcher\IAshEventHandler.cs" />
     <Compile Include="Ash\Support\Event\EventPool\BaseEventArgs.cs" />
-    <Compile Include="Ash\Support\Event\EventPool\AshEventArgs.cs" />
+    <Compile Include="Event\AshEventArgs.cs" />
     <Compile Include="Ash\Support\Event\EventPool\EventPool.cs" />
     <Compile Include="Ash\Support\Event\EventPool\EventPool.Event.cs" />
     <Compile Include="Ash\Support\Event\EventPool\EventPoolMode.cs" />
@@ -72,6 +72,17 @@
     <Compile Include="DataNode\DataNodeManager.DataNode.cs" />
     <Compile Include="DataNode\IDataNode.cs" />
     <Compile Include="DataNode\IDataNodeManager.cs" />
+    <Compile Include="DataTable\DataTableBase.cs" />
+    <Compile Include="DataTable\DataTableManager.cs" />
+    <Compile Include="DataTable\DataTableManager.DataTable.cs" />
+    <Compile Include="DataTable\IDataRow.cs" />
+    <Compile Include="DataTable\IDataTable.cs" />
+    <Compile Include="DataTable\IDataTableHelper.cs" />
+    <Compile Include="DataTable\IDataTableManager.cs" />
+    <Compile Include="DataTable\LoadDataTableDependencyAssetEventArgs.cs" />
+    <Compile Include="DataTable\LoadDataTableFailureEventArgs.cs" />
+    <Compile Include="DataTable\LoadDataTableSuccessEventArgs.cs" />
+    <Compile Include="DataTable\LoadDataTableUpdateEventArgs.cs" />
     <Compile Include="Debugger\DebuggerManager.cs" />
     <Compile Include="Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
     <Compile Include="Debugger\IDebuggerManager.cs" />
@@ -117,6 +128,32 @@
     <Compile Include="Fsm\FsmState.cs" />
     <Compile Include="Fsm\IFsm.cs" />
     <Compile Include="Fsm\IFsmManager.cs" />
+    <Compile Include="Localization\ILocalizationHelper.cs" />
+    <Compile Include="Localization\ILocalizationManager.cs" />
+    <Compile Include="Localization\Language.cs" />
+    <Compile Include="Localization\LoadDictionaryDependencyAssetEventArgs.cs" />
+    <Compile Include="Localization\LoadDictionaryFailureEventArgs.cs" />
+    <Compile Include="Localization\LoadDictionarySuccessEventArgs.cs" />
+    <Compile Include="Localization\LoadDictionaryUpdateEventArgs.cs" />
+    <Compile Include="Localization\LocalizationManager.cs" />
+    <Compile Include="Network\INetworkChannel.cs" />
+    <Compile Include="Network\INetworkHelper.cs" />
+    <Compile Include="Network\INetworkManager.cs" />
+    <Compile Include="Network\IPacketHandler.cs" />
+    <Compile Include="Network\NetworkClosedEventArgs.cs" />
+    <Compile Include="Network\NetworkConnectedEventArgs.cs" />
+    <Compile Include="Network\NetworkCustomErrorEventArgs.cs" />
+    <Compile Include="Network\NetworkErrorCode.cs" />
+    <Compile Include="Network\NetworkErrorEventArgs.cs" />
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="Network\NetworkManager.NetworkChannel.cs" />
+    <Compile Include="Network\NetworkManager.NetworkChannel.HeartBeatState.cs" />
+    <Compile Include="Network\NetworkManager.NetworkChannel.ReceiveState.cs" />
+    <Compile Include="Network\NetworkManager.NetworkChannel.SocketUserData.cs" />
+    <Compile Include="Network\NetworkMissHeartBeatEventArgs.cs" />
+    <Compile Include="Network\NetworkSendPacketEventArgs.cs" />
+    <Compile Include="Network\NetworkType.cs" />
+    <Compile Include="Network\Packet.cs" />
     <Compile Include="ObjectPool\IObjectPool.cs" />
     <Compile Include="ObjectPool\IObjectPoolManager.cs" />
     <Compile Include="ObjectPool\ObjectBase.cs" />
@@ -222,6 +259,21 @@
     <Compile Include="Sound\SoundManager.PlaySoundInfo.cs" />
     <Compile Include="Sound\SoundManager.SoundAgent.cs" />
     <Compile Include="Sound\SoundManager.SoundGroup.cs" />
+    <Compile Include="UI\CloseUIFormCompleteEventArgs.cs" />
+    <Compile Include="UI\IUIForm.cs" />
+    <Compile Include="UI\IUIFormHelper.cs" />
+    <Compile Include="UI\IUIGroup.cs" />
+    <Compile Include="UI\IUIGroupHelper.cs" />
+    <Compile Include="UI\IUIManager.cs" />
+    <Compile Include="UI\OpenUIFormDependencyAssetEventArgs.cs" />
+    <Compile Include="UI\OpenUIFormFailureEventArgs.cs" />
+    <Compile Include="UI\OpenUIFormSuccessEventArgs.cs" />
+    <Compile Include="UI\OpenUIFormUpdateEventArgs.cs" />
+    <Compile Include="UI\UIManager.cs" />
+    <Compile Include="UI\UIManager.OpenUIFormInfo.cs" />
+    <Compile Include="UI\UIManager.UIFormInstanceObject.cs" />
+    <Compile Include="UI\UIManager.UIGroup.cs" />
+    <Compile Include="UI\UIManager.UIGroup.UIFormInfo.cs" />
     <Compile Include="Utility\Nullable.cs" />
     <Compile Include="Utility\Profiler\DontProfileAttribute.cs" />
     <Compile Include="Utility\Profiler\Profiler.cs" />
@@ -251,6 +303,7 @@
     <Compile Include="WebRequest\WebRequestStartEventArgs.cs" />
     <Compile Include="WebRequest\WebRequestSuccessEventArgs.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) D:\Ash\Ash.Unity\Assets\ThirdParty\Ash\Ash.Lib</PostBuildEvent>

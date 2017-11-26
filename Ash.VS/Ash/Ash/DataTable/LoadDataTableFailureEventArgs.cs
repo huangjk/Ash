@@ -1,16 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2017 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-namespace GameFramework.DataTable
+﻿namespace Ash.DataTable
 {
     /// <summary>
     /// 加载数据表失败事件。
     /// </summary>
-    public sealed class LoadDataTableFailureEventArgs : GameFrameworkEventArgs
+    public sealed class LoadDataTableFailureEventArgs : BaseEventArgs
     {
         /// <summary>
         /// 初始化加载数据表失败事件的新实例。
