@@ -1,5 +1,0 @@
-{
-  "ProjectVersion": "0.1.0",
-  "InternalVersion": 0,
-  "CheckVersionUrl": "http://Ash.cn/Framework/version.txt"
-}
