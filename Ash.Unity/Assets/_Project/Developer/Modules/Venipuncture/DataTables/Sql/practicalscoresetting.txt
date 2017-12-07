@@ -1,0 +1,2 @@
+"id"	"userId"	"checkAdvice"	"checkPatient"	"talk"	"partSelcet"	"wash"	"wearMask"	"confectSolution"	"closingRegulator"	"checkAgain"	"fiveItem"	"disinfect1"	"tourniquet"	"disinfect2"	"scavenging2"	"puncture"	"fixation"	"loosenTourniquet"	"openingRegulator"	"infusionStick"	"drippingSpeed"
+"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"	"1"

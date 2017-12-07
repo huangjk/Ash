@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63294F78-7C76-4D40-A206-82EEDE3056F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AshUnityEditor</RootNamespace>
+    <AssemblyName>AshUnityEditor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNITY_5_6_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\3rd\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\3rd\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\3rd\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzer.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzerController.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetBundleAnalyzerController.Stamp.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\AssetsOrder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\DependencyData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleAnalyzer\ScatteredAssetsOrder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetBundleCode.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetBundleData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.AssetData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.BuildReport.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\AssetBundleBuilderController.VersionListData.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\BuildAssetBundle.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleBuilder\IBuildEventHandler.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\Asset.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundle.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundleCollection.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundleLoadType.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleCollection\AssetBundleType.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.AssetBundleFolder.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.AssetBundleItem.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditor.MenuState.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetBundleEditorController.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\AssetSorterType.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\SourceAsset.cs" />
+    <Compile Include="Editor\AssetBundleTools\AssetBundleEditor\SourceFolder.cs" />
+    <Compile Include="Editor\Config\DrawHelper.cs" />
+    <Compile Include="Editor\Config\FieldHelper.cs" />
+    <Compile Include="Editor\Config\FieldType.cs" />
+    <Compile Include="Editor\Config\ValuePropertityInfo.cs" />
+    <Compile Include="Editor\Config\ConfigEditorSchema.cs" />
+    <Compile Include="Editor\Inspector\AshInspector.cs" />
+    <Compile Include="Editor\Inspector\ProcedureComponentInspector.cs" />
+    <Compile Include="Editor\Log\LogRedirection.cs" />
+    <Compile Include="Editor\Log\LogTrack.cs" />
+    <Compile Include="Editor\Misc\BuildSettings.cs" />
+    <Compile Include="Editor\Misc\ContextMenu.cs" />
+    <Compile Include="Editor\Misc\Help.cs" />
+    <Compile Include="Editor\Misc\HelperInfo.cs" />
+    <Compile Include="Editor\Misc\OpenFolder.cs" />
+    <Compile Include="Editor\Misc\ScriptableObjectCreater.cs" />
+    <Compile Include="Editor\Misc\TypeHelper.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\ProjectDirectoryEditor.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\IProjectDirectory.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\ProjectCatalogDefaultData.cs" />
+    <Compile Include="Editor\ProjectCatalogDirectory\ProjectDirectory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AshUnity\AshUnity.csproj">
+      <Project>{bbccdcc2-0df9-4877-a8de-65a2de96cbd6}</Project>
+      <Name>AshUnity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ash\Ash.csproj">
+      <Project>{76a64c68-3045-4b57-944d-4770624808c7}</Project>
+      <Name>Ash</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) D:\Ash\Ash.Unity\Assets\ThirdParty\Ash\Ash.Lib</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

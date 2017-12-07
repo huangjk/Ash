@@ -1,0 +1,92 @@
+﻿ 
+using System;
+using System.Collections.Generic;
+using Type = System.Type;
+
+namespace  Ash
+{
+    public static partial class Utility
+    {
+        /// <summary>
+        /// 程序集相关的实用函数。
+        /// </summary>
+        public static class Assembly
+        {
+            private static readonly Dictionary<string, System.Type> s_CachedTypes = new Dictionary<string, System.Type>();
+            private static readonly List<string> s_LoadedAssemblyNames = new List<string>();
+
+            static Assembly()
+            {
+                System.Reflection.Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                foreach (System.Reflection.Assembly assembly in assemblies)
+                {
+                    s_LoadedAssemblyNames.Add(assembly.FullName);
+                }
+            }
+
+            /// <summary>
+            /// 获取已加载的程序集名称。
+            /// </summary>
+            /// <returns>已加载的程序集名称。</returns>
+            public static string[] GetLoadedAssemblyNames()
+            {
+                return s_LoadedAssemblyNames.ToArray();
+            }
+
+            /// <summary>
+            /// 从已加载的程序集中获取类型。
+            /// </summary>
+            /// <param name="typeName">要获取的类型名。</param>
+            /// <returns>获取的类型。</returns>
+            public static System.Type GetTypeWithinLoadedAssemblies(string typeName)
+            {
+                if (string.IsNullOrEmpty(typeName))
+                {
+                    throw new AshException("Type name is invalid.");
+                }
+
+                System.Type type = null;
+                if (s_CachedTypes.TryGetValue(typeName, out type))
+                {
+                    return type;
+                }
+
+                type = System.Type.GetType(typeName);
+                if (type != null)
+                {
+                    s_CachedTypes.Add(typeName, type);
+                    return type;
+                }
+
+                foreach (string assemblyName in s_LoadedAssemblyNames)
+                {
+                    type = System.Type.GetType(string.Format("{0}, {1}", typeName, assemblyName));
+                    if (type != null)
+                    {
+                        s_CachedTypes.Add(typeName, type);
+                        return type;
+                    }
+                }
+
+                return null;
+            }
+
+            /// <summary>
+            /// 获得类型的默认第一个属性
+            /// </summary>
+            /// <typeparam name="T">属性的类型</typeparam>
+            /// <param name="type">拥有属性的类型</param>
+            /// <param name="inherited"></param>
+            /// <returns>需要获得的属性</returns>
+            public static T GetDefaultFirstAttribute<T>(System.Type type, bool inherited = true)
+            {
+                object[] o = type.GetCustomAttributes(typeof(T), inherited);
+                if (o == null || o.Length < 1)
+                {
+                    return default(T);
+                }
+                return ((T)o[0]);
+            }
+        }    
+    }
+}

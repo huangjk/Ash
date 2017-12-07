@@ -1,0 +1,60 @@
+﻿using Ash.Event;
+using Ash.Network;
+
+namespace AshUnity
+{
+    /// <summary>
+    /// 网络错误事件。
+    /// </summary>
+    public sealed class NetworkErrorEventArgs : AshEventArgs
+    {
+        /// <summary>
+        /// 初始化网络错误事件的新实例。
+        /// </summary>
+        /// <param name="e">内部事件。</param>
+        public NetworkErrorEventArgs(Ash.Network.NetworkErrorEventArgs e)
+        {
+            NetworkChannel = e.NetworkChannel;
+            ErrorCode = e.ErrorCode;
+            ErrorMessage = e.ErrorMessage;
+        }
+
+        /// <summary>
+        /// 获取连接错误事件编号。
+        /// </summary>
+        public override int Id
+        {
+            get
+            {
+                return (int)EventId.NetworkError;
+            }
+        }
+
+        /// <summary>
+        /// 获取网络频道。
+        /// </summary>
+        public INetworkChannel NetworkChannel
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取错误码。
+        /// </summary>
+        public NetworkErrorCode ErrorCode
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取错误信息。
+        /// </summary>
+        public string ErrorMessage
+        {
+            get;
+            private set;
+        }
+    }
+}

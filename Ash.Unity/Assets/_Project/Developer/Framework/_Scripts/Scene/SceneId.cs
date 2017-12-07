@@ -1,0 +1,15 @@
+﻿namespace Framework
+{
+    /// <summary>
+    /// 场景编号。
+    /// </summary>
+    public enum SceneId
+    {
+        Undefined = 0,
+
+        /// <summary>
+        /// 菜单场景。
+        /// </summary>
+        Menu = 1,
+    }
+}
