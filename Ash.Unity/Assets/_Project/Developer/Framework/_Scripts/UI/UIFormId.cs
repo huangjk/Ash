@@ -1,4 +1,4 @@
-﻿namespace Framework
+namespace Framework
 {
     /// <summary>
     /// 界面编号。
@@ -10,21 +10,35 @@
         /// <summary>
         /// 弹出框。
         /// </summary>
-        DialogForm = 1,
+        DialogUI = 1,
 
         /// <summary>
-        /// 主菜单。
+        /// 病例信息面板
         /// </summary>
-        MenuForm = 100,
+        CaseDetails = 100,
 
         /// <summary>
-        /// 设置。
+        /// 提示信息面板
         /// </summary>
-        SettingForm = 101,
+        Tooltip = 101,
 
-        /// <summary>
-        /// 关于。
-        /// </summary>
-        AboutForm = 102,
+        LoginUIForm,
+        ModuleSelsectUIForm,
+        UserManagerUIForm,
+        EditorSelectUIForm,
+        CaseEditorUIForm,
+        QuestionEditorUIForm,
+        ExamPaperEditorUIForm,
+        ExamEditorUIForm,
+        PopUpUIForm,
+        ScoreEditorUIForm,
+        ScoreManagerUIForm,
+        TrainingModuleUIForm,
+        TheoryModuleUIForm,
+        PracticeModuleUIForm,
+
+        Test,
+        TooltipUI,
+        //#
     }
 }

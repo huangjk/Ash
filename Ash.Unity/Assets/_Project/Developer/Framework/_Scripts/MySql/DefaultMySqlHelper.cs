@@ -70,7 +70,7 @@ namespace Framework
                         break;
 
                     case 1045:
-                        Ash.Log.Error("Invalid username/password, please try again");
+                        Ash.Log.Error("Invalid username/password, please try again: " + ex);
                         break;
                 }
                 return false;

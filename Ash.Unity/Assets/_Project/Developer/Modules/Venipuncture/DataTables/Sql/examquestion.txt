@@ -1,2 +1,0 @@
-"id"	"name"	"item1"	"item2"	"item3"	"item4"	"rightAnswer"	"TheoreticalPaper"
-"1"	"外科题目1"	"AAA"	"BBB"	"CCC"	"DDD"	"1,2,3"	"1"

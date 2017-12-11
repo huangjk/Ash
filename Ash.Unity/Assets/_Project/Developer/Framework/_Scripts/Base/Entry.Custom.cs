@@ -23,7 +23,7 @@ namespace Framework
         private static void InitCustomComponents()
         {
             Config = AshApp.GetComponent<ConfigComponent>();
-            MySql = AshApp.GetComponent<MySqlComponent>();
+            //MySql = AshApp.GetComponent<MySqlComponent>();
         }
     }
 }

@@ -46,6 +46,16 @@ namespace Framework
 
         public void InitAppBuildInfo()
         {
+
+#if UNITY_EDITOR
+            BuildInfo = m_AppBuildInfo;
+            if (BuildInfo == null)
+            {
+                Log.Fatal("AppBuildInfo is null!");
+                AshApp.Shutdown(ShutdownType.Quit);
+                return;
+            }
+#else
             AppBuildInfoPath = Application.streamingAssetsPath + "//AppBuildInfo.Json";
 
             if(Utility.File.Exists(AppBuildInfoPath))
@@ -68,11 +78,13 @@ namespace Framework
                     BuildInfo.SaveToJSON(AppBuildInfoPath);
                 }
             }
+#endif
 
             Entry.Base.GameVersion = Entry.Config.BuildInfo.Version;
             Entry.Base.InternalApplicationVersion = Entry.Config.BuildInfo.InternalVersion;
 
-            Entry.MySql.Init(Entry.Config.BuildInfo.MySqlServerInfo);
+            if(Entry.MySql != null)
+                Entry.MySql.Init(Entry.Config.BuildInfo.MySqlServerInfo);
         }
 
         public void InitDefaultDictionary()

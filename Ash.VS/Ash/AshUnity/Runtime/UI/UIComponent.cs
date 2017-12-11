@@ -443,7 +443,8 @@ namespace AshUnity
         /// <returns>界面的序列编号。</returns>
         public int OpenUIForm(Type uiLogicType, string uiFormAssetName, string uiGroupName, bool pauseCoveredUIForm, object userData)
         {
-            return m_UIManager.OpenUIForm(uiFormAssetName, uiGroupName, pauseCoveredUIForm, new ShowUIInfo(uiLogicType, userData));
+            //Log.Info(TooltipParams.Message);
+            return m_UIManager.OpenUIForm(uiFormAssetName, uiGroupName, pauseCoveredUIForm, new OpenUIFormInfo(uiLogicType, userData));
         }
 
         /// <summary>

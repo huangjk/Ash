@@ -1,2 +1,0 @@
-"id"	"time"	"userId"	"theoreticalPaperId"	"studentAnswer"
-"1"	"1"	"1"	"1"	"1"

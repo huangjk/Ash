@@ -78,40 +78,41 @@ namespace Framework
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                LoadDataTableFormMySql<DRExamQuestion>("examquestion");
+            //if (Input.GetKeyDown(KeyCode.Alpha1))
+            //{
+            //    LoadDataTableFormMySql<DRUser>("user");
 
-                IDataTable<DRExamQuestion> table = Entry.DataTable.GetDataTable<DRExamQuestion>();
+            //    IDataTable<DRUser> table = Entry.DataTable.GetDataTable<DRUser>();
 
-                Log.Debug("11111" + table.Count);
-            }
+            //    DRUser a = table.MaxIdDataRow;
+            //    Debug.Log("111111: " + table.Count);
+            //}
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                IDataTable<DRExamQuestion> table = Entry.DataTable.GetDataTable<DRExamQuestion>();
+            //if (Input.GetKeyDown(KeyCode.Alpha2))
+            //{
+            //    IDataTable<DRExamQuestion> table = Entry.DataTable.GetDataTable<DRExamQuestion>();
 
-                //Log.Debug("11111" + table.Count);
+            //    //Log.Debug("11111" + table.Count);
 
-                //table.AddDataRow(new DRCasehistory(2, "张三", 1, 1, 1, "似懂非懂是丰富沙发斯蒂芬粉色粉色粉色粉色发的沙发斯蒂芬", "注意事项胜多负少的胜多负少", "都是范德萨范德萨发生的范德萨发斯蒂芬", "都是范德萨范德萨发斯蒂芬斯蒂芬斯蒂芬佛挡杀佛斯蒂芬斯蒂芬发顺丰"));
+            //    //table.AddDataRow(new DRCasehistory(2, "张三", 1, 1, 1, "似懂非懂是丰富沙发斯蒂芬粉色粉色粉色粉色发的沙发斯蒂芬", "注意事项胜多负少的胜多负少", "都是范德萨范德萨发生的范德萨发斯蒂芬", "都是范德萨范德萨发斯蒂芬斯蒂芬斯蒂芬佛挡杀佛斯蒂芬斯蒂芬发顺丰"));
 
-                for (int i = 5; i < 15; i++)
-                {
-                    table.AddDataRow(new DRExamQuestion(i, "水电费sad", "第三方收到水电费", "第三方收到水电费", "的范德萨发", "递四方速递", new int[] { 1, 2 }, new int[] { 1, 2 }));
-                }
-            }
+            //    for (int i = 5; i < 15; i++)
+            //    {
+            //        table.AddDataRow(new DRExamQuestion(i, "水电费sad", "第三方收到水电费", "第三方收到水电费", "的范德萨发", "递四方速递", new int[] { 1, 2 }, new int[] { 1, 2 }));
+            //    }
+            //}
 
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                IDataTable<DRUser> table = Entry.DataTable.GetDataTable<DRUser>();
-                table.DeleteDataRow(11);
-            }
+            //if (Input.GetKeyDown(KeyCode.Alpha3))
+            //{
+            //    IDataTable<DRUser> table = Entry.DataTable.GetDataTable<DRUser>();
+            //    table.DeleteDataRow(11);
+            //}
 
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                IDataTable<DRUser> table = Entry.DataTable.GetDataTable<DRUser>();
-                table.UpdateDataRow(new DRUser(12, 12, "哈啊哈", "哈啊哈", "哈啊哈", "哈啊哈", "哈啊哈", DRUser.UsetType.Student));
-            }
+            //if (Input.GetKeyDown(KeyCode.Alpha4))
+            //{
+            //    IDataTable<DRUser> table = Entry.DataTable.GetDataTable<DRUser>();
+            //    table.UpdateDataRow(new DRUser(12, 12, "哈啊哈", "哈啊哈", "哈啊哈", "哈啊哈", "哈啊哈", DRUser.UsetType.Student));
+            //}
         }
 
         /// <summary>

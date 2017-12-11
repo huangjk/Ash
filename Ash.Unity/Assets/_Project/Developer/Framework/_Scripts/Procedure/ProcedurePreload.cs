@@ -4,6 +4,8 @@ using Ash.Event;
 using Ash;
 using Ash.Resource;
 using ProcedureOwner = Ash.Fsm.IFsm<Ash.Procedure.IProcedureManager>;
+using Ash.DataTable;
+using UnityEngine;
 
 namespace Framework
 {
@@ -85,7 +87,9 @@ namespace Framework
 
             #region Custom。 
 
-
+            //Entry.MySql.LoadDataTableFormMySql<DRUser>("user");        
+            //Entry.MySql.LoadDataTableFormMySql<DRCasehistory>("casehistory");
+            //Entry.MySql.LoadDataTableFormMySql<DRUser>("casehistory");
 
             #endregion
         }

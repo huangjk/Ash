@@ -1,2 +1,0 @@
-"id"	"name"	"age"	"skinColor"	"model"	"information"	"advice"	"skinTest"	"Note"
-"1"	"李四"	"15"	"1"	"1"	"感冒了"	"多喝水"	"无过敏原"	"睡眠不好"

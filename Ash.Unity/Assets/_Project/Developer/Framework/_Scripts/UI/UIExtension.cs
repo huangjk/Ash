@@ -6,11 +6,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using AshUnity;
+using Framework;
 
 namespace Framework
 {
     public static class UIExtension
     {
+        public static object GameEntry { get; private set; }
+
         public static IEnumerator FadeToAlpha(this CanvasGroup canvasGroup, float alpha, float duration)
         {
             float time = 0f;
@@ -145,6 +148,15 @@ namespace Framework
             }
 
             return uiComponent.OpenUIForm(typeof(T), assetName, drUIForm.UIGroupName, drUIForm.PauseCoveredUIForm, userData);
+        }
+        public static void OpenDialog(this UIComponent uiComponent, DialogParams dialogParams)
+        {
+            uiComponent.OpenUIForm<DialogUIWin>(UIFormId.DialogUI, dialogParams);
+        }
+
+        public static void OpenTitle(this UIComponent uiComponent, DialogParams dialogParams)
+        {
+            uiComponent.OpenUIForm<DialogUIWin>(UIFormId.DialogUI, dialogParams);
         }
     }
 }

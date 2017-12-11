@@ -1,2 +1,0 @@
-"id"	"name"	"content"	"time"	"caseHistoryId"
-"1"	"1"	"1"	"1"	"1"
