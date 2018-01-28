@@ -1,0 +1,10 @@
+{
+    "name": "UnityAsh.Core.Editor",
+    "references": [
+        "UnityAsh.Core.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

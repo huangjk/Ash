@@ -1,0 +1,21 @@
+
+[AppEngine]
+AssetBundleExt = .ash	
+IsEditorLoadAsset = 0
+
+; Override default "UGUIBridge"
+[AppEngine.UI]
+UIModuleBridge = KSFramework.UGUISLuaBridge
+
+[KSFramework.I18N]
+
+;first as default
+I18NLanguages = zh_CN,en_US
+
+; current language
+I18N = en_US
+
+
+[KSFramework.Lua]
+; a path relative to product path
+LuaPath = Lua

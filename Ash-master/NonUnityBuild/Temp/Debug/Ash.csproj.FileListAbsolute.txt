@@ -1,0 +1,9 @@
+C:\Users\ChineseHXYun\OneDrive\Ash\Ash-master\NonUnityBuild\Temp\Debug\Ash.csprojResolveAssemblyReference.cache
+C:\Users\huangjiangkun\OneDrive\Ash\Ash-master\NonUnityBuild\Bin\Debug\Ash.dll
+C:\Users\huangjiangkun\OneDrive\Ash\Ash-master\NonUnityBuild\Bin\Debug\Ash.pdb
+C:\Users\huangjiangkun\OneDrive\Ash\Ash-master\NonUnityBuild\Temp\Debug\Ash.dll
+C:\Users\huangjiangkun\OneDrive\Ash\Ash-master\NonUnityBuild\Temp\Debug\Ash.pdb
+C:\Users\ChineseHXYun\OneDrive\Ash\Ash-master\NonUnityBuild\Bin\Debug\AshCore.dll
+C:\Users\ChineseHXYun\OneDrive\Ash\Ash-master\NonUnityBuild\Bin\Debug\AshCore.pdb
+C:\Users\ChineseHXYun\OneDrive\Ash\Ash-master\NonUnityBuild\Temp\Debug\AshCore.dll
+C:\Users\ChineseHXYun\OneDrive\Ash\Ash-master\NonUnityBuild\Temp\Debug\AshCore.pdb
