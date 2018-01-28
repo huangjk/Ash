@@ -1,8 +1,0 @@
-﻿#	界面配置表					
-#	Id		AssetName	UIGroupName	AllowMultiInstance	PauseCoveredUIForm
-#	int		string	string	bool	bool
-#	界面编号	策划备注	资源名称	界面组名称	是否允许多个界面实例	是否暂停被其覆盖的界面
-	1	主菜单	DialogUI	Default	TRUE	TRUE
-	100	病例信息	CaseDetailsUIForm	Default	FALSE	TRUE
-	101	提示信息	TooltipUIForm	Default	FALSE	FALSE
-	102	登录面板	LoginUIForm	Default	FALSE	FALSE
