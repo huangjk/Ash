@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Ash.Runtime;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Ash.GameMain
@@ -35,7 +36,8 @@ namespace Ash.GameMain
         {
             Ash.Log.Info("MyGame GameStart");
 
-            //procedureComponent = AppEngine.Instance.GetAshComponent<ProcedureComponent>();
+            var configComponent = AshUnityEntry.Instance.GetAshComponent<ConfigComponent>();
+            Log.Info(configComponent.GetConfig("AppEngine", "AssetBundleExt"));
 
             //从流程启动还是从场景启动
 
