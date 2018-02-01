@@ -15,8 +15,8 @@
     <TargetFrameworkProfile></TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>GamePlugins:3</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
-    <UnityVersion>5.6.2f1</UnityVersion>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
+    <UnityVersion>2017.3.0f3</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>6</LangVersion>
   </PropertyGroup>
@@ -27,7 +27,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_2;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_0;UNITY_2017_3;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_2;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_0;UNITY_2017_3;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -47,14 +47,164 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WebModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.WebModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.StyleSheetsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticlesLegacyModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ParticlesLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>Library\UnityAssemblies\UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>Library\UnityAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>Library\UnityAssemblies\UnityEngine.TestRunner.dll</HintPath>
@@ -62,17 +212,71 @@
     <Reference Include="nunit.framework">
       <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Timeline">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIAutomation">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIAutomation">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GoogleAudioSpatializer">
+      <HintPath>Library\UnityAssemblies\UnityEditor.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>Library\UnityAssemblies\UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.HoloLens">
+      <HintPath>Library\UnityAssemblies\UnityEditor.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.VR">
-      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>Library\UnityAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>Library\UnityAssemblies\UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>Library\UnityAssemblies\UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>Assets\Plugins\Ash\Ash.Lib\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -93,8 +297,8 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\AshFunc.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\AshModule.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\EventPool\BaseEventArgs.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\EventPool\EventPool.Event.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\EventPool\EventPool.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\EventPool\EventPool.Event.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\EventPool\EventPoolMode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\ReferencePool\IReference.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\ReferencePool\ReferencePool.cs" />
@@ -103,13 +307,13 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\TaskPool\TaskPool.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\Variable\GenericVariable.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Base\Variable\Variable.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\DataNode\DataNodeManager.DataNode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataNode\DataNodeManager.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\DataNode\DataNodeManager.DataNode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataNode\IDataNode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataNode\IDataNodeManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\DataTableBase.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\DataTableManager.DataTable.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\DataTableManager.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\DataTableManager.DataTable.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\IDataRow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\IDataTable.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\IDataTableHelper.cs" />
@@ -118,8 +322,8 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\LoadDataTableFailureEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\LoadDataTableSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\DataTable\LoadDataTableUpdateEventArgs.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Debugger\DebuggerManager.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Debugger\IDebuggerManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Debugger\IDebuggerWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Debugger\IDebuggerWindowGroup.cs" />
@@ -127,23 +331,23 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadAgentHelperErrorEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadAgentHelperUpdateEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadFailureEventArgs.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.DownloadAgent.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.DownloadCounter.DownloadCounterNode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.DownloadCounter.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.DownloadCounter.DownloadCounterNode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.DownloadTask.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.DownloadTaskStatus.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadStartEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\DownloadUpdateEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\IDownloadAgentHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Download\IDownloadManager.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\EntityManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\EntityManager.EntityGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\EntityManager.EntityInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\EntityManager.EntityInstanceObject.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\EntityManager.EntityStatus.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\EntityManager.ShowEntityInfo.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\EntityManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\HideEntityCompleteEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\IEntity.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Entity\IEntityGroup.cs" />
@@ -182,11 +386,11 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkCustomErrorEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkErrorCode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkErrorEventArgs.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkManager.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkManager.NetworkChannel.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkManager.NetworkChannel.HeartBeatState.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkManager.NetworkChannel.ReceiveState.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkManager.NetworkChannel.SocketUserData.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkManager.NetworkChannel.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkMissHeartBeatEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkSendPacketEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Network\NetworkType.cs" />
@@ -196,9 +400,9 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ObjectBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ObjectInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ObjectPoolBase.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ObjectPoolManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ObjectPoolManager.Object.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ObjectPoolManager.ObjectPool.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ObjectPoolManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\ObjectPool\ReleaseObjectFilterCallback.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Procedure\IProcedureManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Procedure\ProcedureBase.cs" />
@@ -231,31 +435,31 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceInitCompleteEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.AssetDependencyInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.AssetInfo.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.LoadType.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ReadWriteResourceInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceChecker.CheckInfo.CheckStatus.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceChecker.CheckInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceChecker.CheckInfo.LocalVersionInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceChecker.CheckInfo.RemoteVersionInfo.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceChecker.CheckInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceChecker.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceIniter.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.AssetObject.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.LoadAssetTask.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.LoadDependencyAssetTask.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.LoadResourceAgent.WaitingType.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.LoadResourceAgent.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.LoadResourceAgent.WaitingType.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.LoadResourceTaskBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.LoadSceneTask.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.ResourceObject.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceLoader.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceName.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceNameComparer.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceUpdater.UpdateInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceUpdater.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.ResourceUpdater.UpdateInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.VersionListProcessor.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceMode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceUpdateAllCompleteEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Resource\ResourceUpdateChangedEventArgs.cs" />
@@ -292,10 +496,10 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\PlaySoundSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\PlaySoundUpdateEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\ResetSoundAgentEventArgs.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\SoundManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\SoundManager.PlaySoundInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\SoundManager.SoundAgent.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\SoundManager.SoundGroup.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Sound\SoundManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\CloseUIFormCompleteEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\IUIForm.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\IUIFormHelper.cs" />
@@ -306,23 +510,23 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\OpenUIFormFailureEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\OpenUIFormSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\OpenUIFormUpdateEventArgs.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\UIManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\UIManager.OpenUIFormInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\UIManager.UIFormInstanceObject.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\UIManager.UIGroup.UIFormInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\UIManager.UIGroup.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\UIManager.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\UI\UIManager.UIGroup.UIFormInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Assembly.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Converter.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Encryption.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Json.IJsonHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Json.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Log\Log.ILogHelper.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Json.IJsonHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Log\Log.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Log\Log.ILogHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Log\LogLevel.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Nullable.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Path.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Profiler.IProfilerHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Profiler.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Profiler.IProfilerHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Random.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Text.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Utility.cs" />
@@ -330,22 +534,22 @@
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Verifier.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Version\AppVersion.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Version\Version.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Zip.IZipHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Zip.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\Utility\Zip.IZipHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\IWebRequestAgentHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\IWebRequestManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestAgentHelperCompleteEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestAgentHelperErrorEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestFailureEventArgs.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestManager.WebRequestAgent.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestManager.WebRequestTask.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestManager.WebRequestTaskStatus.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestManager.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestStartEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\Ash\WebRequest\WebRequestSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Base\AshUnityComponent.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Base\AshUnityEntry.InitUtility.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Base\AshUnityEntry.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Base\AshUnityEntry.InitUtility.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Base\AvoidJIT.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Config\AshConfig.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Config\ConfigComponent.cs" />
@@ -359,8 +563,9 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\DataTable\LoadDataTableSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\DataTable\LoadDataTableUpdateEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerActiveWindowType.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.ConsoleWindow.LogNode.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.ConsoleWindow.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.ConsoleWindow.LogNode.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.EnvironmentInformationWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.FpsCounter.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.GraphicsInformationWindow.cs" />
@@ -375,8 +580,8 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.PathInformationWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.ProfilerInformationWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.QualityInformationWindow.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.RuntimeMemoryInformationWindow.Sample.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.RuntimeMemoryInformationWindow.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.RuntimeMemoryInformationWindow.Sample.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.SceneInformationWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.ScreenInformationWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.ScrollableDebuggerWindowBase.cs" />
@@ -384,7 +589,6 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.SystemInformationWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.TimeInformationWindow.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.WebPlayerInformationWindow.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Debugger\DebuggerComponent.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Download\DefaultDownloadAgentHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Download\DownloadAgentHelperBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Download\DownloadComponent.cs" />
@@ -397,8 +601,8 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\DefaultEntityGroupHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\DefaultEntityHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\Entity.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\EntityComponent.EntityGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\EntityComponent.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\EntityComponent.EntityGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\EntityGroupHelperBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\EntityHelperBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Entity\EntityLogic.cs" />
@@ -462,8 +666,8 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\PlaySoundSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\PlaySoundUpdateEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\SoundAgentHelperBase.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\SoundComponent.SoundGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\SoundComponent.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\SoundComponent.SoundGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\SoundGroupHelperBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Sound\SoundHelperBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\CloseUIFormCompleteEventArgs.cs" />
@@ -473,8 +677,8 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\OpenUIFormFailureEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\OpenUIFormSuccessEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\OpenUIFormUpdateEventArgs.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\UIComponent.UIGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\UIComponent.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\UIComponent.UIGroup.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\UIForm.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\UIFormHelperBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\UIFormLogic.cs" />
@@ -483,8 +687,8 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\UI\UIStringKey.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\Helper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\JsonHelper.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\LogHelper.LogToFile.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\LogHelper.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\LogHelper.LogToFile.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\ProfilerHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\UnityExtension.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Utility\ZipHelper.cs" />
@@ -512,19 +716,19 @@
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarTransform.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarUInt.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarULong.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarUShort.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarUnityObject.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarUShort.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarVector2.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarVector3.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\Variable\VarVector4.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\DefaultWebRequestAgentHelper.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\UnityWebRequestAgentHelper.cs" />
-    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\WWWFormInfo.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\WebRequestAgentHelperBase.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\WebRequestComponent.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\WebRequestFailureEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\WebRequestStartEventArgs.cs" />
     <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\WebRequestSuccessEventArgs.cs" />
+    <Compile Include="Assets\Plugins\Ash\Source\AshUnity\Runtime\WebRequest\WWWFormInfo.cs" />
     <Compile Include="Assets\Plugins\AshGameMain\Scripts\AshGameEntry.cs" />
     <Compile Include="Assets\Plugins\AshGameMain\Scripts\MyGame.cs" />
     <Compile Include="Assets\Plugins\AshGameMain\Scripts\Procedure\ProcedureBase.cs" />
