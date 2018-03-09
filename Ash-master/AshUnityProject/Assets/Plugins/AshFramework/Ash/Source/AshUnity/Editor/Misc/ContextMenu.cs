@@ -32,7 +32,7 @@ namespace Ash.Editor
             Help.ShowComponentHelp("datatable");
         }
 
-        [MenuItem("CONTEXT/DebuggerComponent/Help")]
+        [MenuItem("CONTEXT/DebuggerView/Help")]
         private static void ShowDebuggerComponentHelp(MenuCommand command)
         {
             Help.ShowComponentHelp("debugger");

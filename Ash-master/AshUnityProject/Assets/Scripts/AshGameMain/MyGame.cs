@@ -10,7 +10,6 @@ namespace Ash.GameMain
 
         private string m_FirstLoadSceneName = "";
 
-        private DebuggerComponent m_DebuggerComponent;
         //private SettingComponent m_SettingComponent;
 
         //流程
@@ -66,12 +65,8 @@ namespace Ash.GameMain
             //显示Debug窗口
             if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.D))
             {
-                if(m_DebuggerComponent == null)
-                    m_DebuggerComponent = AshUnityEntry.Instance.GetAshComponent<DebuggerComponent>();
-                else
-                {
-                    m_DebuggerComponent.ActiveWindow = !m_DebuggerComponent.ActiveWindow;
-                }
+                bool currentStatus = DebuggerView.GetInstance().ActiveWindow;
+                DebuggerView.GetInstance().ActiveWindow = !currentStatus;
             }
 
             if (Input.GetKeyDown(KeyCode.P))

@@ -1,13 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
 
-
-
-
-
-
-using System.Collections.Generic;
-
-namespace Ash.Core.Debugger
+namespace Ash
 {
     internal partial class DebuggerManager
     {
@@ -183,7 +176,7 @@ namespace Ash.Core.Debugger
             {
                 if (string.IsNullOrEmpty(path))
                 {
-                    throw new AshException("Path is invalid.");
+                    throw new System.Exception("Path is invalid.");
                 }
 
                 int pos = path.IndexOf('/');
@@ -191,7 +184,7 @@ namespace Ash.Core.Debugger
                 {
                     if (InternalGetDebuggerWindow(path) != null)
                     {
-                        throw new AshException("Debugger window has been registered.");
+                        throw new System.Exception("Debugger window has been registered.");
                     }
 
                     m_DebuggerWindows.Add(new KeyValuePair<string, IDebuggerWindow>(path, debuggerWindow));
@@ -206,7 +199,7 @@ namespace Ash.Core.Debugger
                     {
                         if (InternalGetDebuggerWindow(debuggerWindowGroupName) != null)
                         {
-                            throw new AshException("Debugger window has been registered, can not create debugger window group.");
+                            throw new System.Exception("Debugger window has been registered, can not create debugger window group.");
                         }
 
                         debuggerWindowGroup = new DebuggerWindowGroup();

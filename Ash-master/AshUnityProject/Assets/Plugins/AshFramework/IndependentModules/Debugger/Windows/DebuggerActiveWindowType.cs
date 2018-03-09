@@ -1,11 +1,4 @@
-﻿
-
-
-
-
-
-
-namespace Ash.Runtime
+﻿namespace Ash
 {
     /// <summary>
     /// 调试器激活窗口类型。

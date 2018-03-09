@@ -1,11 +1,4 @@
-﻿
-
-
-
-
-
-
-namespace Ash.Core.Debugger
+﻿namespace Ash
 {
     /// <summary>
     /// 调试窗口接口。

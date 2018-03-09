@@ -1,11 +1,4 @@
-﻿
-
-
-
-
-
-
-namespace Ash
+﻿namespace Ash
 {
     /// <summary>
     /// 日志等级。
