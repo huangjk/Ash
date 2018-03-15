@@ -230,11 +230,11 @@ namespace Ash
                 //}
 
                 Application.logMessageReceived += OnLogMessageReceived;
-                m_LockScroll = m_LastLockScroll = MyGameData.GetInstance().Get("Debugger.Console.LockScroll", true);
-                m_InfoFilter = m_LastInfoFilter = MyGameData.GetInstance().Get("Debugger.Console.InfoFilter", true);
-                m_WarningFilter = m_LastWarningFilter = MyGameData.GetInstance().Get("Debugger.Console.WarningFilter", true);
-                m_ErrorFilter = m_LastErrorFilter = MyGameData.GetInstance().Get("Debugger.Console.ErrorFilter", true);
-                m_FatalFilter = m_LastFatalFilter = MyGameData.GetInstance().Get("Debugger.Console.FatalFilter", true);
+                m_LockScroll = m_LastLockScroll = Setting.GetInstance().Get("Debugger.Console.LockScroll", true);
+                m_InfoFilter = m_LastInfoFilter = Setting.GetInstance().Get("Debugger.Console.InfoFilter", true);
+                m_WarningFilter = m_LastWarningFilter = Setting.GetInstance().Get("Debugger.Console.WarningFilter", true);
+                m_ErrorFilter = m_LastErrorFilter = Setting.GetInstance().Get("Debugger.Console.ErrorFilter", true);
+                m_FatalFilter = m_LastFatalFilter = Setting.GetInstance().Get("Debugger.Console.FatalFilter", true);
             }
 
             public void Shutdown()
@@ -258,31 +258,31 @@ namespace Ash
                 if (m_LastLockScroll != m_LockScroll)
                 {
                     m_LastLockScroll = m_LockScroll;
-                    MyGameData.GetInstance().Set("Debugger.Console.LockScroll", m_LockScroll);
+                    Setting.GetInstance().Set("Debugger.Console.LockScroll", m_LockScroll);
                 }
 
                 if (m_LastInfoFilter != m_InfoFilter)
                 {
                     m_LastInfoFilter = m_InfoFilter;
-                    MyGameData.GetInstance().Set("Debugger.Console.InfoFilter", m_InfoFilter);
+                    Setting.GetInstance().Set("Debugger.Console.InfoFilter", m_InfoFilter);
                 }
 
                 if (m_LastWarningFilter != m_WarningFilter)
                 {
                     m_LastWarningFilter = m_WarningFilter;
-                    MyGameData.GetInstance().Set("Debugger.Console.WarningFilter", m_WarningFilter);
+                    Setting.GetInstance().Set("Debugger.Console.WarningFilter", m_WarningFilter);
                 }
 
                 if (m_LastErrorFilter != m_ErrorFilter)
                 {
                     m_LastErrorFilter = m_ErrorFilter;
-                    MyGameData.GetInstance().Set("Debugger.Console.ErrorFilter", m_ErrorFilter);
+                    Setting.GetInstance().Set("Debugger.Console.ErrorFilter", m_ErrorFilter);
                 }
 
                 if (m_LastFatalFilter != m_FatalFilter)
                 {
                     m_LastFatalFilter = m_FatalFilter;
-                    MyGameData.GetInstance().Set("Debugger.Console.FatalFilter", m_FatalFilter);
+                    Setting.GetInstance().Set("Debugger.Console.FatalFilter", m_FatalFilter);
                 }
             }
 

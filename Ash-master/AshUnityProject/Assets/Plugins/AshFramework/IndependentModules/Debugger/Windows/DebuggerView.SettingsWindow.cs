@@ -25,13 +25,13 @@ namespace Ash
                     return;
                 }
 
-                m_LastIconX = MyGameData.GetInstance().Get("Debugger.Icon.X", DefaultIconRect.x);
-                m_LastIconY = MyGameData.GetInstance().Get("Debugger.Icon.Y", DefaultIconRect.y);
-                m_LastWindowX = MyGameData.GetInstance().Get("Debugger.Window.X", DefaultWindowRect.x);
-                m_LastWindowY = MyGameData.GetInstance().Get("Debugger.Window.Y", DefaultWindowRect.y);
-                m_LastWindowWidth = MyGameData.GetInstance().Get("Debugger.Window.Width", DefaultWindowRect.width);
-                m_LastWindowHeight = MyGameData.GetInstance().Get("Debugger.Window.Height", DefaultWindowRect.height);
-                m_DebuggerComponent.WindowScale = m_LastWindowScale = MyGameData.GetInstance().Get("Debugger.Window.Scale", DefaultWindowScale);
+                m_LastIconX = Setting.GetInstance().Get("Debugger.Icon.X", DefaultIconRect.x);
+                m_LastIconY = Setting.GetInstance().Get("Debugger.Icon.Y", DefaultIconRect.y);
+                m_LastWindowX = Setting.GetInstance().Get("Debugger.Window.X", DefaultWindowRect.x);
+                m_LastWindowY = Setting.GetInstance().Get("Debugger.Window.Y", DefaultWindowRect.y);
+                m_LastWindowWidth = Setting.GetInstance().Get("Debugger.Window.Width", DefaultWindowRect.width);
+                m_LastWindowHeight = Setting.GetInstance().Get("Debugger.Window.Height", DefaultWindowRect.height);
+                m_DebuggerComponent.WindowScale = m_LastWindowScale = Setting.GetInstance().Get("Debugger.Window.Scale", DefaultWindowScale);
                 m_DebuggerComponent.IconRect = new Rect(m_LastIconX, m_LastIconY, DefaultIconRect.width, DefaultIconRect.height);
                 m_DebuggerComponent.WindowRect = new Rect(m_LastWindowX, m_LastWindowY, m_LastWindowWidth, m_LastWindowHeight);
             }
@@ -41,43 +41,43 @@ namespace Ash
                 if (m_LastIconX != m_DebuggerComponent.IconRect.x)
                 {
                     m_LastIconX = m_DebuggerComponent.IconRect.x;
-                    MyGameData.GetInstance().Set("Debugger.Icon.X", m_DebuggerComponent.IconRect.x);
+                    Setting.GetInstance().Set("Debugger.Icon.X", m_DebuggerComponent.IconRect.x);
                 }
 
                 if (m_LastIconY != m_DebuggerComponent.IconRect.y)
                 {
                     m_LastIconY = m_DebuggerComponent.IconRect.y;
-                    MyGameData.GetInstance().Set("Debugger.Icon.Y", m_DebuggerComponent.IconRect.y);
+                    Setting.GetInstance().Set("Debugger.Icon.Y", m_DebuggerComponent.IconRect.y);
                 }
 
                 if (m_LastWindowX != m_DebuggerComponent.WindowRect.x)
                 {
                     m_LastWindowX = m_DebuggerComponent.WindowRect.x;
-                    MyGameData.GetInstance().Set("Debugger.Window.X", m_DebuggerComponent.WindowRect.x);
+                    Setting.GetInstance().Set("Debugger.Window.X", m_DebuggerComponent.WindowRect.x);
                 }
 
                 if (m_LastWindowY != m_DebuggerComponent.WindowRect.y)
                 {
                     m_LastWindowY = m_DebuggerComponent.WindowRect.y;
-                    MyGameData.GetInstance().Set("Debugger.Window.Y", m_DebuggerComponent.WindowRect.y);
+                    Setting.GetInstance().Set("Debugger.Window.Y", m_DebuggerComponent.WindowRect.y);
                 }
 
                 if (m_LastWindowWidth != m_DebuggerComponent.WindowRect.width)
                 {
                     m_LastWindowWidth = m_DebuggerComponent.WindowRect.width;
-                    MyGameData.GetInstance().Set("Debugger.Window.Width", m_DebuggerComponent.WindowRect.width);
+                    Setting.GetInstance().Set("Debugger.Window.Width", m_DebuggerComponent.WindowRect.width);
                 }
 
                 if (m_LastWindowHeight != m_DebuggerComponent.WindowRect.height)
                 {
                     m_LastWindowHeight = m_DebuggerComponent.WindowRect.height;
-                    MyGameData.GetInstance().Set("Debugger.Window.Height", m_DebuggerComponent.WindowRect.height);
+                    Setting.GetInstance().Set("Debugger.Window.Height", m_DebuggerComponent.WindowRect.height);
                 }
 
                 if (m_LastWindowScale != m_DebuggerComponent.WindowScale)
                 {
                     m_LastWindowScale = m_DebuggerComponent.WindowScale;
-                    MyGameData.GetInstance().Set("Debugger.Window.Scale", m_DebuggerComponent.WindowScale);
+                    Setting.GetInstance().Set("Debugger.Window.Scale", m_DebuggerComponent.WindowScale);
                 }
             }
 
