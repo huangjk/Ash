@@ -39,7 +39,7 @@ namespace Ash
             var sourcePath = "Product/DT_LocalSource";
             var compilePath = "Product/DT_Local";
             var SettingCodePath = "Assets/AutoGenerate/DT_Local.cs";
-            var template = DTMySQLTemplate.GenCodeTemplate; // 
+            var template = DefaultTemplate.GenCodeTemplate; // 
             var SettingExtension = ".bytes";
             var settingCodeIgnorePattern = "(I18N/.*)|(StringsTable.*)";
             //var force = true;

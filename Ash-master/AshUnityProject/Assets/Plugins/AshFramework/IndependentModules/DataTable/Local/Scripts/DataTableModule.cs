@@ -47,7 +47,7 @@ namespace Ash
         {
             get
             {
-                return "Product/DataTableSource";
+                return "Product/DT_LocalSource";
             }
         }
 
@@ -111,7 +111,7 @@ namespace Ash
 
         private static string GetFileSystemPath(string path)
         {
-            var compilePath = "Product/DataTable";
+            var compilePath = "Product/DT_Local";
             var resPath = Path.Combine(compilePath, path);
             return resPath;
         }

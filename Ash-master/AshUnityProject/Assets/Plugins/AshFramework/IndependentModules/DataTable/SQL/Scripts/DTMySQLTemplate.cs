@@ -15,115 +15,56 @@ namespace Ash
 using System.Collections;
 using System.Collections.Generic;
 using TableML;
+
 namespace {{ NameSpace }}
 {
-	/// <summary>
-    /// All dataTables list here, so you can reload all dataTables manully from the list.
-	/// </summary>
-    public partial class DataTablesManager
+    public partial class MySQLManager
     {
-        private static IReloadableDataTables[] _dataTablesList;
-        public static IReloadableDataTables[] DataTablesList
-        {
-            get
-            {
-                if (_dataTablesList == null)
-                {
-                    _dataTablesList = new IReloadableDataTables[]
-                    { {% for file in Files %}
-                        {{ file.ClassName }}DataTables._instance,{% endfor %}
-                    };
-                }
-                return _dataTablesList;
-            }
+#if UNITY_EDITOR
+
+        [UnityEditor.MenuItem(""Window/Ash/DT/MySQL/Update All DataTables To MySQL"")]
+#endif
+        public static void UpdateAllDataTablesToMySQL()
+        {{% for file in Files %}
+            Update{{file.ClassName}}ToMySQL();{% endfor %} 
         }
-
+{% for file in Files %}
 #if UNITY_EDITOR
-        [UnityEditor.MenuItem(""Window/Ash/DT/Local/Try Reload All DataTables Code"")]
-#endif
-	    public static void AllDataTablesReload()
-	    {
-	        for (var i = 0; i < DataTablesList.Length; i++)
-	        {
-	            var dataTables = DataTablesList[i];
-                if (dataTables.Count > 0 // if never reload, ignore
-#if UNITY_EDITOR
-                    || !UnityEditor.EditorApplication.isPlaying // in editor and not playing, force load!
-#endif
-                    )
-                {
-                    dataTables.ReloadAll();
-                }
 
-	        }
-	    }
+        [UnityEditor.MenuItem(""Window/Ash/DT/MySQL/Class/Update {{file.ClassName}} DataTable To MySQL"")]
+#endif
+        public static void Update{{file.ClassName}}ToMySQL()
+        {
+            //删除数据库
+            string commandText = ""DROP TABLE {{file.ClassName}}"";
+            DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
 
+            commandText = ""CREATE TABLE {{file.ClassName}} ("";
+            {% for field in file.Fields %}
+            commandText += DTMySQLExtenion.GetMySQL_{{ field.FormatType }}(""{{ field.Name }}"");            {% endfor %}
+            commandText = commandText.Substring(0,commandText.Length - 1)
+            commandText += "");"";
+
+            DatabaseManager.GetInstance().OpenDatabase();
+            DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
+
+            //数据库插入数据
+        }{% endfor %} 
     }
 
-{% for file in Files %}
-	/// <summary>
-	/// Auto Generate for Tab File: {{ file.TabFilePaths }}
+    /// <summary>
+    /// Auto Generate for Tab File: ""{{file.ClassName}}.bytes""
     /// No use of generic and reflection, for better performance,  less IL code generating
-	/// </summary>>
-    public partial class {{file.ClassName}}DataTables : IReloadableDataTables
+    /// </summary>>
+    public partial class DTMySQL{{file.ClassName}}_Manager
     {
-        /// <summary>
-        /// How many reload function load?
-        /// </summary>>
-        public static int ReloadCount { get; private set; }
+        private Dictionary<string, DTMySQL{{file.ClassName}}> _dict = new Dictionary<string, DTMySQL{{file.ClassName}}>();
 
-		public static readonly string[] TabFilePaths = 
+        public DTMySQL{{file.ClassName}}_Manager()
         {
-            {{ file.TabFilePaths }}
-        };
-        internal static {{file.ClassName}}DataTables _instance = new {{file.ClassName}}DataTables();
-        Dictionary<{{ file.PrimaryKeyField.FormatType }}, {{file.ClassName}}DataTable> _dict = new Dictionary<{{ file.PrimaryKeyField.FormatType }}, {{file.ClassName}}DataTable>();
-
-        /// <summary>
-        /// Trigger delegate when reload the DataTables
-        /// </summary>>
-	    public static System.Action OnReload;
-
-        /// <summary>
-        /// Constructor, just reload(init)
-        /// When Unity Editor mode, will watch the file modification and auto reload
-        /// </summary>
-	    private {{file.ClassName}}DataTables()
-	    {
+            _dict = new Dictionary<string, DTMySQL{{file.ClassName}}>();
         }
 
-        /// <summary>
-        /// Get the singleton
-        /// </summary>
-        /// <returns></returns>
-	    public static {{file.ClassName}}DataTables GetInstance()
-	    {
-            if (ReloadCount == 0)
-            {
-                _instance._ReloadAll(true);
-    #if UNITY_EDITOR
-                if (DataTableModule.IsFileSystemMode)
-                {
-                    for (var j = 0; j < TabFilePaths.Length; j++)
-                    {
-                        var tabFilePath = TabFilePaths[j];
-                        DataTableModule.WatchDataTable(tabFilePath, (path) =>
-                        {
-                            if (path.Replace(""\\"", ""/"").EndsWith(path))
-                            {
-                                _instance.ReloadAll();
-                                //UnityEngine.Debug.Log(""File Watcher! Reload success! -> "" + path);
-                            }
-                        });
-                    }
-
-                }
-    #endif
-            }
-
-	        return _instance;
-	    }
-        
         public int Count
         {
             get
@@ -133,94 +74,76 @@ namespace {{ NameSpace }}
         }
 
         /// <summary>
-        /// Do reload the dataTable file: {{ file.ClassName }}, no exception when duplicate primary key
+        /// Do reload the dataTable file: {{file.ClassName}}, no exception when duplicate primary key
         /// </summary>
-        public void ReloadAll()
+        public static List<DTMySQL{{file.ClassName}}> LoadAll()
         {
-            _ReloadAll(false);
+            List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
+
+            return testTempList;
+        }
+
+        public static List<DTMySQL{{file.ClassName}}> LoadAllByLimit(int form, int to)
+        {
+            List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
+
+            return testTempList;
         }
 
         /// <summary>
-        /// Do reload the dataTable class : {{ file.ClassName }}, no exception when duplicate primary key, use custom string content
+        /// 获得MySQL数据表里面的Row总数量
         /// </summary>
-        public void ReloadAllWithString(string context)
+        public static int MySQL_GetRowsCount()
         {
-            _ReloadAll(false, context);
+            return 0;
+        }
+
+        public static DTMySQL{{file.ClassName}} MySQL_GetByID(int id)
+        {
+            //List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
+            return null;
+        }
+
+        public static int MySQL_GetMaxID()
+        {
+            //List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
+            return 0;
+        }
+
+        public static DTMySQL{{file.ClassName}} MySQL_GetByMaxID()
+        {
+            //List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
+            return null;
         }
 
         /// <summary>
-        /// Do reload the dataTable file: {{ file.ClassName }}
+        /// foreachable enumerable: {{file.ClassName}}
         /// </summary>
-	    void _ReloadAll(bool throwWhenDuplicatePrimaryKey, string customContent = null)
+        public IEnumerable GetAll()
         {
-            for (var j = 0; j < TabFilePaths.Length; j++)
-            {
-                var tabFilePath = TabFilePaths[j];
-                TableFile tableFile;
-                if (customContent == null)
-                    tableFile = DataTableModule.Get(tabFilePath, false);
-                else
-                    tableFile = TableFile.LoadFromString(customContent);
-
-                using (tableFile)
-                {
-                    foreach (var row in tableFile)
-                    {
-                        var pk = {{ file.ClassName }}DataTable.ParsePrimaryKey(row);
-                        {{file.ClassName}}DataTable dataTable;
-                        if (!_dict.TryGetValue(pk, out dataTable))
-                        {
-                            dataTable = new {{file.ClassName}}DataTable(row);
-                            _dict[dataTable.{{ file.PrimaryKeyField.Name }}] = dataTable;
-                        }
-                        else 
-                        {
-                            if (throwWhenDuplicatePrimaryKey) throw new System.Exception(string.Format(""DuplicateKey, Class: {0}, File: {1}, Key: {2}"", this.GetType().Name, tabFilePath, pk));
-                            else dataTable.Reload(row);
-                        }
-                    }
-                }
-            }
-
-	        if (OnReload != null)
-	        {
-	            OnReload();
-	        }
-
-            ReloadCount++;
-            UnityEngine.Debug.LogFormat(""Reload dataTables: {0}, Row Count: {1}, Reload Count: {2}"", GetType(), Count, ReloadCount);
-        }
-
-	    /// <summary>
-        /// foreachable enumerable: {{ file.ClassName }}
-        /// </summary>
-        public static IEnumerable GetAll()
-        {
-            foreach (var row in GetInstance()._dict.Values)
+            foreach (var row in _dict.Values)
             {
                 yield return row;
             }
         }
 
         /// <summary>
-        /// GetEnumerator for `MoveNext`: {{ file.ClassName }}
-        /// </summary> 
-	    public static IEnumerator GetEnumerator()
-	    {
-	        return GetInstance()._dict.Values.GetEnumerator();
-	    }
-         
-		 
-		 
+        /// GetEnumerator for `MoveNext`: {{file.ClassName}}
+        /// </summary>
+	    public IEnumerator GetEnumerator()
+        {
+            return _dict.Values.GetEnumerator();
+        }
+
         /// <summary>
         /// 获取数据表行。
         /// </summary>
         /// <param name=""id"">数据表行的PrimaryKey。</param>
         /// <returns>数据表行。</returns>
-        public static {{file.ClassName}}DataTable Get({{ file.PrimaryKeyField.FormatType }} primaryKey)
+        public DTMySQL{{file.ClassName}} Get(string primaryKey)
         {
-            {{file.ClassName}}DataTable dataTable;
-            if (GetInstance()._dict.TryGetValue(primaryKey, out dataTable)) return dataTable;
+            DTMySQL{{file.ClassName}} dataTable;
+            if (_dict.TryGetValue(primaryKey, out dataTable)) return dataTable;
             return null;
         }
 
@@ -229,9 +152,9 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""primaryKey"" > 数据表行的主Key。</param>
         /// <returns>是否存在数据表行。</returns>
-        public static bool HasDataRow({{ file.PrimaryKeyField.FormatType }} primaryKey)
+        public bool HasDataRow(string primaryKey)
         {
-            return GetInstance()._dict.ContainsKey(primaryKey);
+            return _dict.ContainsKey(primaryKey);
         }
 
         /// <summary>
@@ -239,14 +162,14 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <returns>是否存在数据表行。</returns>
-        public static bool HasDataRow(System.Predicate<{{file.ClassName}}DataTable> condition)
+        public bool HasDataRow(System.Predicate<DTMySQL{{file.ClassName}}> condition)
         {
             if (condition == null)
             {
                 throw new System.Exception(""Condition is invalid."");
             }
 
-            foreach (var dataRow in GetInstance()._dict)
+            foreach (var dataRow in _dict)
             {
                 if (condition(dataRow.Value))
                 {
@@ -257,23 +180,22 @@ namespace {{ NameSpace }}
             return false;
         }
 
-
         /// <summary>
         /// 获取符合条件的数据表行。
         /// </summary>
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <returns>符合条件的数据表行。</returns>
         /// <remarks>当存在多个符合条件的数据表行时，仅返回第一个符合条件的数据表行。</remarks>
-        public static {{file.ClassName}}DataTable GetDataRow(System.Predicate<{{file.ClassName}}DataTable> condition)
+        public DTMySQL{{file.ClassName}} GetDataRow(System.Predicate<DTMySQL{{file.ClassName}}> condition)
         {
             if (condition == null)
             {
                 throw new System.Exception(""Condition is invalid."");
             }
 
-            foreach (var dataRow in GetInstance()._dict)
+            foreach (var dataRow in _dict)
             {
-                {{file.ClassName}}DataTable dr = dataRow.Value;
+                DTMySQL{{file.ClassName}} dr = dataRow.Value;
                 if (condition(dr))
                 {
                     return dr;
@@ -287,11 +209,11 @@ namespace {{ NameSpace }}
         /// 获取所有数据表行。
         /// </summary>
         /// <returns>所有数据表行。</returns>
-        public static {{file.ClassName}}DataTable[] GetAllDataRows()
+        public DTMySQL{{file.ClassName}}[] GetAllDataRows()
         {
             int index = 0;
-            {{file.ClassName}}DataTable[] allDataRows = new {{file.ClassName}}DataTable[GetInstance().Count];
-            foreach (var dataRow in GetInstance()._dict)
+            DTMySQL{{file.ClassName}}[] allDataRows = new DTMySQL{{file.ClassName}}[Count];
+            foreach (var dataRow in _dict)
             {
                 allDataRows[index++] = dataRow.Value;
             }
@@ -304,17 +226,17 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <returns>所有符合条件的数据表行。</returns>
-        public static {{file.ClassName}}DataTable[] GetAllDataRows(System.Predicate<{{file.ClassName}}DataTable> condition)
+        public DTMySQL{{file.ClassName}}[] GetAllDataRows(System.Predicate<DTMySQL{{file.ClassName}}> condition)
         {
             if (condition == null)
             {
                 throw new System.Exception(""Condition is invalid."");
             }
 
-            List<{{file.ClassName}}DataTable> results = new List<{{file.ClassName}}DataTable>();
-            foreach (var dataRow in GetInstance()._dict)
+            List<DTMySQL{{file.ClassName}}> results = new List<DTMySQL{{file.ClassName}}>();
+            foreach (var dataRow in _dict)
             {
-                {{file.ClassName}}DataTable dr = dataRow.Value;
+                DTMySQL{{file.ClassName}} dr = dataRow.Value;
                 if (condition(dr))
                 {
                     results.Add(dr);
@@ -329,15 +251,15 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""comparison"" > 要排序的条件。</param>
         /// <returns>所有排序后的数据表行。</returns>
-        public static {{file.ClassName}}DataTable[] GetAllDataRows(System.Comparison<{{file.ClassName}}DataTable> comparison)
+        public DTMySQL{{file.ClassName}}[] GetAllDataRows(System.Comparison<DTMySQL{{file.ClassName}}> comparison)
         {
             if (comparison == null)
             {
                 throw new System.Exception(""Comparison is invalid."");
             }
 
-            List<{{file.ClassName}}DataTable> allDataRows = new List<{{file.ClassName}}DataTable>();
-            foreach (var dataRow in GetInstance()._dict)
+            List<DTMySQL{{file.ClassName}}> allDataRows = new List<DTMySQL{{file.ClassName}}>();
+            foreach (var dataRow in _dict)
             {
                 allDataRows.Add(dataRow.Value);
             }
@@ -352,7 +274,7 @@ namespace {{ NameSpace }}
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <param name=""comparison"" > 要排序的条件。</param>
         /// <returns>所有排序后的符合条件的数据表行。</returns>
-        public static {{file.ClassName}}DataTable[] GetAllDataRows(System.Predicate<{{file.ClassName}}DataTable> condition, System.Comparison<{{file.ClassName}}DataTable> comparison)
+        public DTMySQL{{file.ClassName}}[] GetAllDataRows(System.Predicate<DTMySQL{{file.ClassName}}> condition, System.Comparison<DTMySQL{{file.ClassName}}> comparison)
         {
             if (condition == null)
             {
@@ -364,10 +286,10 @@ namespace {{ NameSpace }}
                 throw new System.Exception(""Comparison is invalid."");
             }
 
-            List<{{file.ClassName}}DataTable> results = new List<{{file.ClassName}}DataTable>();
-            foreach (var dataRow in GetInstance()._dict)
+            List<DTMySQL{{file.ClassName}}> results = new List<DTMySQL{{file.ClassName}}>();
+            foreach (var dataRow in _dict)
             {
-                {{file.ClassName}}DataTable dr = dataRow.Value;
+                DTMySQL{{file.ClassName}} dr = dataRow.Value;
                 if (condition(dr))
                 {
                     results.Add(dr);
@@ -377,35 +299,42 @@ namespace {{ NameSpace }}
             results.Sort(comparison);
             return results.ToArray();
         }
-		
-		
-		
+
         // ========= CustomExtraString begin ===========
-        {% if file.Extra %}{{ file.Extra }}{% endif %}
+
         // ========= CustomExtraString end ===========
     }
 
-	/// <summary>
-	/// Auto Generate for Tab File: {{ file.TabFilePaths }}
+    /// <summary>
+    /// Auto Generate for Tab File: ""{{file.ClassName}}.bytes""
     /// Singleton class for less memory use
-	/// </summary>
-	public partial class {{file.ClassName}}DataTable : TableRowFieldParser
-	{
-		{% for field in file.Fields %}
+    /// </summary>
+    public partial class DTMySQL{{file.ClassName}} : TableRowFieldParser
+    {
         /// <summary>
-        /// {{ field.Comment }}
+        /// ID Column/编号/主键
         /// </summary>
-        public {{ field.FormatType }} {{ field.Name}} { get; private set;}
-        {% endfor %}
+        public string Id { get; private set; }
 
-        internal {{file.ClassName}}DataTable(TableFileRow row)
+        /// <summary>
+        /// Name/名字
+        /// </summary>
+        public string Value { get; set; }
+
+        internal DTMySQL{{file.ClassName}}()
+        {
+            Reset();
+        }
+
+        internal DTMySQL{{file.ClassName}}(System.Data.DataRow row)
         {
             Reload(row);
         }
 
-        internal void Reload(TableFileRow row)
-        { {% for field in file.Fields %}
-            {{ field.Name}} = row.Get_{{ field.TypeMethod }}(row.Values[{{ field.Index }}], ""{{ field.DefaultValue }}""); {% endfor %}
+        internal void Reload(System.Data.DataRow row)
+        {
+            Id = Get_string(row[""USERID""].ToString(), """");
+            Value = Get_string(row[""USERID""].ToString(), """");
         }
 
         /// <summary>
@@ -413,13 +342,30 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""row""></param>
         /// <returns></returns>
-        public static {{ file.PrimaryKeyField.FormatType }} ParsePrimaryKey(TableFileRow row)
+        public string ParsePrimaryKey(System.Data.DataRow row)
         {
-            var primaryKey = row.Get_{{ file.PrimaryKeyField.TypeMethod }}(row.Values[{{ file.PrimaryKeyField.Index }}], ""{{ file.PrimaryKeyField.DefaultValue }}"");
+            var primaryKey = Get_string(row[""USERID""].ToString(), """");
             return primaryKey;
         }
-	}
-{% endfor %} 
+
+        public bool DeleteInMySQL()
+        {
+            return false;
+        }
+
+        public bool UpdateToMySQL()
+        {
+            return false;
+        }
+
+        public void Clone(DTMySQL{{file.ClassName}} c)
+        {
+        }
+
+        public void Reset()
+        {
+        }
+    }
 }
 ";
 	}

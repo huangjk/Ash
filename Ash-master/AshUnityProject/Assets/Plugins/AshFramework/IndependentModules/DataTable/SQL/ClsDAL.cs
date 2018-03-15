@@ -240,7 +240,6 @@ public class ClsDAL
             {
                 case ConnectionState.Open:
                     _blnIsOnline = true;
-                    UnityEngine.Debug.Log("Á´½Ó³É¹¦");
                     break;
 
                 case ConnectionState.Closed:
@@ -1578,7 +1577,7 @@ public class ClsDAL
     {
         decimal decRet = 0;
 
-        //_strSQLqueries += "-- GetSQLSelectDecimal(" + strSQL + ")\n";
+        _strSQLqueries += "-- GetSQLSelectDecimal(" + strSQL + ")\n";
 
         switch (_dbType)
         {
@@ -1614,7 +1613,7 @@ public class ClsDAL
     {
         double dblRet = 0;
 
-        //_strSQLqueries += "-- GetSQLSelectDecimal(" + strSQL + ")\n";
+        _strSQLqueries += "-- GetSQLSelectDecimal(" + strSQL + ")\n";
 
         switch (_dbType)
         {
