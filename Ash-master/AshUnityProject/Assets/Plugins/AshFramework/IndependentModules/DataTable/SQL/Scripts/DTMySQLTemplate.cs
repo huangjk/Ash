@@ -28,20 +28,23 @@ namespace {{ NameSpace }}
         {{% for file in Files %}
             Update{{file.ClassName}}ToMySQL();{% endfor %} 
         }
+
 {% for file in Files %}
 #if UNITY_EDITOR
-
         [UnityEditor.MenuItem(""Window/Ash/DT/MySQL/Class/Update {{file.ClassName}} DataTable To MySQL"")]
 #endif
         public static void Update{{file.ClassName}}ToMySQL()
         {
-            //删除数据库
+            //删除表
             string commandText = ""DROP TABLE {{file.ClassName}}"";
             DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
+            
+            //创建表
+            commandText = ""CREATE TABLE {{file.ClassName}} ("";{% for field in file.Fields %}
+            {% if field.Index == 0 %}
+            commandText += DTMySQLExtenion.GetMySQL_PK(""{{ field.Name }}""); {% else %}
+            commandText += DTMySQLExtenion.GetMySQL_{{ field.FormatType }}(""{{ field.Name }}"");     {% endif %}{% endfor %}
 
-            commandText = ""CREATE TABLE {{file.ClassName}} ("";
-            {% for field in file.Fields %}
-            commandText += DTMySQLExtenion.GetMySQL_{{ field.FormatType }}(""{{ field.Name }}"");            {% endfor %}
             commandText = commandText.Substring(0,commandText.Length - 1)
             commandText += "");"";
 
@@ -56,13 +59,13 @@ namespace {{ NameSpace }}
     /// Auto Generate for Tab File: ""{{file.ClassName}}.bytes""
     /// No use of generic and reflection, for better performance,  less IL code generating
     /// </summary>>
-    public partial class DTMySQL{{file.ClassName}}_Manager
+    public partial class DTMySQL_{{file.ClassName}}_Manager
     {
-        private Dictionary<string, DTMySQL{{file.ClassName}}> _dict = new Dictionary<string, DTMySQL{{file.ClassName}}>();
+        private Dictionary<string, DTMySQL_{{file.ClassName}}> _dict = new Dictionary<string, DTMySQL_{{file.ClassName}}>();
 
-        public DTMySQL{{file.ClassName}}_Manager()
+        public DTMySQL_{{file.ClassName}}_Manager()
         {
-            _dict = new Dictionary<string, DTMySQL{{file.ClassName}}>();
+            _dict = new Dictionary<string, DTMySQL_{{file.ClassName}}>();
         }
 
         public int Count
@@ -73,48 +76,73 @@ namespace {{ NameSpace }}
             }
         }
 
+        public static List<DTMySQL_{{file.ClassName}}> LoadAll()
+        {
+            string commandText = string.Format(""select * from {0};"", ""{{file.ClassName}}"");
+            return LoadBy_MySQLComText(commandText);
+        }
+         {% for field in file.Fields %}
+        public static List<DTMySQL_{{file.ClassName}}> LoadBy{{field.Name}}()
+        {
+            string commandText = string.Format(""select* from {0}
+        where {1}={2};"" , ""{{file.ClassName}}"", ""{{field.Name}}"", {{field.Name}});
+            return LoadBy_MySQLComText(commandText);
+         }{% endfor%}
+
         /// <summary>
-        /// Do reload the dataTable file: {{file.ClassName}}, no exception when duplicate primary key
+        /// 从指定第几行开始，获得指定长度的数据行
+        /// 如 GetMySqlSelect_Limit（5，10） 获得6-15行
         /// </summary>
-        public static List<DTMySQL{{file.ClassName}}> LoadAll()
+        /// <param name=""fromRow""> 开始行，第一行为0</param>
+        /// <param name=""offsetLenght"" > 长度,如果是-1，则获得开始行到最后一行</param>
+        /// <returns></returns>
+        public static List<DTMySQL_{{file.ClassName}}> LoadAllByLimit(int form, int to)
         {
-            List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
+            string commandText = """";
+            if (offsetLenght < -1)
+            {
+                commandText = string.Format(""select* from {0}
+        limit {1};"", ""{{file.ClassName}}"", from);
+            }
+            else
+            {
+                commandText = string.Format(""select * from {0} limit {1},{2};"", ""{{file.ClassName}}"", from, offsetLenght);
+            }
+            return LoadBy_MySQLComText(commandText);
+        }
+
+        public static List<DTMySQL_{{file.ClassName}}> LoadBy_MySQLComText(string commandText)
+        {
+            List<DTMySQL_{{file.ClassName}}> testTempList = new List<DTMySQL_{{file.ClassName}}>();
+
+            System.Data.DataTable dt = DatabaseManager.GetInstance().GetSQLSelectDataTable(commandText);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                foreach (System.Data.DataRow dr in dt.Rows)
+                {
+                    DTMySQL_{{file.ClassName}} temp = new DTMySQL_{{file.ClassName}}(dr);
+                    testTempList.Add(temp);
+                }
+            }
 
             return testTempList;
         }
-
-        public static List<DTMySQL{{file.ClassName}}> LoadAllByLimit(int form, int to)
-        {
-            List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
-
-            return testTempList;
-        }
-
+        
+        
         /// <summary>
         /// 获得MySQL数据表里面的Row总数量
         /// </summary>
         public static int MySQL_GetRowsCount()
         {
-            return 0;
-        }
-
-        public static DTMySQL{{file.ClassName}} MySQL_GetByID(int id)
-        {
-            //List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
-            return null;
+            string commandText = string.Format(""select count(*) from {0}"", ""{{file.ClassName}}"");
+            return DatabaseManager.GetInstance().GetSQLSelectInt(commandText);
         }
 
         public static int MySQL_GetMaxID()
         {
-            //List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
-            return 0;
-        }
-
-        public static DTMySQL{{file.ClassName}} MySQL_GetByMaxID()
-        {
-            //List<DTMySQL{{file.ClassName}}> testTempList = new List<DTMySQL{{file.ClassName}}>();
-            return null;
-        }
+            string commandText = string.Format(""select max({{Fields[0].Name}}) from {0}"", ""{{file.ClassName}}"");
+            return DatabaseManager.GetInstance().GetSQLSelectInt(commandText);
+    }
 
         /// <summary>
         /// foreachable enumerable: {{file.ClassName}}
@@ -140,9 +168,9 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""id"">数据表行的PrimaryKey。</param>
         /// <returns>数据表行。</returns>
-        public DTMySQL{{file.ClassName}} Get(string primaryKey)
+        public DTMySQL_{{file.ClassName}} Get(string primaryKey)
         {
-            DTMySQL{{file.ClassName}} dataTable;
+            DTMySQL_{{file.ClassName}} dataTable;
             if (_dict.TryGetValue(primaryKey, out dataTable)) return dataTable;
             return null;
         }
@@ -162,7 +190,7 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <returns>是否存在数据表行。</returns>
-        public bool HasDataRow(System.Predicate<DTMySQL{{file.ClassName}}> condition)
+        public bool HasDataRow(System.Predicate<DTMySQL_{{file.ClassName}}> condition)
         {
             if (condition == null)
             {
@@ -186,7 +214,7 @@ namespace {{ NameSpace }}
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <returns>符合条件的数据表行。</returns>
         /// <remarks>当存在多个符合条件的数据表行时，仅返回第一个符合条件的数据表行。</remarks>
-        public DTMySQL{{file.ClassName}} GetDataRow(System.Predicate<DTMySQL{{file.ClassName}}> condition)
+        public DTMySQL_{{file.ClassName}} GetDataRow(System.Predicate<DTMySQL_{{file.ClassName}}> condition)
         {
             if (condition == null)
             {
@@ -195,7 +223,7 @@ namespace {{ NameSpace }}
 
             foreach (var dataRow in _dict)
             {
-                DTMySQL{{file.ClassName}} dr = dataRow.Value;
+                DTMySQL_{{file.ClassName}} dr = dataRow.Value;
                 if (condition(dr))
                 {
                     return dr;
@@ -209,10 +237,10 @@ namespace {{ NameSpace }}
         /// 获取所有数据表行。
         /// </summary>
         /// <returns>所有数据表行。</returns>
-        public DTMySQL{{file.ClassName}}[] GetAllDataRows()
+        public DTMySQL_{{file.ClassName}}[] GetAllDataRows()
         {
             int index = 0;
-            DTMySQL{{file.ClassName}}[] allDataRows = new DTMySQL{{file.ClassName}}[Count];
+            DTMySQL_{{file.ClassName}}[] allDataRows = new DTMySQL_{{file.ClassName}}[Count];
             foreach (var dataRow in _dict)
             {
                 allDataRows[index++] = dataRow.Value;
@@ -226,17 +254,17 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <returns>所有符合条件的数据表行。</returns>
-        public DTMySQL{{file.ClassName}}[] GetAllDataRows(System.Predicate<DTMySQL{{file.ClassName}}> condition)
+        public DTMySQL_{{file.ClassName}}[] GetAllDataRows(System.Predicate<DTMySQL_{{file.ClassName}}> condition)
         {
             if (condition == null)
             {
                 throw new System.Exception(""Condition is invalid."");
             }
 
-            List<DTMySQL{{file.ClassName}}> results = new List<DTMySQL{{file.ClassName}}>();
+            List<DTMySQL_{{file.ClassName}}> results = new List<DTMySQL_{{file.ClassName}}>();
             foreach (var dataRow in _dict)
             {
-                DTMySQL{{file.ClassName}} dr = dataRow.Value;
+                DTMySQL_{{file.ClassName}} dr = dataRow.Value;
                 if (condition(dr))
                 {
                     results.Add(dr);
@@ -251,14 +279,14 @@ namespace {{ NameSpace }}
         /// </summary>
         /// <param name=""comparison"" > 要排序的条件。</param>
         /// <returns>所有排序后的数据表行。</returns>
-        public DTMySQL{{file.ClassName}}[] GetAllDataRows(System.Comparison<DTMySQL{{file.ClassName}}> comparison)
+        public DTMySQL_{{file.ClassName}}[] GetAllDataRows(System.Comparison<DTMySQL_{{file.ClassName}}> comparison)
         {
             if (comparison == null)
             {
                 throw new System.Exception(""Comparison is invalid."");
             }
 
-            List<DTMySQL{{file.ClassName}}> allDataRows = new List<DTMySQL{{file.ClassName}}>();
+            List<DTMySQL_{{file.ClassName}}> allDataRows = new List<DTMySQL_{{file.ClassName}}>();
             foreach (var dataRow in _dict)
             {
                 allDataRows.Add(dataRow.Value);
@@ -274,7 +302,7 @@ namespace {{ NameSpace }}
         /// <param name=""condition"" > 要检查的条件。</param>
         /// <param name=""comparison"" > 要排序的条件。</param>
         /// <returns>所有排序后的符合条件的数据表行。</returns>
-        public DTMySQL{{file.ClassName}}[] GetAllDataRows(System.Predicate<DTMySQL{{file.ClassName}}> condition, System.Comparison<DTMySQL{{file.ClassName}}> comparison)
+        public DTMySQL_{{file.ClassName}}[] GetAllDataRows(System.Predicate<DTMySQL_{{file.ClassName}}> condition, System.Comparison<DTMySQL_{{file.ClassName}}> comparison)
         {
             if (condition == null)
             {
@@ -286,10 +314,10 @@ namespace {{ NameSpace }}
                 throw new System.Exception(""Comparison is invalid."");
             }
 
-            List<DTMySQL{{file.ClassName}}> results = new List<DTMySQL{{file.ClassName}}>();
+            List<DTMySQL_{{file.ClassName}}> results = new List<DTMySQL_{{file.ClassName}}>();
             foreach (var dataRow in _dict)
             {
-                DTMySQL{{file.ClassName}} dr = dataRow.Value;
+                DTMySQL_{{file.ClassName}} dr = dataRow.Value;
                 if (condition(dr))
                 {
                     results.Add(dr);
@@ -309,43 +337,60 @@ namespace {{ NameSpace }}
     /// Auto Generate for Tab File: ""{{file.ClassName}}.bytes""
     /// Singleton class for less memory use
     /// </summary>
-    public partial class DTMySQL{{file.ClassName}} : TableRowFieldParser
+    public partial class DTMySQL_{{file.ClassName}} : TableRowFieldParser
     {
+        {% for field in file.Fields %}
         /// <summary>
-        /// ID Column/编号/主键
+        /// {{ field.Comment }}
         /// </summary>
-        public string Id { get; private set; }
+        public {{ field.FormatType }} {{ field.Name}} { get;  set;}
+        {% endfor %}
 
-        /// <summary>
-        /// Name/名字
-        /// </summary>
-        public string Value { get; set; }
-
-        internal DTMySQL{{file.ClassName}}()
+        internal DTMySQL_{{file.ClassName}}()
         {
             Reset();
         }
 
-        internal DTMySQL{{file.ClassName}}(System.Data.DataRow row)
+        internal DTMySQL_{{file.ClassName}}(System.Data.DataRow row)
         {
             Reload(row);
         }
 
         internal void Reload(System.Data.DataRow row)
-        {
-            Id = Get_string(row[""USERID""].ToString(), """");
-            Value = Get_string(row[""USERID""].ToString(), """");
+        { {% for field in file.Fields %}
+            {{ field.Name}} = Get_{{ field.TypeMethod }}(row[""{{ field.Name }}""].ToString(), ""{{ field.DefaultValue }}"");{% endfor %}
         }
 
-        /// <summary>
-        /// Get PrimaryKey from a table row
-        /// </summary>
-        /// <param name=""row""></param>
-        /// <returns></returns>
-        public string ParsePrimaryKey(System.Data.DataRow row)
+        public bool UpdateToMySQL()
         {
-            var primaryKey = Get_string(row[""USERID""].ToString(), """");
-            return primaryKey;
+            string commandText = string.Format(""select* from {0}
+        where {1}='{2}';"", ""TestTest"", ""id"", 10);
+            if (string.IsNullOrEmpty(DatabaseManager.GetInstance().GetSQLSelectString(commandText)))
+            {
+                UnityEngine.Debug.Log(""插入"");
+                //插入
+                commandText = ""insert into TestTest("";
+                commandText += string.Format(""{ 0},"", ""id"");
+        commandText += string.Format(""{ 0},"", ""Value"");
+        commandText = commandText.Substring(0, commandText.Length - 1);
+                commandText += "") values("";
+                commandText += string.Format(""'{0}',"", 10);
+        commandText += string.Format(""'{0}',"", 2);
+        commandText = commandText.Substring(0, commandText.Length - 1);
+                commandText += "");"";
+            }
+            else
+            {
+                UnityEngine.Debug.Log(""更新"");
+                //更新
+                commandText = ""update TestTest set "";
+
+                commandText += string.Format(""{ 0}='{1}',"", ""id"", ""11"");
+                commandText += string.Format(""{0}='{1}',"", ""Value"", ""33"");
+                commandText = commandText.Substring(0, commandText.Length - 1);
+                commandText += string.Format("" where id={0};"", 10);
+                }
+            return DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
         }
 
         public bool DeleteInMySQL()
@@ -353,12 +398,7 @@ namespace {{ NameSpace }}
             return false;
         }
 
-        public bool UpdateToMySQL()
-        {
-            return false;
-        }
-
-        public void Clone(DTMySQL{{file.ClassName}} c)
+        public void Clone(DTMySQL_{{file.ClassName}} c)
         {
         }
 
