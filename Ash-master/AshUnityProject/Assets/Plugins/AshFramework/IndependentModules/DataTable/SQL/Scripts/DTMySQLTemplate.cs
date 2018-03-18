@@ -42,7 +42,7 @@ namespace {{ NameSpace }}
             commandText = ""CREATE TABLE {{file.ClassName}} ("";{% for field in file.Fields %}
             {% if field.Index == 0 %}
             commandText += DTMySQLExtenion.GetMySQLCreateTable_PK(""{{ field.Name }}""); {% else %}
-            commandText += DTMySQLExtenion.GetMySQLCreateTable_{{ field.FormatType }}(""{{ field.Name }}"");     {% endif %}{% endfor %}
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_{{ field.FormatType }}(""{{ field.Name }}"",""{{ field.MySQLCharLength}}"");     {% endif %}{% endfor %}
             commandText = commandText.Substring(0,commandText.Length - 1);
             commandText += "");"";
 
@@ -93,14 +93,14 @@ namespace {{ NameSpace }}
         {% for field in file.Fields %}{% if field.Index == 0 %}
         public DTMySQL_{{file.ClassName}} LoadBy{{field.Name}}({{ field.FormatType }} {{field.Name}})
         {
-            string commandText = string.Format(""select* from {0} where {1}={2};"" , ""{{file.ClassName}}"", ""{{field.Name}}"",              DTMySQLExtenion.GetMySQLValue_{{ field.FormatType }}({{ field.Name }}));
-            List<DTMySQL_Test> tempList = LoadBy_MySQLComTextInternal(commandText);
+            string commandText = string.Format(""select* from {0} where {1}={2};"" , ""{{file.ClassName}}"", ""{{field.Name}}"", DTMySQLExtenion.GetMySQLValue_{{ field.FormatType }}({{ field.Name }}));
+            List<DTMySQL_{{file.ClassName}}> tempList = LoadBy_MySQLComTextInternal(commandText);
             return tempList.Count > 0 ? tempList[0]:null;
         }
         {% else %}
         public List<DTMySQL_{{file.ClassName}}> LoadBy{{field.Name}}({{ field.FormatType }} {{field.Name}})
         {
-            string commandText = string.Format(""select* from {0} where {1}={2};"" , ""{{file.ClassName}}"", ""{{field.Name}}"",              DTMySQLExtenion.GetMySQLValue_{{ field.FormatType }}({{ field.Name }}));
+            string commandText = string.Format(""select* from {0} where {1}={2};"" , ""{{file.ClassName}}"", ""{{field.Name}}"", DTMySQLExtenion.GetMySQLValue_{{ field.FormatType }}({{ field.Name }}));
             return LoadBy_MySQLComTextInternal(commandText);
          }{% endif%}{% endfor%}
 

@@ -17,11 +17,41 @@ namespace Ash
         public static void UpdateAllDataTablesToMySQL()
         {
             
+            UpdateMyTestToMySQL();
+            
             UpdateTestToMySQL();
              
         }
 
 
+#if UNITY_EDITOR
+        [UnityEditor.MenuItem("Window/Ash/DT/MySQL/Class/Update MyTest DataTable To MySQL")]
+#endif
+        public static void UpdateMyTestToMySQL()
+        {
+            //删除表
+            string commandText = "DROP TABLE MyTest";
+            DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
+            //创建表
+            commandText = "CREATE TABLE MyTest (";
+            
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_PK("Id"); 
+            
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_string("Name","");     
+            
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_string("ClassName","");     
+            
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_string("Info","200");     
+            
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_int("Score","");     
+            commandText = commandText.Substring(0,commandText.Length - 1);
+            commandText += ");";
+
+            DatabaseManager.GetInstance().OpenDatabase();
+            DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
+            //数据库插入数据
+            DTMySQL_MyTest_Manager.Instance.ReloadAll(true);
+        }
 #if UNITY_EDITOR
         [UnityEditor.MenuItem("Window/Ash/DT/MySQL/Class/Update Test DataTable To MySQL")]
 #endif
@@ -35,9 +65,9 @@ namespace Ash
             
             commandText += DTMySQLExtenion.GetMySQLCreateTable_PK("Id"); 
             
-            commandText += DTMySQLExtenion.GetMySQLCreateTable_float("Value1");     
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_float("Value1","");     
             
-            commandText += DTMySQLExtenion.GetMySQLCreateTable_string("Value");     
+            commandText += DTMySQLExtenion.GetMySQLCreateTable_string("Value","");     
             commandText = commandText.Substring(0,commandText.Length - 1);
             commandText += ");";
 
@@ -48,6 +78,545 @@ namespace Ash
         } 
     }
 
+
+    /// <summary>
+    /// Auto Generate for Tab File: "MyTest.bytes"
+    /// No use of generic and reflection, for better performance,  less IL code generating
+    /// </summary>>
+    public partial class DTMySQL_MyTest_Manager
+    {
+        static DTMySQL_MyTest_Manager _instance = null;
+        public static DTMySQL_MyTest_Manager Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = new DTMySQL_MyTest_Manager();
+                return _instance;
+            }
+        }
+
+        private Dictionary<int, DTMySQL_MyTest> _dict = new Dictionary<int, DTMySQL_MyTest>();
+
+        public DTMySQL_MyTest_Manager()
+        {
+            _dict = new Dictionary<int, DTMySQL_MyTest>();
+        }
+
+        public int Count
+        {
+            get
+            {
+                return _dict.Count;
+            }
+        }
+
+        public List<DTMySQL_MyTest> LoadAll()
+        {
+            string commandText = string.Format("select * from {0};", "MyTest");
+            return LoadBy_MySQLComTextInternal(commandText);
+        }
+        
+        public DTMySQL_MyTest LoadById(int Id)
+        {
+            string commandText = string.Format("select* from {0} where {1}={2};" , "MyTest", "Id", DTMySQLExtenion.GetMySQLValue_int(Id));
+            List<DTMySQL_MyTest> tempList = LoadBy_MySQLComTextInternal(commandText);
+            return tempList.Count > 0 ? tempList[0]:null;
+        }
+        
+        public List<DTMySQL_MyTest> LoadByName(string Name)
+        {
+            string commandText = string.Format("select* from {0} where {1}={2};" , "MyTest", "Name", DTMySQLExtenion.GetMySQLValue_string(Name));
+            return LoadBy_MySQLComTextInternal(commandText);
+         }
+        public List<DTMySQL_MyTest> LoadByClassName(string ClassName)
+        {
+            string commandText = string.Format("select* from {0} where {1}={2};" , "MyTest", "ClassName", DTMySQLExtenion.GetMySQLValue_string(ClassName));
+            return LoadBy_MySQLComTextInternal(commandText);
+         }
+        public List<DTMySQL_MyTest> LoadByInfo(string Info)
+        {
+            string commandText = string.Format("select* from {0} where {1}={2};" , "MyTest", "Info", DTMySQLExtenion.GetMySQLValue_string(Info));
+            return LoadBy_MySQLComTextInternal(commandText);
+         }
+        public List<DTMySQL_MyTest> LoadByScore(int Score)
+        {
+            string commandText = string.Format("select* from {0} where {1}={2};" , "MyTest", "Score", DTMySQLExtenion.GetMySQLValue_int(Score));
+            return LoadBy_MySQLComTextInternal(commandText);
+         }
+
+
+        private List<DTMySQL_MyTest> LoadBy_MySQLComTextInternal(string commandText)
+        {
+            List<DTMySQL_MyTest> testTempList = new List<DTMySQL_MyTest>();
+
+            UnityEngine.Debug.Log("Load: " + commandText);
+            System.Data.DataTable dt = DatabaseManager.GetInstance().GetSQLSelectDataTable(commandText);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                foreach (System.Data.DataRow dr in dt.Rows)
+                {
+                    DTMySQL_MyTest temp = new DTMySQL_MyTest(dr);
+                    testTempList.Add(temp);
+                    if(!_dict.ContainsKey(temp.Id))_dict.Add(temp.Id, temp);
+                }
+            }
+
+            return testTempList;
+        }
+
+        /// <summary>
+        /// 从指定第几行开始，获得指定长度的数据行
+        /// 如 GetMySqlSelect_Limit（5，10） 获得6-15行
+        /// </summary>
+        /// <param name="fromRow"> 开始行，第一行为0</param>
+        /// <param name="offsetLenght" > 长度,如果是-1，则获得开始行到最后一行</param>
+        /// <returns></returns>
+        public static List<DTMySQL_MyTest> LoadAllByLimit(int from, int offsetLenght)
+        {
+            string commandText = "";
+            if (offsetLenght < -1)
+            {
+                commandText = string.Format("select * from {0} limit {1};", "MyTest", from);
+            }
+            else
+            {
+                commandText = string.Format("select * from {0} limit {1},{2};", "MyTest", from, offsetLenght);
+            }
+            return LoadBy_MySQLComText(commandText);
+        }
+
+        public static List<DTMySQL_MyTest> LoadBy_MySQLComText(string commandText)
+        {
+            List<DTMySQL_MyTest> testTempList = new List<DTMySQL_MyTest>();
+
+            UnityEngine.Debug.Log("Load: " + commandText);
+            System.Data.DataTable dt = DatabaseManager.GetInstance().GetSQLSelectDataTable(commandText);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                foreach (System.Data.DataRow dr in dt.Rows)
+                {
+                    DTMySQL_MyTest temp = new DTMySQL_MyTest(dr);
+                    testTempList.Add(temp);
+                }
+            }
+
+            return testTempList;
+        }
+        
+        
+        /// <summary>
+        /// 获得MySQL数据表里面的Row总数量
+        /// </summary>
+        public static int MySQL_GetRowsCount()
+        {
+            string commandText = string.Format("select count(*) from {0}", "MyTest");
+            return DatabaseManager.GetInstance().GetSQLSelectInt(commandText);
+        }
+
+        public static int MySQL_GetMaxID()
+        {
+            string commandText = string.Format("select max(Id) from {0}", "MyTest");
+            return DatabaseManager.GetInstance().GetSQLSelectInt(commandText);
+        }
+
+        /// <summary>
+        /// foreachable enumerable: MyTest
+        /// </summary>
+        public IEnumerable GetAll()
+        {
+            foreach (var row in _dict.Values)
+            {
+                yield return row;
+            }
+        }
+
+        /// <summary>
+        /// GetEnumerator for `MoveNext`: MyTest
+        /// </summary>
+	    public IEnumerator GetEnumerator()
+        {
+            return _dict.Values.GetEnumerator();
+        }
+
+        /// <summary>
+        /// 获取数据表行。
+        /// </summary>
+        /// <param name="id">数据表行的PrimaryKey。</param>
+        /// <returns>数据表行。</returns>
+        public DTMySQL_MyTest Get(int primaryKey)
+        {
+            DTMySQL_MyTest dataTable;
+            if (_dict.TryGetValue(primaryKey, out dataTable)) return dataTable;
+            return null;
+        }
+
+        /// <summary>
+        /// 检查是否存在数据表行。
+        /// </summary>
+        /// <param name="primaryKey" > 数据表行的主Key。</param>
+        /// <returns>是否存在数据表行。</returns>
+        public bool HasDataRow(int primaryKey)
+        {
+            return _dict.ContainsKey(primaryKey);
+        }
+
+        /// <summary>
+        /// 检查是否存在数据表行。
+        /// </summary>
+        /// <param name="condition" > 要检查的条件。</param>
+        /// <returns>是否存在数据表行。</returns>
+        public bool HasDataRow(System.Predicate<DTMySQL_MyTest> condition)
+        {
+            if (condition == null)
+            {
+                throw new System.Exception("Condition is invalid.");
+            }
+
+            foreach (var dataRow in _dict)
+            {
+                if (condition(dataRow.Value))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// 获取符合条件的数据表行。
+        /// </summary>
+        /// <param name="condition" > 要检查的条件。</param>
+        /// <returns>符合条件的数据表行。</returns>
+        /// <remarks>当存在多个符合条件的数据表行时，仅返回第一个符合条件的数据表行。</remarks>
+        public DTMySQL_MyTest GetDataRow(System.Predicate<DTMySQL_MyTest> condition)
+        {
+            if (condition == null)
+            {
+                throw new System.Exception("Condition is invalid.");
+            }
+
+            foreach (var dataRow in _dict)
+            {
+                DTMySQL_MyTest dr = dataRow.Value;
+                if (condition(dr))
+                {
+                    return dr;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 获取所有数据表行。
+        /// </summary>
+        /// <returns>所有数据表行。</returns>
+        public DTMySQL_MyTest[] GetAllDataRows()
+        {
+            int index = 0;
+            DTMySQL_MyTest[] allDataRows = new DTMySQL_MyTest[Count];
+            foreach (var dataRow in _dict)
+            {
+                allDataRows[index++] = dataRow.Value;
+            }
+
+            return allDataRows;
+        }
+
+        /// <summary>
+        /// 获取所有符合条件的数据表行。
+        /// </summary>
+        /// <param name="condition" > 要检查的条件。</param>
+        /// <returns>所有符合条件的数据表行。</returns>
+        public DTMySQL_MyTest[] GetAllDataRows(System.Predicate<DTMySQL_MyTest> condition)
+        {
+            if (condition == null)
+            {
+                throw new System.Exception("Condition is invalid.");
+            }
+
+            List<DTMySQL_MyTest> results = new List<DTMySQL_MyTest>();
+            foreach (var dataRow in _dict)
+            {
+                DTMySQL_MyTest dr = dataRow.Value;
+                if (condition(dr))
+                {
+                    results.Add(dr);
+                }
+            }
+
+            return results.ToArray();
+        }
+
+        /// <summary>
+        /// 获取所有排序后的数据表行。
+        /// </summary>
+        /// <param name="comparison" > 要排序的条件。</param>
+        /// <returns>所有排序后的数据表行。</returns>
+        public DTMySQL_MyTest[] GetAllDataRows(System.Comparison<DTMySQL_MyTest> comparison)
+        {
+            if (comparison == null)
+            {
+                throw new System.Exception("Comparison is invalid.");
+            }
+
+            List<DTMySQL_MyTest> allDataRows = new List<DTMySQL_MyTest>();
+            foreach (var dataRow in _dict)
+            {
+                allDataRows.Add(dataRow.Value);
+            }
+
+            allDataRows.Sort(comparison);
+            return allDataRows.ToArray();
+        }
+
+        /// <summary>
+        /// 获取所有排序后的符合条件的数据表行。
+        /// </summary>
+        /// <param name="condition" > 要检查的条件。</param>
+        /// <param name="comparison" > 要排序的条件。</param>
+        /// <returns>所有排序后的符合条件的数据表行。</returns>
+        public DTMySQL_MyTest[] GetAllDataRows(System.Predicate<DTMySQL_MyTest> condition, System.Comparison<DTMySQL_MyTest> comparison)
+        {
+            if (condition == null)
+            {
+                throw new System.Exception("Condition is invalid.");
+            }
+
+            if (comparison == null)
+            {
+                throw new System.Exception("Comparison is invalid.");
+            }
+
+            List<DTMySQL_MyTest> results = new List<DTMySQL_MyTest>();
+            foreach (var dataRow in _dict)
+            {
+                DTMySQL_MyTest dr = dataRow.Value;
+                if (condition(dr))
+                {
+                    results.Add(dr);
+                }
+            }
+
+            results.Sort(comparison);
+            return results.ToArray();
+        }
+
+        public static readonly string[] TabFilePaths = 
+        {
+            "MyTest.bytes"
+        };
+
+        /// <summary>
+        /// Do reload the dataTable file: MyTest
+        /// </summary>
+	    internal void ReloadAll(bool throwWhenDuplicatePrimaryKey, string customContent = null)
+        {
+            for (var j = 0; j < TabFilePaths.Length; j++)
+            {
+                var tabFilePath = TabFilePaths[j];
+                TableFile tableFile;
+                if (customContent == null)
+                    tableFile = DTMySqlModule.Get(tabFilePath, false);
+                else
+                    tableFile = TableFile.LoadFromString(customContent);
+
+                using (tableFile)
+                {
+                    foreach (var row in tableFile)
+                    {
+                        DTMySQL_MyTest  dataTable;
+                        dataTable = new DTMySQL_MyTest(row);
+                        if (!_dict.ContainsKey(dataTable.Id))
+                        {
+                            dataTable.UpdateToMySQL();
+                            _dict[dataTable.Id] = dataTable;
+                        }    
+                        else 
+                        {
+                            if (throwWhenDuplicatePrimaryKey) throw new System.Exception(string.Format("DuplicateKey, Class: {0}, File: {1}, Key: {2}", this.GetType().Name, tabFilePath, "Id"));
+                            else dataTable.Reload(row);
+                        }
+                    }
+                }
+            }
+            //UnityEngine.Debug.LogFormat("Reload dataTables: {0}, Row Count: {1}, Reload Count: {2}", GetType(), Count);
+        }
+
+        // ========= CustomExtraString begin ===========
+
+        // ========= CustomExtraString end ===========
+    }
+
+    /// <summary>
+    /// Auto Generate for Tab File: "MyTest.bytes"
+    /// Singleton class for less memory use
+    /// </summary>
+    public partial class DTMySQL_MyTest : TableRowFieldParser
+    {
+        private static int _maxId = 0;
+
+        private static int NewId
+        {
+            get
+            {
+                int currentMaxId = DTMySQL_MyTest_Manager.MySQL_GetMaxID();
+                if (_maxId <= currentMaxId)
+                {
+                    _maxId = currentMaxId;
+                }
+                _maxId++;
+                return _maxId;
+            }
+        }
+        
+        /// <summary>
+        /// ID Column/编号/主键
+        /// </summary>
+        public int Id { get;private set;}
+        
+        /// <summary>
+        /// ID Column/编号/主键
+        /// </summary>
+        public string Name { get; set;}
+        /// <summary>
+        /// ID Column/编号/主键
+        /// </summary>
+        public string ClassName { get; set;}
+        /// <summary>
+        /// ID Column/编号/主键
+        /// </summary>
+        public string Info { get; set;}
+        /// <summary>
+        /// ID Column/编号/主键
+        /// </summary>
+        public int Score { get; set;}
+
+        internal DTMySQL_MyTest()
+        {
+            Reset();
+        }
+
+        internal DTMySQL_MyTest(System.Data.DataRow row)
+        {
+            Reload(row);
+        }
+
+        internal void Reload(System.Data.DataRow row)
+        { 
+            
+            Id = Get_int(row["Id"].ToString(), "0");
+            
+            Name = Get_string(row["Name"].ToString(), "");
+            
+            ClassName = Get_string(row["ClassName"].ToString(), "");
+            
+            Info = Get_string(row["Info"].ToString(), " ");
+            
+            Score = Get_int(row["Score"].ToString(), "0");
+            
+        }
+
+        public void AutoNewID()
+        {
+            Id = NewId;
+        }
+
+        public bool UpdateToMySQL()
+        {
+            string commandText = string.Format("select * from {0} where {1}={2};", "MyTest", "Id", DTMySQLExtenion.GetMySQLValue_int(Id)); 
+            if (string.IsNullOrEmpty(DatabaseManager.GetInstance().GetSQLSelectString(commandText)))
+            {
+                //插入
+                commandText = "insert into MyTest(";
+                commandText += string.Format(" {0},", "Id");
+                commandText += string.Format(" {0},", "Name");
+                commandText += string.Format(" {0},", "ClassName");
+                commandText += string.Format(" {0},", "Info");
+                commandText += string.Format(" {0},", "Score");
+                commandText = commandText.Substring(0, commandText.Length - 1);
+                commandText += ") values(";
+                
+                commandText += string.Format("{0},",  DTMySQLExtenion.GetMySQLValue_int(Id));
+                commandText += string.Format("{0},",  DTMySQLExtenion.GetMySQLValue_string(Name));
+                commandText += string.Format("{0},",  DTMySQLExtenion.GetMySQLValue_string(ClassName));
+                commandText += string.Format("{0},",  DTMySQLExtenion.GetMySQLValue_string(Info));
+                commandText += string.Format("{0},",  DTMySQLExtenion.GetMySQLValue_int(Score));
+                commandText = commandText.Substring(0, commandText.Length - 1);
+                commandText += ");";
+                UnityEngine.Debug.Log("插入: " + commandText);
+            }
+            else
+            {
+                //更新
+                commandText = "update MyTest set ";
+                commandText += string.Format(" {0}={1},", "Name", DTMySQLExtenion.GetMySQLValue_string(Name));
+                commandText += string.Format(" {0}={1},", "ClassName", DTMySQLExtenion.GetMySQLValue_string(ClassName));
+                commandText += string.Format(" {0}={1},", "Info", DTMySQLExtenion.GetMySQLValue_string(Info));
+                commandText += string.Format(" {0}={1},", "Score", DTMySQLExtenion.GetMySQLValue_int(Score));
+                commandText = commandText.Substring(0, commandText.Length - 1);
+                commandText += string.Format(" where Id={0};", DTMySQLExtenion.GetMySQLValue_int(Id));
+                UnityEngine.Debug.Log("更新: " + commandText);
+            }
+            return DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
+        }
+
+        public bool DeleteInMySQL()
+        {
+            string commandText = string.Format("delete from {0} where Id = {1};", "MyTest", DTMySQLExtenion.GetMySQLValue_int(Id));
+            UnityEngine.Debug.Log("删除: " + commandText);
+            return DatabaseManager.GetInstance().DoSQLUpdateDelete(commandText);
+        }
+
+        public void CloneAll(DTMySQL_MyTest c)
+        {
+            
+            Id = c.Id;
+            
+            Name = c.Name;
+            
+            ClassName = c.ClassName;
+            
+            Info = c.Info;
+            
+            Score = c.Score;
+            
+        }
+
+        public void CloneButId(DTMySQL_MyTest c)
+        {
+            
+            Name = c.Name;
+            ClassName = c.ClassName;
+            Info = c.Info;
+            Score = c.Score;
+        }
+
+        public void Reset()
+        {
+            
+            Id = NewId;
+            Name = Get_string("", "");
+            ClassName = Get_string("", "");
+            Info = Get_string("", " ");
+            Score = Get_int("", "0");
+        }
+
+        internal DTMySQL_MyTest(TableFileRow row)
+        {
+            Reload(row);
+        }
+
+        internal void Reload(TableFileRow row)
+        { 
+            Id = row.Get_int(row.Values[0], "0"); 
+            Name = row.Get_string(row.Values[1], ""); 
+            ClassName = row.Get_string(row.Values[2], ""); 
+            Info = row.Get_string(row.Values[3], " "); 
+            Score = row.Get_int(row.Values[4], "0"); 
+        }
+    }
 
     /// <summary>
     /// Auto Generate for Tab File: "Test.bytes"
@@ -88,19 +657,19 @@ namespace Ash
         
         public DTMySQL_Test LoadById(int Id)
         {
-            string commandText = string.Format("select* from {0} where {1}={2};" , "Test", "Id",              DTMySQLExtenion.GetMySQLValue_int(Id));
+            string commandText = string.Format("select* from {0} where {1}={2};" , "Test", "Id", DTMySQLExtenion.GetMySQLValue_int(Id));
             List<DTMySQL_Test> tempList = LoadBy_MySQLComTextInternal(commandText);
             return tempList.Count > 0 ? tempList[0]:null;
         }
         
         public List<DTMySQL_Test> LoadByValue1(float Value1)
         {
-            string commandText = string.Format("select* from {0} where {1}={2};" , "Test", "Value1",              DTMySQLExtenion.GetMySQLValue_float(Value1));
+            string commandText = string.Format("select* from {0} where {1}={2};" , "Test", "Value1", DTMySQLExtenion.GetMySQLValue_float(Value1));
             return LoadBy_MySQLComTextInternal(commandText);
          }
         public List<DTMySQL_Test> LoadByValue(string Value)
         {
-            string commandText = string.Format("select* from {0} where {1}={2};" , "Test", "Value",              DTMySQLExtenion.GetMySQLValue_string(Value));
+            string commandText = string.Format("select* from {0} where {1}={2};" , "Test", "Value", DTMySQLExtenion.GetMySQLValue_string(Value));
             return LoadBy_MySQLComTextInternal(commandText);
          }
 

@@ -26,19 +26,28 @@ public static class DTMySQLExtenion
         return  string.Format("{0} INT NOT NULL PRIMARY KEY AUTO_INCREMENT,", fieldName);
     }
 
-    public static string GetMySQLCreateTable_string(string fieldName)
+    public static string GetMySQLCreateTable_string(string fieldName,string charLength)
     {
-        return  string.Format(" {0} VARCHAR(20),", fieldName);
+        if (string.IsNullOrEmpty(charLength)) 
+            return  string.Format(" {0} VARCHAR({1}),", fieldName, 20);
+        else
+            return string.Format(" {0} VARCHAR({1}),", fieldName, charLength);
     }
 
-    public static string GetMySQLCreateTable_float(string fieldName)
+    public static string GetMySQLCreateTable_float(string fieldName, string charLength)
     {
-        return string.Format(" {0} FLOAT(20, 5),", fieldName);
+        if (string.IsNullOrEmpty(charLength))
+            return string.Format(" {0} FLOAT({1}, 5),", fieldName, 20);
+        else
+            return string.Format(" {0} FLOAT({1}, 5),", fieldName, charLength);
     }
 
-    public static string GetMySQLCreateTable_int(string fieldName)
+    public static string GetMySQLCreateTable_int(string fieldName, string charLength)
     {
-        return string.Format(" {0} INT(20),", fieldName);
+        if (string.IsNullOrEmpty(charLength)) 
+            return string.Format(" {0} INT({1}),", fieldName, 20);
+        else
+            return string.Format(" {0} INT({1}),", fieldName, charLength);
     }
     #endregion #region CreateTable
 }
