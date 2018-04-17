@@ -1,0 +1,10 @@
+{
+    "name": "AshUnity.Editor",
+    "references": [
+        "Ash.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

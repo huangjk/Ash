@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DD1D0FE-EE6A-4809-9A33-4CAAFAFFA59F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ash</RootNamespace>
+    <AssemblyName>Ash.Game</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <IntermediateOutputPath>..\..\..\..\..\..\NonUnityBuild\Temp\Debug\</IntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\..\..\..\..\NonUnityBuild\Temp\Debug\</BaseIntermediateOutputPath>
+    <OutputPath>..\..\..\..\..\..\..\NonUnityBuild\Bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNITY_5_5_OR_NEWER,UNITY_5_3_OR_NEWER,UNITY_5_3,UNITY_5_6_OR_NEWER,UNITY_5_3,UNITY_5_4,UNITY_5_4_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>..\..\..\..\..\..\..\NonUnityBuild\Bin\Debug\</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\..\..\..\NonUnityBuild\Libraries\Unity\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\..\NonUnityBuild\Libraries\Unity\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AshUnity\AshUnity.csproj">
+      <Project>{25d335f1-5aa4-4af9-9907-89586148adff}</Project>
+      <Name>AshUnity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ash\Ash.csproj">
+      <Project>{54be666f-757f-49f9-b75e-b0680837bfe0}</Project>
+      <Name>Ash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FM\FM.csproj">
+      <Project>{1cec358f-8acf-47f2-99ad-1de37f35b7bc}</Project>
+      <Name>FM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Editor\Inspector\MyGameEntryInspector.cs" />
+    <Compile Include="Entry\MyGameEntry.cs" />
+    <Compile Include="Entry\MyGameEntryBase.cs" />
+    <Compile Include="Entry\MyGameEntryBase.Setting.cs" />
+    <Compile Include="Entry\ShutdownType.cs" />
+    <Compile Include="Procedure\ProcedureBase.cs" />
+    <Compile Include="Procedure\ProcedureCheckVersion.cs" />
+    <Compile Include="Procedure\ProcedureLaunch.cs" />
+    <Compile Include="Procedure\ProcedureSplash.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

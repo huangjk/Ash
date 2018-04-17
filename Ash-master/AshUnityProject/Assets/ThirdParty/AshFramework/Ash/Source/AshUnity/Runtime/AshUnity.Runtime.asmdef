@@ -1,0 +1,8 @@
+{
+    "name": "AshUnity.Runtime",
+    "references": [
+        "Ash.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

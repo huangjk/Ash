@@ -1,0 +1,40 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ThirdParty\AshFramework\Ash\Source\Test\Ash\TaskPool\TaskPoolTest.cs">
+    <Files>
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\MyGameEntry\Entry\MyGameEntry.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Test\Ash\Log\LogTestRuntime.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Test\AshUnity\Fsm\FsmTest.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\AshUnity\Runtime\Base\AshUnityEntry.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Fsm\IFsmManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Fsm\IFsm.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Fsm\Fsm.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Fsm\FsmState.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Fsm\FsmEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Base\Variable\GenericVariable.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Base\Variable\Variable.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Procedure\ProcedureManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Procedure\ProcedureBase.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\AshUnity\Runtime\Fsm\FsmComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\AshUnity\Runtime\Procedure\ProcedureComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Procedure\IProcedureManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\MyGameEntry\Entry\MyGameEntryBase.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\MyGameEntry\Procedure\ProcedureBase.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\MyGameEntry\Entry\MyGameEntryBase.Setting.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\AshUnity\Editor\Inspector\AshInspector.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\AshUnity\Runtime\Base\AshUnityComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\MyGameEntry\Editor\Inspector\MyGameEntryInspector.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\MyGameEntry\Procedure\ProcedureLaunch.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Test\AshUnity\Base\Editor\AshUnityEntryTest.cs" Line="1" Column="1" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Test\Ash\TaskPool\TaskPoolTest.cs" Line="59" Column="5" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Base\TaskPool\TaskPool.cs" Line="9" Column="11" />
+      <File FileName="Assets\ThirdParty\AshFramework\Ash\Source\Ash\Base\TaskPool\ITaskAgent.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="C:\Users\ABCDEFG\OneDrive\Github\Ash\Ash-master\AshUnityProject\Assets\ThirdParty\AshFramework\Ash\Source\Test\Ash\TaskPool\TaskPoolTest.cs" line="30" column="31" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

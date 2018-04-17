@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ash", "..\AshUnityProject\Assets\Plugins\Ash\Source\Ash\Ash.csproj", "{54BE666F-757F-49F9-B75E-B0680837BFE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ash", "..\AshUnityProject\Assets\ThirdParty\AshFramework\Ash\Source\Ash\Ash.csproj", "{54BE666F-757F-49F9-B75E-B0680837BFE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshUnity", "..\AshUnityProject\Assets\Plugins\Ash\Source\AshUnity\AshUnity.csproj", "{25D335F1-5AA4-4AF9-9907-89586148ADFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshUnity", "..\AshUnityProject\Assets\ThirdParty\AshFramework\Ash\Source\AshUnity\AshUnity.csproj", "{25D335F1-5AA4-4AF9-9907-89586148ADFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshUnity-tests",  "..\AshUnityProject\Assets\Plugins\Ash\OptionalExtras\UnitTests\Editor\AshUnity-tests.csproj",  "{AA82DD8D-DD31-41F2-8D6F-A8F2D01735BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FM", "..\AshUnityProject\Assets\ThirdParty\AshFramework\Ash\Source\FM\FM.csproj", "{1CEC358F-8ACF-47F2-99AD-1DE37F35B7BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGameEntry", "..\AshUnityProject\Assets\ThirdParty\AshFramework\Ash\Source\MyGameEntry\MyGameEntry.csproj", "{1DD1D0FE-EE6A-4809-9A33-4CAAFAFFA59F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\AshUnityProject\Assets\ThirdParty\AshFramework\Ash\Source\Test\Test.csproj", "{19C16302-45CD-454F-BD4B-7BE8148EF6D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,18 @@ Global
 		{25D335F1-5AA4-4AF9-9907-89586148ADFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25D335F1-5AA4-4AF9-9907-89586148ADFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25D335F1-5AA4-4AF9-9907-89586148ADFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA82DD8D-DD31-41F2-8D6F-A8F2D01735BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA82DD8D-DD31-41F2-8D6F-A8F2D01735BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA82DD8D-DD31-41F2-8D6F-A8F2D01735BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA82DD8D-DD31-41F2-8D6F-A8F2D01735BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CEC358F-8ACF-47F2-99AD-1DE37F35B7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CEC358F-8ACF-47F2-99AD-1DE37F35B7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CEC358F-8ACF-47F2-99AD-1DE37F35B7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CEC358F-8ACF-47F2-99AD-1DE37F35B7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD1D0FE-EE6A-4809-9A33-4CAAFAFFA59F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD1D0FE-EE6A-4809-9A33-4CAAFAFFA59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD1D0FE-EE6A-4809-9A33-4CAAFAFFA59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD1D0FE-EE6A-4809-9A33-4CAAFAFFA59F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C16302-45CD-454F-BD4B-7BE8148EF6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C16302-45CD-454F-BD4B-7BE8148EF6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C16302-45CD-454F-BD4B-7BE8148EF6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C16302-45CD-454F-BD4B-7BE8148EF6D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

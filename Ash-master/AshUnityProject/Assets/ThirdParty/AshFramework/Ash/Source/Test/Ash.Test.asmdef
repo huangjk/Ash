@@ -1,0 +1,12 @@
+{
+    "name": "Ash.Test",
+    "references": [
+        "Ash.Core",
+        "AshUnity.Runtime",
+        "AshUnity.Editor",
+        "FM",
+        "Ash.Game"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

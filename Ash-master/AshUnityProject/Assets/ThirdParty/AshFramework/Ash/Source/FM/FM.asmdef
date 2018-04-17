@@ -1,0 +1,9 @@
+{
+    "name": "FM",
+    "references": [
+        "Ash.Core",
+        "AshUnity.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}
